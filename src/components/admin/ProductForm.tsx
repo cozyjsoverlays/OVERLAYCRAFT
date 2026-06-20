@@ -93,19 +93,24 @@ export function ProductForm({ product }: { product?: Product }) {
   async function handleFileChange(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
-    if (!file.name.endsWith(".zip")) {
-      setUploadError("Only .zip files are accepted.");
+
+    const lower = file.name.toLowerCase();
+    const ext = lower.endsWith(".pdf") ? "pdf" : lower.endsWith(".zip") ? "zip" : null;
+    if (!ext) {
+      setUploadError("Only .pdf or .zip files are accepted.");
       return;
     }
+    const contentType = ext === "pdf" ? "application/pdf" : "application/zip";
 
     setUploadError(null);
     setUploading(true);
     setUploadProgress(0);
 
     try {
-      const key = `packs/${values.slug || nameToSlug(values.name) || "pack"}-${Date.now()}.zip`;
+      const base = values.slug || nameToSlug(values.name) || "pack";
+      const key = `packs/${base}-${Date.now()}.${ext}`;
       const urlRes = await fetch(
-        `/api/admin/upload?key=${encodeURIComponent(key)}&contentType=application/zip`,
+        `/api/admin/upload?key=${encodeURIComponent(key)}&contentType=${encodeURIComponent(contentType)}`,
       );
       if (!urlRes.ok) throw new Error("Could not get upload URL");
       const { uploadUrl, key: finalKey } = (await urlRes.json()) as {
@@ -121,7 +126,7 @@ export function ProductForm({ product }: { product?: Product }) {
         xhr.onload = () => (xhr.status < 300 ? resolve() : reject(new Error(`Upload failed: ${xhr.status}`)));
         xhr.onerror = () => reject(new Error("Network error during upload"));
         xhr.open("PUT", uploadUrl);
-        xhr.setRequestHeader("Content-Type", "application/zip");
+        xhr.setRequestHeader("Content-Type", contentType);
         xhr.send(file);
       });
 
@@ -322,7 +327,7 @@ export function ProductForm({ product }: { product?: Product }) {
 
       {/* File upload */}
       <div>
-        <label className={labelCls}>Downloadable .zip file</label>
+        <label className={labelCls}>Downloadable file (.pdf or .zip)</label>
         <div className="rounded-xl border border-subtle bg-surface/30 p-4">
           {values.fileKey ? (
             <div className="flex items-center gap-3">
@@ -347,12 +352,12 @@ export function ProductForm({ product }: { product?: Product }) {
             <label className="flex cursor-pointer flex-col items-center gap-2 text-center">
               <Upload size={20} className="text-muted" />
               <span className="text-sm text-muted">
-                {uploading ? `Uploading… ${uploadProgress}%` : "Click to upload .zip"}
+                {uploading ? `Uploading… ${uploadProgress}%` : "Click to upload .pdf or .zip"}
               </span>
               <input
                 ref={fileRef}
                 type="file"
-                accept=".zip,application/zip"
+                accept=".pdf,application/pdf,.zip,application/zip"
                 className="sr-only"
                 onChange={handleFileChange}
                 disabled={uploading}
