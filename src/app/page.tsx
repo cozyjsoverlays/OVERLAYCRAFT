@@ -11,6 +11,10 @@ import { About } from "@/components/About";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 
+// The featured-packs section reads the live DB, so render at request time
+// instead of statically prerendering at build (which has no database).
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   return (
     <>
