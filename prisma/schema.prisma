@@ -1,0 +1,118 @@
+// CozyOverlays digital marketplace schema.
+// Dev uses SQLite; swap `provider` to "postgresql" for production (Neon/Supabase).
+// SQLite has no native enums or scalar arrays, so `features` is a JSON string and
+// `status` is a constrained string — this keeps the Postgres migration clean.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id            String      @id @default(cuid())
+  slug          String      @unique
+  name          String
+  category      String
+  description   String
+  priceCents    Int
+  currency      String      @default("USD")
+  image         String
+  video         String?
+  features      String      // JSON-encoded string[]
+  fileKey       String      // storage object key, e.g. "packs/cat-forest.zip"
+  bestseller    Boolean     @default(false)
+  active        Boolean     @default(true)
+  // Admin-managed fields
+  source        String      @default("manual") // "manual" | "etsy"
+  etsyListingId String?     @unique
+  etsyUrl       String?
+  needsFile     Boolean     @default(false)    // etsy-imported but no zip attached yet
+  featured      Boolean     @default(false)
+  sortOrder     Int         @default(0)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  orderItems    OrderItem[]
+
+  @@index([category])
+  @@index([active, sortOrder])
+}
+
+model Order {
+  id             String          @id @default(cuid())
+  paypalOrderId  String          @unique
+  captureId      String?
+  email          String
+  payerName      String?
+  amountCents    Int
+  currency       String          @default("USD")
+  status         String          @default("PENDING") // PENDING | COMPLETED | FAILED
+  createdAt      DateTime        @default(now())
+  items          OrderItem[]
+  downloadTokens DownloadToken[]
+
+  @@index([email])
+}
+
+model OrderItem {
+  id           String  @id @default(cuid())
+  orderId      String
+  productId    String
+  nameSnapshot String
+  priceCents   Int
+  order        Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product      Product @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+}
+
+model DownloadToken {
+  id            String   @id @default(cuid())
+  token         String   @unique
+  orderId       String
+  productId     String
+  fileKey       String
+  expiresAt     DateTime
+  maxDownloads  Int      @default(5)
+  downloadCount Int      @default(0)
+  createdAt     DateTime @default(now())
+  order         Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+}
+
+model Review {
+  id        String @id @default(cuid())
+  name      String
+  date      String
+  stars     Int
+  quote     String
+  pack      String
+  sortOrder Int    @default(0)
+}
+
+// Stores encrypted Etsy OAuth tokens for the shop owner's account.
+// Only one row should ever exist (the shop owner's credentials).
+model EtsyAuth {
+  id                   String   @id @default(cuid())
+  accessToken          String   // AES-256-GCM encrypted
+  refreshToken         String   // AES-256-GCM encrypted
+  accessTokenExpiresAt DateTime
+  shopId               String
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+}
+
+// Tracks the last time a sync was run and its outcome.
+model EtsySyncLog {
+  id          String   @id @default(cuid())
+  startedAt   DateTime @default(now())
+  finishedAt  DateTime?
+  status      String   @default("running") // "running" | "success" | "error"
+  upserted    Int      @default(0)
+  errors      Int      @default(0)
+  message     String?
+}

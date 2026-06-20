@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/data/site";
+import { CartDrawer } from "@/components/commerce/CartDrawer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({
     <html lang="en" className={poppins.variable}>
       <body className="grain min-h-screen bg-base font-sans antialiased">
         {children}
+        <CartDrawer />
       </body>
     </html>
   );

@@ -1,86 +1,232 @@
 # 🐾 CozyOverlays.com
 
-A polished, Awwwards-style marketing site for **CozyJsStudio** — an Etsy shop selling animated stream overlay packs for Twitch, YouTube, Kick & TikTok. It's a storefront/landing page that drives traffic to Etsy listings (no cart, no checkout, no backend commerce — every "buy" action links out to Etsy).
+A standalone digital marketplace for **CozyJsStudio** — animated stream overlay
+packs for Twitch, YouTube, Kick & TikTok. Customers buy directly on the site,
+pay with **PayPal**, and get **instant, secure, expiring download links** by
+email. Packs are managed entirely from a built-in `/admin` panel (no code edits,
+no redeploys) with an **optional** Etsy import path.
 
-## ✨ Features
+## ✨ What's inside
 
-- **Single long landing page** with smooth-scroll navigation + dedicated `/blog` routes
-- Animated **aurora glow blobs**, **floating particles**, **glass-morphism cards**, gradient text, scroll-triggered reveals, shimmer pill buttons, and a full-page film-grain overlay
-- **Filterable bestsellers grid** with hover video previews (`.webm` swap) and a lightbox modal
-- Browse-by-animal categories, real Etsy reviews, How-It-Works, compatibility strip, custom commission CTA, About, tutorials, and an FAQ accordion
-- **Real blog routes** under `/blog/[slug]` with full placeholder articles
-- Fully responsive, accessible (semantic HTML, focus states, alt text), and respects `prefers-reduced-motion`
-- SEO-ready: metadata, Open Graph + Twitter cards, dynamic favicon, `sitemap.xml`, `robots.txt`
-- Remote Etsy images optimized via `next/image`
+- **Marketing storefront** — Awwwards-style landing page, filterable shop grid,
+  product detail pages, hover video previews, lightbox.
+- **Cart + checkout** — Zustand cart with drawer, PayPal Smart Buttons,
+  server-authoritative pricing.
+- **Secure delivery** — HMAC-signed, time-limited, download-count-limited links
+  that proxy to short-TTL signed storage URLs (files are never public).
+- **Admin panel** (`/admin`) — password login, full product CRUD, **direct .zip
+  upload to R2/S3**, instant storefront revalidation, active/featured/bestseller
+  flags and sort order.
+- **Optional Etsy sync** (`/admin/etsy`) — OAuth2 (PKCE) import of your own
+  listings, daily Vercel Cron refresh, graceful degradation when not configured.
 
 ## 🛠 Tech Stack
 
-- [Next.js 14](https://nextjs.org/) (App Router) + TypeScript
-- [Tailwind CSS](https://tailwindcss.com/) (theme tokens for all colors)
-- [Framer Motion](https://www.framer.com/motion/) for animation
-- [lucide-react](https://lucide.dev/) icons
-- `next/font` for Poppins (weights 400–900)
+| Layer | Choice |
+| --- | --- |
+| Framework | Next.js 14 (App Router) + TypeScript |
+| Styling | Tailwind CSS + Framer Motion |
+| Payments | `@paypal/react-paypal-js` (client) + PayPal Orders v2 REST API (server) |
+| Database | Prisma + SQLite (dev) → Postgres (prod, Neon/Supabase) |
+| Storage | Cloudflare R2 / any S3-compatible (presigned URLs) |
+| Email | Resend |
+| Cart | Zustand (localStorage persisted) |
+| Validation | Zod |
 
-## 🚀 Getting Started
+---
+
+## 🚀 Local setup
 
 ```bash
 # 1. Install dependencies
 npm install
 
-# 2. Run the dev server
+# 2. Create your env file and fill it in (see "What you must provide" below)
+cp .env.example .env
+
+# 3. Create the database and apply migrations
+npm run db:migrate
+
+# 4. Seed 12 demo packs + reviews
+npm run db:seed
+
+# 5. Start the dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### Other scripts
+The site runs **with no third-party credentials**: storage and email fall back
+to console/stub implementations, so you can exercise the entire purchase flow
+locally. (PayPal needs at least sandbox keys to render the buttons — see below.)
+
+### Scripts
 
 ```bash
-npm run build   # production build
-npm run start   # serve the production build
-npm run lint    # run ESLint
+npm run dev         # dev server
+npm run build       # prisma generate + next build
+npm run start       # serve the production build
+npm run lint        # ESLint
+npm run db:migrate  # prisma migrate dev
+npm run db:seed     # seed demo data
+npm run db:studio   # open Prisma Studio
+npm run db:reset    # drop + re-migrate + re-seed
 ```
 
-## 📁 Project Structure
+---
 
-```
-src/
-├── app/                # App Router pages, layout, SEO (robots, sitemap, icon)
-│   ├── blog/           # /blog index + /blog/[slug] article routes
-│   ├── layout.tsx      # Poppins font, metadata, OG tags, grain overlay
-│   ├── page.tsx        # the single long landing page
-│   └── globals.css     # theme tokens, grain, glow utilities
-├── components/         # Nav, Hero, PackGrid, Lightbox, Footer, etc.
-│   └── ui/             # Button, Reveal, AuroraBackground, Particles, SectionHeading
-├── data/               # typed content — packs, reviews, categories, blog, site config
-└── lib/                # shared types + helpers
-```
+## 🧑‍💼 The everyday workflow — adding a pack (no Etsy needed)
 
-All product, review, category, and blog content lives in `src/data/` as typed
-data files and is mapped over in the components — edit those to update the site.
+This is the primary, always-working path.
 
-## 🎨 Design Tokens
+1. Go to **`/admin`** and sign in with `ADMIN_PASSWORD`.
+2. Click **Add pack**.
+3. Fill in name (slug auto-generates), category, price, description, and pick
+   feature tags.
+4. Paste a **preview image URL** (and optional preview video URL).
+5. **Upload the pack `.zip`** — it uploads directly to your storage bucket via a
+   signed URL, with a progress bar. The resulting `fileKey` is stored on the
+   product.
+6. Set flags (**Live**, Featured, Bestseller) and sort order, then **Create**.
+7. The storefront updates **immediately** — `revalidatePath('/shop')` runs on
+   save, so the pack appears without a redeploy.
 
-Colors are defined once in `tailwind.config.ts` (and mirrored as CSS variables in
-`globals.css`):
+> A pack with no `.zip` attached is marked **Needs file** and stays hidden from
+> the shop until you attach one. This guarantees customers can never buy an
+> undeliverable product.
 
-| Token | Value | Use |
+Editing, hiding (toggle active), and deleting all work inline from the product
+table and revalidate the storefront the same way.
+
+---
+
+## 🔐 Security model
+
+- **PayPal secret is server-only.** Only the public client ID reaches the browser.
+- **Totals are always recomputed from the database** server-side in
+  `create-order` and re-verified in `capture-order`. Any amount sent by the
+  client is ignored.
+- **Capture verifies** `status === "COMPLETED"` **and**
+  `capturedAmount === recomputedTotal` **and** currency match before any
+  fulfillment. Capture is idempotent (safe to retry).
+- **Download tokens** are HMAC-SHA256 signed, expire in **72h**, allow **5**
+  downloads max, and are scoped to one paid order. The signature is checked
+  before any DB hit.
+- **Files are never public** — every download proxies through
+  `/api/download/[token]`, which mints a fresh ~60s signed storage URL per request.
+- **Admin** is gated by a signed session cookie (HMAC, 24h) enforced in
+  `middleware.ts`; login is rate-limited (5 / 15 min).
+- **Etsy tokens** are encrypted at rest with AES-256-GCM (`TOKEN_ENCRYPTION_KEY`).
+- Checkout, download, and admin-login routes are all rate-limited; all inputs
+  are validated with Zod.
+
+---
+
+## 📦 What you must provide (production)
+
+| Need | Where | Notes |
 | --- | --- | --- |
-| `base` | `#0D0814` | Page background |
-| `surface` / `surface-2` | `#130D26` / `#1A1230` | Cards & sections |
-| `lavender` | `#B088FF` | Primary accent |
-| `pink` / `cyan` | `#FF6BD6` / `#46E5FF` | Glow accents |
-| `heading` / `body` / `muted` | `#F0ECFA` / `#C4BBD9` / `#8A82A0` | Text |
+| **PayPal app** | [developer.paypal.com](https://developer.paypal.com/dashboard/) | Client ID + secret. Start in **sandbox**, flip `PAYPAL_ENV=live` for production. |
+| **Storage bucket** | Cloudflare R2 or any S3-compatible | Holds the pack `.zip` files. Set the 5 `STORAGE_*` vars. |
+| **Email sender** | [Resend](https://resend.com) | API key + a **verified** `EMAIL_FROM` domain. |
+| **Production database** | [Neon](https://neon.tech) / [Supabase](https://supabase.com) | Set `DATABASE_URL` and change `provider` to `postgresql` in `prisma/schema.prisma`, then `npm run db:migrate`. |
+| **Secrets** | — | `DOWNLOAD_TOKEN_SECRET`, `SESSION_SECRET`, `ADMIN_PASSWORD`, `CRON_SECRET` (and `TOKEN_ENCRYPTION_KEY` if using Etsy). Generate randoms with `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`. |
+| **Site URL** | — | `NEXT_PUBLIC_SITE_URL=https://yourdomain.com` (no trailing slash). |
 
-## 🌐 Deploying to Vercel
+Every variable is documented in [`.env.example`](.env.example).
 
-This project is deploy-ready. Push to a Git repo and import it at
-[vercel.com/new](https://vercel.com/new) — no environment variables required.
-Remote Etsy image hosts (`i.etsystatic.com`, `v.etsystatic.com`) are already
-allow-listed in `next.config.mjs`.
+---
 
-> Update `SITE.url` in `src/data/site.ts` to your production domain so canonical
-> URLs, the sitemap, and Open Graph tags resolve correctly.
+## 🧪 Sandbox purchase test
+
+1. In `.env`, set sandbox PayPal keys and `PAYPAL_ENV=sandbox`.
+2. `npm run dev`, add a pack to the cart, go to **/checkout**, enter an email.
+3. Pay with a [PayPal sandbox buyer account](https://developer.paypal.com/dashboard/accounts).
+4. On success you'll see download links on the confirmation page; the email is
+   logged to your terminal (or sent, if Resend is configured).
+5. Click a link → it routes through `/api/download/[token]`. With real storage
+   it 302s to a signed URL; with the dev stub it returns a placeholder file.
+   Confirm the link stops working after 5 downloads or 72h.
+
+---
+
+## 🛒 Etsy sync (OPTIONAL — best-effort)
+
+> **The site runs 100% without Etsy.** This path only mirrors your existing Etsy
+> listings into the same product table to save re-entry.
+
+### Current Etsy API status (verified mid-2025)
+
+The **Etsy Open API v3** is live and uses OAuth2 with PKCE. However, **new app
+approval is selective** — Etsy restricted open registration, and access for
+third-party apps is reviewed case-by-case. Apply at
+[etsy.com/developers/register](https://www.etsy.com/developers/register). Rate
+limits are ~10,000 requests/day and ~10/second; this app paginates and backs off
+on HTTP 429.
+
+**Hard limitation:** Etsy's API does **not** expose your uploaded digital files.
+So imported listings come in with metadata + images but `needsFile = true` and
+stay **hidden** from the shop until you attach the `.zip` once via the admin
+form. **We never scrape Etsy HTML** — that violates their Terms of Service. API
+only, or nothing.
+
+### Connecting
+
+1. Create an approved Etsy app and set `ETSY_CLIENT_ID`, `ETSY_CLIENT_SECRET`,
+   `ETSY_SHOP_ID`, `ETSY_REDIRECT_URI`, and `TOKEN_ENCRYPTION_KEY`.
+2. Add your callback URL (`https://yourdomain.com/api/etsy/oauth/callback`) to
+   the app's allowed redirect URIs.
+3. Go to **`/admin/etsy`** → **Connect Etsy** → authorize. Tokens are stored
+   encrypted, and refreshed automatically.
+4. Click **Sync now** to import/refresh listings. Categories are mapped from
+   tags/taxonomy to your animal categories (unknowns → `other`, flagged for
+   review).
+5. Attach a `.zip` to each imported pack to publish it.
+
+If credentials are missing or invalid, `/admin/etsy` shows a clear "not
+configured" message and nothing breaks.
+
+### Auto-refresh (Vercel Cron)
+
+[`vercel.json`](vercel.json) registers a daily cron:
+
+```json
+{ "crons": [{ "path": "/api/cron/etsy-sync", "schedule": "0 6 * * *" }] }
+```
+
+The route is protected by `CRON_SECRET` (sent as a Bearer token by Vercel) and
+**no-ops cleanly** when Etsy isn't configured.
+
+---
+
+## 📁 Structure
+
+```
+prisma/
+├── schema.prisma        # Product, Order, OrderItem, DownloadToken, Review,
+│                        #   EtsyAuth, EtsySyncLog
+├── seed.ts              # 12 demo packs + reviews
+└── migrations/
+
+src/
+├── middleware.ts        # admin/api auth gate (signed session cookie)
+├── app/
+│   ├── admin/           # login, products list, add/edit form, etsy sync
+│   ├── api/
+│   │   ├── admin/       # login, logout, products CRUD, signed upload
+│   │   ├── checkout/    # create-order, capture-order (server-authoritative)
+│   │   ├── download/    # [token] secure proxy + dev stub
+│   │   ├── etsy/        # oauth start/callback, sync
+│   │   └── cron/        # etsy-sync (Vercel Cron)
+│   ├── shop/            # /shop + /shop/[slug] (DB-driven)
+│   ├── cart, checkout/  # cart, checkout, success, cancel
+│   └── page.tsx         # landing page
+├── components/
+│   ├── admin/           # login form, product table, product form, etsy panel
+│   └── commerce/        # cart drawer, product cards, PayPal buttons
+└── lib/                 # db, env, money, paypal, storage, email, tokens,
+                         #   admin-auth, encrypt, etsy, etsy-sync, rate-limit
+```
 
 ---
 

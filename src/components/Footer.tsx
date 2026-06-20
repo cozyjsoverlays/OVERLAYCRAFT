@@ -56,16 +56,20 @@ export function Footer() {
           {/* Top Packs */}
           <FooterCol title="Top Packs">
             {topPacks.map((p) => (
-              <FooterLink key={p.slug} href={p.etsy} external>
-                {p.name.replace(" Animated Stream Package", "").replace(" Animated Package", "")}
+              <FooterLink key={p.slug} href={`/shop/${p.slug}`}>
+                {p.name
+                  .replace(" Animated Stream Package", "")
+                  .replace(" Animated Package", "")
+                  .replace(" Animated Pack", "")}
               </FooterLink>
             ))}
           </FooterCol>
 
           {/* Browse */}
           <FooterCol title="Browse">
+            <FooterLink href="/shop">All Packs</FooterLink>
             {browse.map((c) => (
-              <FooterLink key={c.name} href={c.href} external>
+              <FooterLink key={c.name} href={c.href}>
                 {c.emoji} {c.name}
               </FooterLink>
             ))}
@@ -74,13 +78,13 @@ export function Footer() {
           {/* Help */}
           <FooterCol title="Help">
             <FooterLink href="/#faq">FAQ</FooterLink>
-            <FooterLink href="/#tutorials">Tutorials</FooterLink>
+            <FooterLink href="/#how">How It Works</FooterLink>
             <FooterLink href="/blog">Blog</FooterLink>
+            <FooterLink href="/refund-policy">Refund Policy</FooterLink>
+            <FooterLink href="/terms">Terms</FooterLink>
+            <FooterLink href="/privacy">Privacy</FooterLink>
             <FooterLink href={LINKS.etsyContact} external>
-              Contact on Etsy
-            </FooterLink>
-            <FooterLink href={LINKS.etsyCustom} external>
-              Custom Commission
+              Contact
             </FooterLink>
           </FooterCol>
         </div>

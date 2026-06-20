@@ -5,7 +5,7 @@ import { Star, ArrowRight, MoveDown } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { Particles } from "@/components/ui/Particles";
 import { Button } from "@/components/ui/Button";
-import { HERO_STATS, LINKS } from "@/data/site";
+import { HERO_STATS } from "@/data/site";
 
 const container = {
   hidden: {},
@@ -65,8 +65,8 @@ export function Hero() {
             variants={reduce ? undefined : item}
             className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
-            <Button href={LINKS.etsy} external>
-              Browse All 122 Packs <ArrowRight size={16} />
+            <Button href="/shop">
+              Browse Packs <ArrowRight size={16} />
             </Button>
             <Button href="#browse" variant="secondary">
               Find Your Animal <MoveDown size={16} />

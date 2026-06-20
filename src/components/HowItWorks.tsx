@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function HowItWorks() {
   return (
-    <section className="section-pad">
+    <section id="how" className="section-pad">
       <div className="container-page">
         <SectionHeading
           eyebrow="How It Works"

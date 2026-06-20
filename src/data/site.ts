@@ -25,11 +25,10 @@ export const LINKS = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Shop", href: "/#bestsellers" },
+  { label: "Shop", href: "/shop" },
   { label: "Browse", href: "/#browse" },
   { label: "Reviews", href: "/#reviews" },
-  { label: "About", href: "/#about" },
-  { label: "Tutorials", href: "/#tutorials" },
+  { label: "How It Works", href: "/#how" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
 
@@ -42,11 +41,12 @@ export const HERO_STATS = [
 ] as const;
 
 export const TRUST_ITEMS = [
-  "⭐ Etsy Star Seller",
+  "⭐ Star Seller",
   "91 Reviews · 4.9 avg",
-  "Instant delivery",
-  "Works with OBS & Streamlabs",
+  "⚡ Instant secure download",
+  "OBS & Streamlabs",
   ".WEBM + .PNG included",
+  "💳 Pay safely with PayPal",
 ] as const;
 
 export const COMPATIBILITY = [
@@ -70,20 +70,20 @@ export const ABOUT_CHIPS = [
 
 export const HOW_IT_WORKS = [
   {
-    title: "Buy on Etsy",
-    desc: "Pick your pack and check out securely through Etsy. No account hoops.",
+    title: "Pick a Pack",
+    desc: "Browse the shop and add your favorite cozy worlds to your cart.",
   },
   {
-    title: "Unzip the Pack",
-    desc: "Your files arrive instantly by email — unzip the .WEBM and .PNG assets.",
+    title: "Pay with PayPal",
+    desc: "Check out securely in seconds — no account or Etsy detour required.",
   },
   {
-    title: "Add to OBS",
-    desc: "Drop the animated screens in as browser/media sources. Sized for every platform.",
+    title: "Instant Secure Download",
+    desc: "Get private, time-limited download links on-screen and by email.",
   },
   {
-    title: "Go Live!",
-    desc: "Hit stream and glow up your channel with cozy, alive overlays.",
+    title: "Add to OBS & Go Live",
+    desc: "Drop the .WEBM screens into OBS or Streamlabs and glow up your stream.",
   },
 ] as const;
 
@@ -107,9 +107,9 @@ export const TUTORIALS = [
 
 export const FAQ: FaqEntry[] = [
   {
-    question: "How are the files delivered?",
+    question: "How do I get my files after paying?",
     answer:
-      "Instantly. As soon as your Etsy payment clears, Etsy emails you a download link and the files appear in your Etsy Purchases. No waiting, no shipping — it's a digital download.",
+      "The moment your PayPal payment is confirmed, you're taken to a success page with secure, private download links — and we email the same links to you. Downloads are instant; there's no waiting and nothing ships.",
   },
   {
     question: "Will these work with OBS and Streamlabs?",
@@ -117,23 +117,28 @@ export const FAQ: FaqEntry[] = [
       "Yes. Every animated screen ships as a transparent .WEBM you can drop into OBS Studio, Streamlabs, or StreamElements as a browser/media source. Static .PNG versions are included too for tools that need them.",
   },
   {
-    question: "Which platforms are supported?",
+    question: "Which platforms and sizes are supported?",
     answer:
-      "All four: Twitch, YouTube, Kick, and TikTok. The assets are sized and exported so they look crisp on each platform's layout.",
+      "All four major platforms: Twitch, YouTube, Kick, and TikTok. The assets are sized and exported so they look crisp on each platform's layout.",
   },
   {
     question: "Can I request changes to a pack?",
     answer:
-      "Absolutely — just message me on Etsy. Small tweaks to existing packs can often be arranged, and full personalization is available through a custom commission.",
+      "Small tweaks can often be arranged — reach out and ask. For full personalization (your own character, palette, and emotes), grab a custom commission.",
   },
   {
-    question: "What's the refund policy?",
+    question: "What's your refund policy?",
     answer:
-      "Because these are instant-download digital goods, all sales are final once the files have been downloaded, in line with Etsy's policy for digital items. If something isn't working, message me and I'll help you get it set up.",
+      "Because these are instant-download digital goods, all sales are final once the files have been downloaded. If you hit a technical problem, contact us and we'll fix it or make it right.",
   },
   {
     question: "Do you take custom commissions?",
     answer:
       "Yes! Custom packs start at $601 and include your own character or mascot, a custom palette, every screen and alert, custom emotes, a sub badge set, and matching panels and overlays.",
+  },
+  {
+    question: "I lost my download link — what now?",
+    answer:
+      "No problem. Your links are in the confirmation email we sent at purchase. If they've expired, just contact us with your order email and we'll happily re-issue them.",
   },
 ];

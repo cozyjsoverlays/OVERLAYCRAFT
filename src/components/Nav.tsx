@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Youtube, Send, Menu, X, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import { NAV_LINKS, LINKS } from "@/data/site";
-import { Button } from "@/components/ui/Button";
-import { PinterestIcon } from "@/components/icons";
+import { CartButton } from "@/components/commerce/CartButton";
+import { EtsyIcon } from "@/components/icons";
 import { clsx } from "@/lib/clsx";
 
 export function Nav() {
@@ -34,56 +35,63 @@ export function Nav() {
         )}
         aria-label="Primary"
       >
-        <a
-          href="/#top"
+        <Link
+          href="/"
           className="flex items-center gap-2 text-lg font-extrabold text-heading"
         >
           <span aria-hidden>🐾</span>
           <span>
             Cozy<span className="gradient-text">Overlays</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-1 lg:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="rounded-full px-3 py-2 text-sm font-medium text-body transition-colors hover:bg-white/5 hover:text-heading"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         {/* Desktop actions */}
-        <div className="hidden items-center gap-2 lg:flex">
-          <IconLink href={LINKS.youtube} label="YouTube">
-            <Youtube size={18} />
-          </IconLink>
-          <IconLink href={LINKS.pinterest} label="Pinterest">
-            <PinterestIcon className="h-[18px] w-[18px]" />
-          </IconLink>
-          <IconLink href={LINKS.telegram} label="Telegram">
-            <Send size={18} />
-          </IconLink>
-          <Button href={LINKS.etsy} external className="ml-1">
-            Shop on Etsy <ExternalLink size={15} />
-          </Button>
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={LINKS.etsy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-xs font-medium text-muted transition-colors hover:text-body"
+          >
+            <EtsyIcon className="h-3.5 w-3.5" /> Also on Etsy
+            <ArrowUpRight size={12} />
+          </a>
+          <CartButton />
+          <Link
+            href="/shop"
+            className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-accent-gradient bg-[length:200%_auto] px-5 py-2.5 text-sm font-bold text-base shadow-glow transition-all hover:bg-[position:100%_50%] hover:-translate-y-0.5"
+          >
+            <Sparkles size={15} /> Shop Now
+          </Link>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full text-heading hover:bg-white/5 lg:hidden"
-          aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Mobile actions */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <CartButton />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-heading hover:bg-white/5"
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -91,54 +99,34 @@ export function Nav() {
         <div className="border-t border-subtle bg-base/95 backdrop-blur-xl lg:hidden">
           <div className="container-page flex flex-col gap-1 py-4">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3 py-3 text-base font-medium text-body hover:bg-white/5 hover:text-heading"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <div className="mt-3 flex items-center gap-2">
-              <IconLink href={LINKS.youtube} label="YouTube">
-                <Youtube size={18} />
-              </IconLink>
-              <IconLink href={LINKS.pinterest} label="Pinterest">
-                <PinterestIcon className="h-[18px] w-[18px]" />
-              </IconLink>
-              <IconLink href={LINKS.telegram} label="Telegram">
-                <Send size={18} />
-              </IconLink>
-            </div>
-            <Button href={LINKS.etsy} external className="mt-3 w-full">
-              Shop on Etsy <ExternalLink size={15} />
-            </Button>
+            <Link
+              href="/shop"
+              onClick={() => setOpen(false)}
+              className="mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-accent-gradient px-6 py-3 text-sm font-bold text-base shadow-glow"
+            >
+              <Sparkles size={15} /> Shop Now
+            </Link>
+            <a
+              href={LINKS.etsy}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 flex items-center justify-center gap-1 py-2 text-xs font-medium text-muted"
+            >
+              <EtsyIcon className="h-3.5 w-3.5" /> Also on Etsy{" "}
+              <ArrowUpRight size={12} />
+            </a>
           </div>
         </div>
       )}
     </header>
-  );
-}
-
-function IconLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-subtle text-body transition-all hover:border-lavender/40 hover:text-heading hover:shadow-glow"
-    >
-      {children}
-    </a>
   );
 }
