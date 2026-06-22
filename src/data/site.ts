@@ -10,8 +10,18 @@ export const SITE = {
     "https://i.etsystatic.com/61635066/r/isla/962937/85081868/isla_180x180.85081868_iwuxhcgu.jpg",
 } as const;
 
+/**
+ * Buy model. When true, every pack's buy button links out to its Etsy listing
+ * (Etsy handles payment + delivery) instead of the on-site PayPal checkout.
+ * Flip to false to re-enable the built-in cart/PayPal flow.
+ */
+export const BUY_ON_ETSY = true;
+
+/** Etsy shop home — fallback target when a pack has no specific listing URL. */
+export const ETSY_SHOP_URL = "https://cozyjsstudio.etsy.com";
+
 export const LINKS = {
-  etsy: "https://www.etsy.com/shop/cozyjsstudio",
+  etsy: "https://cozyjsstudio.etsy.com",
   etsyCats:
     "https://www.etsy.com/shop/CozyJsStudio?section_id=56165083",
   etsyContact: "https://www.etsy.com/messages/new?with_id=1121232907",

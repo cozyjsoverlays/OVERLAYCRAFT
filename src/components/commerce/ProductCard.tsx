@@ -128,6 +128,7 @@ export function ProductCard({ product, onOpenMedia }: ProductCardProps) {
               image: product.image,
               currency: product.currency,
             }}
+            etsyUrl={product.etsyUrl}
           />
         </div>
       </div>

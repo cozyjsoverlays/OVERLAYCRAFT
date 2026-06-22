@@ -12,6 +12,8 @@
  *   image       Public preview image URL
  *   video       Public preview video URL (optional)
  *   features    Pipe-separated, e.g. "Animated Screens|Alerts|Panels"
+ *   etsy_url    Etsy listing URL — when set, the pack sells on Etsy and goes
+ *               live immediately (no local file needed)
  *   file        Deliverable filename, e.g. "cat-forest.pdf" (lives under packs/)
  *   featured    true|false
  *   bestseller  true|false
@@ -134,6 +136,13 @@ async function main() {
 
     const sortOrder = parseInt(r.sortorder ?? "", 10);
 
+    // Etsy listing URL (accepts a few common column spellings). When present,
+    // the pack is sold/delivered on Etsy — no local file needed, so it goes
+    // live immediately and the buy button deep-links to the listing.
+    const etsyUrl =
+      r.etsy_url?.trim() || r.etsyurl?.trim() || r.etsy?.trim() || null;
+    const soldOnEtsy = !!etsyUrl;
+
     const data = {
       name,
       category,
@@ -144,9 +153,12 @@ async function main() {
       video: r.video?.trim() || null,
       features: JSON.stringify(features),
       fileKey,
-      source: "manual",
-      needsFile: true, // flipped to false by upload:files once the file lands
-      active: false, // published after the file is attached
+      etsyUrl,
+      source: soldOnEtsy ? "etsy" : "manual",
+      // Etsy packs need no local deliverable; self-hosted packs stay hidden
+      // until upload:files attaches the file.
+      needsFile: soldOnEtsy ? false : true,
+      active: soldOnEtsy ? true : false,
       featured: bool(r.featured),
       bestseller: bool(r.bestseller),
       sortOrder: isNaN(sortOrder) ? i : sortOrder,

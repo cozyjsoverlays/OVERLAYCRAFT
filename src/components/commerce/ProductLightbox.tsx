@@ -106,6 +106,7 @@ export function ProductLightbox({ product, onClose }: ProductLightboxProps) {
                   currency: product.currency,
                 }}
                 variant="detail"
+                etsyUrl={product.etsyUrl}
               />
             </div>
           </motion.div>

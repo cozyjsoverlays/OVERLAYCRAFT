@@ -14,6 +14,7 @@ export interface ProductDTO {
   video: string | null;
   features: string[];
   bestseller: boolean;
+  etsyUrl: string | null;
 }
 
 export function toProductDTO(p: PrismaProduct): ProductDTO {
@@ -36,6 +37,7 @@ export function toProductDTO(p: PrismaProduct): ProductDTO {
     video: p.video,
     features,
     bestseller: p.bestseller,
+    etsyUrl: p.etsyUrl,
   };
 }
 

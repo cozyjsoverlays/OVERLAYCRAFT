@@ -10,7 +10,7 @@ import { RelatedProducts } from "@/components/commerce/RelatedProducts";
 import { AddToCartButtons } from "@/components/commerce/AddToCartButtons";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
 import { formatCents } from "@/lib/money";
-import { COMPATIBILITY } from "@/data/site";
+import { COMPATIBILITY, BUY_ON_ETSY } from "@/data/site";
 
 export async function generateMetadata({
   params,
@@ -104,6 +104,7 @@ export default async function ProductDetailPage({
                       currency: product.currency,
                     }}
                     variant="detail"
+                    etsyUrl={product.etsyUrl}
                   />
                 </div>
 
@@ -113,7 +114,8 @@ export default async function ProductDetailPage({
                     <Zap size={14} className="text-cyan" /> Instant download
                   </span>
                   <span className="inline-flex items-center gap-1.5">
-                    <Shield size={14} className="text-cyan" /> Secure PayPal checkout
+                    <Shield size={14} className="text-cyan" />{" "}
+                    {BUY_ON_ETSY ? "Buy safely on Etsy" : "Secure PayPal checkout"}
                   </span>
                   <span className="inline-flex items-center gap-1.5">
                     <Download size={14} className="text-cyan" /> .WEBM + .PNG
