@@ -46,9 +46,9 @@ export function Hero() {
             variants={reduce ? undefined : item}
             className="mt-6 text-balance text-[clamp(2.6rem,7vw,5.25rem)] font-extrabold leading-[1.02] tracking-tight text-heading"
           >
-            Most stream overlays just sit there.{" "}
+            Stream Overlays That Feel{" "}
             <span className="gradient-text animate-gradient-pan">
-              Yours should breathe.
+              Alive &amp; Cozy
             </span>
           </motion.h1>
 
@@ -56,9 +56,9 @@ export function Hero() {
             variants={reduce ? undefined : item}
             className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-body md:text-xl"
           >
-            Animated cozy overlay packs for Twitch, YouTube, Kick &amp; TikTok —
-            petals drift, lanterns glow, the rain keeps falling. Drop them into
-            OBS and your channel feels like a place, in five minutes.
+            Hand-crafted animated overlay packs for Twitch, YouTube, Kick &amp;
+            TikTok. Cozy worlds that move — screens, alerts, panels &amp; emotes
+            ready to drop into OBS in minutes.
           </motion.p>
 
           <motion.div
