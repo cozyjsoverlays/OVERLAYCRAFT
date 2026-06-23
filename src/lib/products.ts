@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/db";
 import type { Product as PrismaProduct } from "@prisma/client";
+import { PACKS } from "@/data/packs";
+import type { Pack } from "@/lib/types";
 
 /** UI-facing product shape (features deserialized, price kept as cents). */
 export interface ProductDTO {
@@ -42,80 +44,65 @@ export function toProductDTO(p: PrismaProduct): ProductDTO {
 }
 
 /**
- * Storefront reads degrade gracefully: if the database is unreachable or not yet
- * migrated (e.g. a fresh deploy before DATABASE_URL/migrations are set up), we
- * log and return an empty catalog instead of throwing. This keeps `next build`
- * and request-time rendering from crashing — the shop simply shows no packs
- * until the DB is provisioned. Mutations still surface their errors normally.
+ * The storefront reads from the STATIC catalog in `src/data/packs.ts` — not the
+ * database. Because packs are sold/delivered on Etsy (BUY_ON_ETSY), the site is
+ * just a catalog that links out, so it renders on any host (incl. Hostinger)
+ * with zero database/env setup. The Prisma layer is retained for the admin and
+ * the (toggleable) on-site checkout, but it is NOT required for the shop.
  */
-function onReadError(where: string, e: unknown): void {
-  console.error(
-    `[products] DB read failed in ${where} — returning empty result. ` +
-      `Is DATABASE_URL set and migrated?`,
-    e,
-  );
+
+/** Parse a display price like "$24.00" / "24" into integer cents. */
+function priceToCents(price: string): number {
+  const n = parseFloat(price.replace(/[^0-9.]/g, ""));
+  return Number.isFinite(n) ? Math.round(n * 100) : 0;
+}
+
+function packToDTO(p: Pack): ProductDTO {
+  return {
+    id: p.slug,
+    slug: p.slug,
+    name: p.name,
+    category: p.category,
+    description: p.description,
+    priceCents: priceToCents(p.price),
+    currency: "USD",
+    image: p.image,
+    video: p.video ?? null,
+    features: p.features,
+    bestseller: p.bestseller ?? false,
+    etsyUrl: p.etsy ?? null,
+  };
 }
 
 export async function getAllProducts(): Promise<ProductDTO[]> {
-  try {
-    const products = await prisma.product.findMany({
-      // Only active packs that have a deliverable file attached are buyable.
-      where: { active: true, needsFile: false },
-      orderBy: [
-        { sortOrder: "asc" },
-        { featured: "desc" },
-        { bestseller: "desc" },
-        { createdAt: "asc" },
-      ],
-    });
-    return products.map(toProductDTO);
-  } catch (e) {
-    onReadError("getAllProducts", e);
-    return [];
-  }
+  return PACKS.map(packToDTO);
 }
 
-/** A limited set for the homepage featured section (prefers featured/bestseller). */
+/** A limited set for the homepage featured section (prefers bestsellers). */
 export async function getFeaturedProducts(limit = 8): Promise<ProductDTO[]> {
-  try {
-    const products = await prisma.product.findMany({
-      where: { active: true, needsFile: false },
-      orderBy: [
-        { featured: "desc" },
-        { bestseller: "desc" },
-        { sortOrder: "asc" },
-        { createdAt: "asc" },
-      ],
-      take: limit,
-    });
-    return products.map(toProductDTO);
-  } catch (e) {
-    onReadError("getFeaturedProducts", e);
-    return [];
-  }
+  const sorted = [...PACKS].sort(
+    (a, b) => Number(Boolean(b.bestseller)) - Number(Boolean(a.bestseller)),
+  );
+  return sorted.slice(0, limit).map(packToDTO);
 }
 
 export async function getProductBySlug(
   slug: string,
 ): Promise<ProductDTO | null> {
-  try {
-    const p = await prisma.product.findUnique({ where: { slug } });
-    return p ? toProductDTO(p) : null;
-  } catch (e) {
-    onReadError("getProductBySlug", e);
-    return null;
-  }
+  const p = PACKS.find((x) => x.slug === slug);
+  return p ? packToDTO(p) : null;
 }
 
-/** Fetch products for a set of slugs, returned in DB order (used by checkout).
- *  Only buyable packs (active + file attached) are returned. */
+/** Fetch DB packs for a set of slugs (used only by the legacy on-site checkout,
+ *  which is disabled in the Etsy buy model). Reads the database directly because
+ *  the checkout/fulfillment path needs server-only fields like `fileKey`. */
 export async function getProductsBySlugs(slugs: string[]) {
   try {
     return await prisma.product.findMany({
       where: { slug: { in: slugs }, active: true, needsFile: false },
     });
   } catch (e) {
-    onReadError("getProductsBySlugs", e);
+    console.error("[products] getProductsBySlugs DB read failed:", e);
     return [];
   }
 }
