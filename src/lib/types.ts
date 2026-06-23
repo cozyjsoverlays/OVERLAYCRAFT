@@ -4,7 +4,10 @@ export type PackCategory =
   | "bear"
   | "fox"
   | "frog"
-  | "japanese";
+  | "japanese"
+  | "witchy"
+  | "room"
+  | "seasonal";
 
 export type PackFeature =
   | "Animated Screens"

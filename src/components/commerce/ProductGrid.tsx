@@ -14,6 +14,9 @@ export const PRODUCT_FILTERS: { id: string; label: string }[] = [
   { id: "fox", label: "Foxes" },
   { id: "bear", label: "Bears & Pandas" },
   { id: "japanese", label: "Japanese" },
+  { id: "witchy", label: "Witchy" },
+  { id: "room", label: "Cozy Rooms" },
+  { id: "seasonal", label: "Seasonal" },
   { id: "frog", label: "Frogs & More" },
 ];
 
@@ -24,6 +27,9 @@ interface ProductGridProps {
   syncUrl?: boolean;
   /** Show the category filter tabs (off for curated homepage sets). */
   showFilters?: boolean;
+  /** If set, show this many packs at first and reveal more via a "Load more"
+   *  button (used on the homepage to show the whole shop progressively). */
+  pageSize?: number;
 }
 
 export function ProductGrid({
@@ -31,12 +37,14 @@ export function ProductGrid({
   initialCategory = "all",
   syncUrl = false,
   showFilters = true,
+  pageSize,
 }: ProductGridProps) {
   const validInitial = PRODUCT_FILTERS.some((f) => f.id === initialCategory)
     ? initialCategory
     : "all";
   const [filter, setFilter] = useState(validInitial);
   const [active, setActive] = useState<ProductDTO | null>(null);
+  const [count, setCount] = useState(pageSize ?? Infinity);
 
   useEffect(() => {
     if (!syncUrl) return;
@@ -46,13 +54,21 @@ export function ProductGrid({
     window.history.replaceState(null, "", url.toString());
   }, [filter, syncUrl]);
 
-  const visible = useMemo(
+  // Reset the visible count whenever the filter changes.
+  useEffect(() => {
+    setCount(pageSize ?? Infinity);
+  }, [filter, pageSize]);
+
+  const matching = useMemo(
     () =>
       filter === "all"
         ? products
         : products.filter((p) => p.category === filter),
     [filter, products],
   );
+
+  const visible = pageSize ? matching.slice(0, count) : matching;
+  const hasMore = pageSize ? count < matching.length : false;
 
   return (
     <>
@@ -100,6 +116,21 @@ export function ProductGrid({
         <p className="mt-10 text-center text-body">
           No packs in this category yet — check back soon!
         </p>
+      )}
+
+      {hasMore && (
+        <div className="mt-12 flex flex-col items-center gap-3">
+          <button
+            type="button"
+            onClick={() => setCount((c) => c + (pageSize ?? 12))}
+            className="inline-flex items-center gap-2 rounded-full border border-subtle bg-white/5 px-7 py-3 text-sm font-bold text-heading transition-all hover:border-lavender/50 hover:bg-white/10 hover:-translate-y-0.5"
+          >
+            Load more packs
+          </button>
+          <span className="text-xs text-muted">
+            Showing {visible.length} of {matching.length}
+          </span>
+        </div>
       )}
 
       <ProductLightbox product={active} onClose={() => setActive(null)} />

@@ -67,7 +67,7 @@ export const PACKS: Pack[] = [
   {
     slug: "whimsical-witchs-library-cats-animated-overlay",
     name: "Whimsical Witch's Library Cats Animated Overlay",
-    category: "frog",
+    category: "seasonal",
     price: "$14.84",
     description: "Whimsical Witch's Library Cats — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/1b174e/8212663465/il_fullxfull.8212663465_12ej.jpg",
@@ -137,7 +137,7 @@ export const PACKS: Pack[] = [
   {
     slug: "magical-night-garden-room-animated-overlay",
     name: "Magical Night Garden Room Animated Overlay",
-    category: "frog",
+    category: "room",
     price: "$13.84",
     description: "Magical Night Garden Room — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/5998d0/8033872950/il_fullxfull.8033872950_byom.jpg",
@@ -167,7 +167,7 @@ export const PACKS: Pack[] = [
   {
     slug: "y2k-spooky-cat-animated-overlay",
     name: "Y2K Spooky Cat Animated Overlay",
-    category: "cat",
+    category: "seasonal",
     price: "$15.84",
     description: "Y2K Spooky Cat — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/69d58c/8198518705/il_fullxfull.8198518705_n9zb.jpg",
@@ -207,7 +207,7 @@ export const PACKS: Pack[] = [
   {
     slug: "spooky-witch-cat-animated-overlay",
     name: "Spooky Witch Cat Animated Overlay",
-    category: "cat",
+    category: "seasonal",
     price: "$14.84",
     description: "Spooky Witch Cat — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/75bae2/8196268417/il_fullxfull.8196268417_d5zu.jpg",
@@ -307,7 +307,7 @@ export const PACKS: Pack[] = [
   {
     slug: "animated-twitch-overlay-pack",
     name: "Animated Twitch Overlay Pack",
-    category: "frog",
+    category: "room",
     price: "$13.85",
     description: "Cozy animated stream overlays — screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/26e058/7570981459/il_fullxfull.7570981459_sndd.jpg",
@@ -387,7 +387,7 @@ export const PACKS: Pack[] = [
   {
     slug: "magical-celestial-bedroom-animated-overlay",
     name: "Magical Celestial Bedroom Animated Overlay",
-    category: "frog",
+    category: "room",
     price: "$14.84",
     description: "Magical Celestial Bedroom — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/aa3dad/8111284118/il_fullxfull.8111284118_2umq.jpg",
@@ -407,7 +407,7 @@ export const PACKS: Pack[] = [
   {
     slug: "cozy-midnight-garden-animated-overlay",
     name: "Cozy Midnight Garden Animated Overlay",
-    category: "frog",
+    category: "room",
     price: "$13.84",
     description: "Cozy Midnight Garden — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/59584f/8014637362/il_fullxfull.8014637362_bp9a.jpg",
@@ -497,7 +497,7 @@ export const PACKS: Pack[] = [
   {
     slug: "midnight-cozy-cat-animated-stream-pack-gothic-twitch-overlay",
     name: "Midnight Cozy Cat Animated Stream Pack: Gothic Twitch Overlay (Digital Download)",
-    category: "cat",
+    category: "seasonal",
     price: "$13.85",
     description: "Midnight Cozy Cat : Gothic (Digital Download) — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/2dfdd0/7597610202/il_fullxfull.7597610202_9lmj.jpg",
@@ -507,7 +507,7 @@ export const PACKS: Pack[] = [
   {
     slug: "ghost-forest-magic-animated-stream-package",
     name: "Ghost Forest Magic Animated Stream Package",
-    category: "frog",
+    category: "witchy",
     price: "$13.85",
     description: "Ghost Forest Magic — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/e0de0e/7923972759/il_fullxfull.7923972759_iuac.jpg",
@@ -517,7 +517,7 @@ export const PACKS: Pack[] = [
   {
     slug: "starry-forest-reaper-overlay-animated-stream-package-twitch-",
     name: "Starry Forest Reaper Overlay Animated Stream Package: Twitch Overlay, YouTube, Kick",
-    category: "frog",
+    category: "witchy",
     price: "$13.85",
     description: "Starry Forest Reaper : , YouTube, Kick — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/0281bc/7811259654/il_fullxfull.7811259654_7k7r.jpg",
@@ -537,7 +537,7 @@ export const PACKS: Pack[] = [
   {
     slug: "cozy-witchy-animated-overlay",
     name: "Cozy Witchy Animated Overlay",
-    category: "frog",
+    category: "witchy",
     price: "$12.34",
     description: "Cozy Witchy — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/9ef18e/8058722832/il_fullxfull.8058722832_i89b.jpg",
@@ -577,7 +577,7 @@ export const PACKS: Pack[] = [
   {
     slug: "magical-moonlight-balcony-animated-overlay",
     name: "Magical Moonlight Balcony Animated Overlay",
-    category: "frog",
+    category: "witchy",
     price: "$13.84",
     description: "Magical Moonlight Balcony — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/612f51/8093363083/il_fullxfull.8093363083_3y2n.jpg",
@@ -587,7 +587,7 @@ export const PACKS: Pack[] = [
   {
     slug: "magical-garden-animated-overlay",
     name: "Magical Garden Animated Overlay",
-    category: "frog",
+    category: "room",
     price: "$13.84",
     description: "Magical Garden — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/709c6b/8044980166/il_fullxfull.8044980166_g2q4.jpg",
@@ -607,7 +607,7 @@ export const PACKS: Pack[] = [
   {
     slug: "starry-night-moon-animated-overlay",
     name: "Starry Night Moon Animated Overlay",
-    category: "frog",
+    category: "room",
     price: "$14.84",
     description: "Starry Night Moon — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/35a60f/8022116082/il_fullxfull.8022116082_fac2.jpg",
@@ -617,7 +617,7 @@ export const PACKS: Pack[] = [
   {
     slug: "animated-neon-bedroom-stream-package",
     name: "Animated Neon Bedroom Stream Package",
-    category: "frog",
+    category: "room",
     price: "$15.34",
     description: "Neon Bedroom — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/530e06/8066184471/il_fullxfull.8066184471_7k0e.jpg",
@@ -647,7 +647,7 @@ export const PACKS: Pack[] = [
   {
     slug: "cozy-terrace-night-cityscape-animated-overlay",
     name: "Cozy Terrace Night Cityscape Animated Overlay",
-    category: "frog",
+    category: "room",
     price: "$14.34",
     description: "Cozy Terrace Night Cityscape — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/470d7c/8062605651/il_fullxfull.8062605651_k82q.jpg",
@@ -657,7 +657,7 @@ export const PACKS: Pack[] = [
   {
     slug: "animated-neon-bedroom-stream-package-65",
     name: "Animated Neon Bedroom Stream Package",
-    category: "frog",
+    category: "room",
     price: "$14.34",
     description: "Neon Bedroom — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/80384a/8014713366/il_fullxfull.8014713366_24x7.jpg",
@@ -737,7 +737,7 @@ export const PACKS: Pack[] = [
   {
     slug: "moonlit-raven-animated-stream-package",
     name: "Moonlit Raven Animated Stream Package",
-    category: "frog",
+    category: "witchy",
     price: "$13.85",
     description: "Moonlit Raven — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/e77a53/7859313713/il_fullxfull.7859313713_hbxv.jpg",
@@ -827,7 +827,7 @@ export const PACKS: Pack[] = [
   {
     slug: "festival-animated-stream-package-twitch-overlay-youtube-kick",
     name: "Festival Animated Stream Package : Twitch Overlay, YouTube, Kick, Purple Overlays",
-    category: "frog",
+    category: "seasonal",
     price: "$2.19",
     description: "Festival : , YouTube, Kick, Purple — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/4f373a/7365131058/il_fullxfull.7365131058_i23d.jpg",
@@ -877,7 +877,7 @@ export const PACKS: Pack[] = [
   {
     slug: "cozy-night-animated-stream-package-for-twitch-overlay-youtub",
     name: "Cozy Night Animated Stream Package: For Twitch Overlay, YouTube, Kick",
-    category: "frog",
+    category: "room",
     price: "$13.85",
     description: "Cozy Night : , YouTube, Kick — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/c1239c/7793803319/il_fullxfull.7793803319_c7dz.jpg",
@@ -987,7 +987,7 @@ export const PACKS: Pack[] = [
   {
     slug: "turtle-under-sea-room-animated-stream-package",
     name: "Turtle Under Sea Room Animated Stream Package",
-    category: "frog",
+    category: "room",
     price: "$13.85",
     description: "Turtle Under Sea Room — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/7746e7/7942347621/il_fullxfull.7942347621_3bqs.jpg",
@@ -1007,7 +1007,7 @@ export const PACKS: Pack[] = [
   {
     slug: "christmas-animated-tiktok-stream-overlay-package-digital-dow",
     name: "Christmas Animated TikTok Stream Overlay Package (Digital Download)",
-    category: "frog",
+    category: "seasonal",
     price: "$2.19",
     description: "Christmas TikTok (Digital Download) — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/2e71b0/7379465446/il_fullxfull.7379465446_q7wn.jpg",
@@ -1017,7 +1017,7 @@ export const PACKS: Pack[] = [
   {
     slug: "christmas-animated-stream-package-for-twitch-overlay-youtube",
     name: "Christmas Animated Stream Package: For Twitch Overlay, YouTube, Kick, Facecam, Alerts, Christmas Overlays",
-    category: "frog",
+    category: "seasonal",
     price: "$2.19",
     description: "Christmas : , YouTube, Kick, Facecam, Alerts, Christmas — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/d73af3/7555303959/il_fullxfull.7555303959_9zjy.jpg",
@@ -1057,7 +1057,7 @@ export const PACKS: Pack[] = [
   {
     slug: "new-year-animated-stream-twitch-screens",
     name: "New Year Animated Stream Twitch Screens",
-    category: "frog",
+    category: "seasonal",
     price: "$2.19",
     description: "New Year Screens — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/75979e/7560727548/il_fullxfull.7560727548_kfu2.jpg",
@@ -1107,7 +1107,7 @@ export const PACKS: Pack[] = [
   {
     slug: "cherry-blossom-animated-tiktok-stream-overlay-package-tiktok",
     name: "Cherry Blossom Animated TikTok Stream Overlay Package, TikTok Overlays (Digital Download)",
-    category: "frog",
+    category: "japanese",
     price: "$13.85",
     description: "Cherry Blossom TikTok , TikTok (Digital Download) — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/1dda52/7426286422/il_fullxfull.7426286422_m3ri.jpg",
@@ -1117,7 +1117,7 @@ export const PACKS: Pack[] = [
   {
     slug: "frog-under-sea-room-animated-stream-package",
     name: "Frog Under Sea Room Animated Stream Package",
-    category: "frog",
+    category: "room",
     price: "$9.85",
     description: "Frog Under Sea Room — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/ee18a2/7945645635/il_fullxfull.7945645635_fgr1.jpg",
@@ -1127,7 +1127,7 @@ export const PACKS: Pack[] = [
   {
     slug: "cozy-christmas-cat-animated-tiktok-stream-overlay-package-di",
     name: "Cozy Christmas Cat Animated TikTok Stream Overlay Package (Digital Download)",
-    category: "cat",
+    category: "seasonal",
     price: "$2.19",
     description: "Cozy Christmas Cat TikTok (Digital Download) — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/ef5cf8/7524383409/il_fullxfull.7524383409_7jgv.jpg",
@@ -1157,7 +1157,7 @@ export const PACKS: Pack[] = [
   {
     slug: "otter-under-sea-room-animated-stream-package",
     name: "Otter Under Sea Room Animated Stream Package",
-    category: "frog",
+    category: "room",
     price: "$13.85",
     description: "Otter Under Sea Room — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/2f445e/7890891492/il_fullxfull.7890891492_hb89.jpg",
@@ -1197,7 +1197,7 @@ export const PACKS: Pack[] = [
   {
     slug: "red-gold-christmas-animated-tiktok-stream-overlay-package-di",
     name: "Red Gold Christmas Animated TikTok Stream Overlay Package (Digital Download)",
-    category: "frog",
+    category: "seasonal",
     price: "$1.19",
     description: "Red Gold Christmas TikTok (Digital Download) — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/992bae/7456723550/il_fullxfull.7456723550_cvjr.jpg",
@@ -1268,5 +1268,8 @@ export const PACK_FILTERS: PackFilter[] = [
   { id: "fox", label: "Foxes" },
   { id: "bear", label: "Bears & Pandas" },
   { id: "japanese", label: "Japanese" },
+  { id: "witchy", label: "Witchy" },
+  { id: "room", label: "Cozy Rooms" },
+  { id: "seasonal", label: "Seasonal" },
   { id: "frog", label: "Frogs & More" },
 ];

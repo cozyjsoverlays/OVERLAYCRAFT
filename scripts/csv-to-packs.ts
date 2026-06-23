@@ -14,17 +14,34 @@ import { parseCsvToObjects } from "./lib/csv";
 
 const SHOP_URL = "https://www.etsy.com/shop/CozyJsStudio";
 
-type Category = "cat" | "dragon" | "bear" | "fox" | "frog" | "japanese";
+type Category =
+  | "cat"
+  | "dragon"
+  | "bear"
+  | "fox"
+  | "frog"
+  | "japanese"
+  | "witchy"
+  | "room"
+  | "seasonal";
 
-// Specific animals first, then theme, then "frog" (the Frogs & More catch-all).
+// First match wins. Seasonal/witchy themes win over animals; named animals win
+// over the generic "Japanese" theme; room/scene themes catch the abstract sets;
+// everything else falls into "frog" (the Frogs & More catch-all).
 const CATEGORY_RULES: Array<[RegExp, Category]> = [
+  [/\b(christmas|new year|halloween|valentine|easter|holiday|festive|festival)\b/i, "seasonal"],
+  [/\b(witch|witchy|ghost|reaper|raven|skull|spooky|grim|haunted|gothic)\b/i, "witchy"],
   [/\b(cat|kitty|kitten|neko)\b/i, "cat"],
   [/\bdragon\b/i, "dragon"],
   [/\b(fox|kitsune)\b/i, "fox"],
   [/\b(bear|panda)\b/i, "bear"],
   [
-    /\b(samurai|ninja|japan(ese)?|sakura|wolf|koi|geisha|kimono|torii|lantern|temple|oni|kitsune)\b/i,
+    /\b(samurai|ninja|japan(ese)?|sakura|cherry blossom|wolf|koi|geisha|kimono|torii|lantern|temple|oni)\b/i,
     "japanese",
+  ],
+  [
+    /\b(room|bedroom|garden|balcony|terrace|cityscape|library|under sea|cafe|caf[eé]|kitchen|studio|apartment|house)\b/i,
+    "room",
   ],
 ];
 
@@ -144,6 +161,9 @@ export const PACK_FILTERS: PackFilter[] = [
   { id: "fox", label: "Foxes" },
   { id: "bear", label: "Bears & Pandas" },
   { id: "japanese", label: "Japanese" },
+  { id: "witchy", label: "Witchy" },
+  { id: "room", label: "Cozy Rooms" },
+  { id: "seasonal", label: "Seasonal" },
   { id: "frog", label: "Frogs & More" },
 ];
 `;
