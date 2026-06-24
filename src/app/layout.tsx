@@ -2,8 +2,37 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
-import { SITE } from "@/data/site";
+import { SITE, LINKS } from "@/data/site";
 import { CartDrawer } from "@/components/commerce/CartDrawer";
+import { JsonLd } from "@/components/seo/JsonLd";
+
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.url,
+  logo: SITE.avatar,
+  description: SITE.tagline,
+  sameAs: [
+    LINKS.etsy,
+    LINKS.youtube,
+    LINKS.instagram,
+    LINKS.pinterest,
+    LINKS.twitter,
+  ],
+};
+
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: SITE.url,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${SITE.url}/shop?category={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -59,6 +88,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className="grain min-h-screen bg-base font-sans antialiased">
+        <JsonLd data={organizationLd} />
+        <JsonLd data={websiteLd} />
         {children}
         <CartDrawer />
         <GoogleAnalytics gaId="G-6GX8B1FJVT" />

@@ -10,7 +10,15 @@ import { RelatedProducts } from "@/components/commerce/RelatedProducts";
 import { AddToCartButtons } from "@/components/commerce/AddToCartButtons";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
 import { formatCents } from "@/lib/money";
-import { COMPATIBILITY, BUY_ON_ETSY } from "@/data/site";
+import { COMPATIBILITY, BUY_ON_ETSY, SITE } from "@/data/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+
+// Prerender every product page as static HTML at build time (great for SEO and
+// crawl coverage). The catalog is static data, so no database is needed.
+export async function generateStaticParams() {
+  const products = await getAllProducts();
+  return products.map((p) => ({ slug: p.slug }));
+}
 
 export async function generateMetadata({
   params,
@@ -19,14 +27,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const product = await getProductBySlug(params.slug);
   if (!product) return { title: "Pack not found" };
+  const title = `${product.name} — Animated Stream Overlay`;
   return {
-    title: product.name,
+    title,
     description: product.description,
     alternates: { canonical: `/shop/${product.slug}` },
     openGraph: {
-      title: product.name,
+      type: "website",
+      title,
       description: product.description,
-      images: [{ url: product.image }],
+      url: `${SITE.url}/shop/${product.slug}`,
+      images: [{ url: product.image, alt: product.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: product.description,
+      images: [product.image],
     },
   };
 }
@@ -55,8 +72,38 @@ export default async function ProductDetailPage({
       ? related
       : all.filter((p) => p.slug !== product.slug).slice(0, 3);
 
+  const canonical = `${SITE.url}/shop/${product.slug}`;
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: [product.image],
+    brand: { "@type": "Brand", name: SITE.shop },
+    category: product.category,
+    offers: {
+      "@type": "Offer",
+      url: product.etsyUrl || canonical,
+      priceCurrency: product.currency || "USD",
+      price: (product.priceCents / 100).toFixed(2),
+      availability: "https://schema.org/InStock",
+      seller: { "@type": "Organization", name: SITE.name },
+    },
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      { "@type": "ListItem", position: 2, name: "Shop", item: `${SITE.url}/shop` },
+      { "@type": "ListItem", position: 3, name: product.name, item: canonical },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={productLd} />
+      <JsonLd data={breadcrumbLd} />
       <Nav />
       <main>
         <section className="relative isolate overflow-hidden pb-12 pt-32 md:pt-40">

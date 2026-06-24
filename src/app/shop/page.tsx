@@ -13,9 +13,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/shop" },
 };
 
-// Reads the live catalog from the DB — render per request, not at build time.
-export const dynamic = "force-dynamic";
-
 export default async function ShopPage({
   searchParams,
 }: {

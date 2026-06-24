@@ -12,14 +12,23 @@ import { Tutorials } from "@/components/Tutorials";
 import { BlogTeaser } from "@/components/BlogTeaser";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { FAQ as FAQ_DATA } from "@/data/site";
 
-// The featured-packs section reads the live DB, so render at request time
-// instead of statically prerendering at build (which has no database).
-export const dynamic = "force-dynamic";
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_DATA.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={faqLd} />
       <Nav />
       <main>
         <Hero />

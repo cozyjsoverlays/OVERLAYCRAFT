@@ -6,7 +6,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      // Keep private/transactional routes out of the index.
+      disallow: ["/admin", "/api/", "/cart", "/checkout"],
     },
     sitemap: `${SITE.url}/sitemap.xml`,
+    host: SITE.url,
   };
 }
