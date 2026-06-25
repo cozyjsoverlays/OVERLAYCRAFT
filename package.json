@@ -5,10 +5,9 @@
   "description": "CozyOverlays.com — animated stream overlay packs by CozyJsStudio",
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
-    "start": "next start",
+    "build": "next build",
+    "start": "node server.mjs",
     "lint": "next lint",
-    "postinstall": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:push": "prisma db push",
     "db:seed": "prisma db seed",

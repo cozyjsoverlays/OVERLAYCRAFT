@@ -13,13 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/shop" },
 };
 
-export default async function ShopPage({
-  searchParams,
-}: {
-  searchParams: { category?: string };
-}) {
+export default async function ShopPage() {
   const products = await getAllProducts();
-  const category = searchParams.category ?? "all";
 
   return (
     <>
@@ -37,8 +32,8 @@ export default async function ShopPage({
                 <span className="gradient-text">one click away</span>
               </h1>
               <p className="mx-auto mt-5 max-w-2xl text-lg text-body">
-                Fully animated screens, alerts, panels &amp; emotes. Buy with
-                PayPal and download instantly — no Etsy account needed.
+                Fully animated screens, alerts, panels &amp; emotes for Twitch,
+                YouTube &amp; Kick. Buy securely on Etsy, download instantly.
               </p>
             </Reveal>
           </div>
@@ -46,11 +41,7 @@ export default async function ShopPage({
 
         <section className="section-pad pt-4">
           <div className="container-page">
-            <ProductGrid
-              products={products}
-              initialCategory={category}
-              syncUrl
-            />
+            <ProductGrid products={products} syncUrl />
           </div>
         </section>
       </main>

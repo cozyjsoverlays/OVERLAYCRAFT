@@ -1,5 +1,3 @@
-import { prisma } from "@/lib/db";
-import type { Product as PrismaProduct } from "@prisma/client";
 import { PACKS } from "@/data/packs";
 import type { Pack } from "@/lib/types";
 
@@ -19,36 +17,10 @@ export interface ProductDTO {
   etsyUrl: string | null;
 }
 
-export function toProductDTO(p: PrismaProduct): ProductDTO {
-  let features: string[] = [];
-  try {
-    const parsed = JSON.parse(p.features);
-    if (Array.isArray(parsed)) features = parsed.map(String);
-  } catch {
-    features = [];
-  }
-  return {
-    id: p.id,
-    slug: p.slug,
-    name: p.name,
-    category: p.category,
-    description: p.description,
-    priceCents: p.priceCents,
-    currency: p.currency,
-    image: p.image,
-    video: p.video,
-    features,
-    bestseller: p.bestseller,
-    etsyUrl: p.etsyUrl,
-  };
-}
-
 /**
- * The storefront reads from the STATIC catalog in `src/data/packs.ts` — not the
- * database. Because packs are sold/delivered on Etsy (BUY_ON_ETSY), the site is
- * just a catalog that links out, so it renders on any host (incl. Hostinger)
- * with zero database/env setup. The Prisma layer is retained for the admin and
- * the (toggleable) on-site checkout, but it is NOT required for the shop.
+ * The storefront reads from the STATIC catalog in `src/data/packs.ts`. The site
+ * is a static export that sells on Etsy, so there's no database or server — it
+ * deploys as plain files on any host.
  */
 
 /** Parse a display price like "$24.00" / "24" into integer cents. */
@@ -91,18 +63,4 @@ export async function getProductBySlug(
 ): Promise<ProductDTO | null> {
   const p = PACKS.find((x) => x.slug === slug);
   return p ? packToDTO(p) : null;
-}
-
-/** Fetch DB packs for a set of slugs (used only by the legacy on-site checkout,
- *  which is disabled in the Etsy buy model). Reads the database directly because
- *  the checkout/fulfillment path needs server-only fields like `fileKey`. */
-export async function getProductsBySlugs(slugs: string[]) {
-  try {
-    return await prisma.product.findMany({
-      where: { slug: { in: slugs }, active: true, needsFile: false },
-    });
-  } catch (e) {
-    console.error("[products] getProductsBySlugs DB read failed:", e);
-    return [];
-  }
 }

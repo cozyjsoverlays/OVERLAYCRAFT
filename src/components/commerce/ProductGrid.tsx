@@ -46,6 +46,14 @@ export function ProductGrid({
   const [active, setActive] = useState<ProductDTO | null>(null);
   const [count, setCount] = useState(pageSize ?? Infinity);
 
+  // On the static /shop page, read the ?category= deep-link from the URL on
+  // mount (the server can't read searchParams in a static export).
+  useEffect(() => {
+    if (!syncUrl) return;
+    const param = new URLSearchParams(window.location.search).get("category");
+    if (param && PRODUCT_FILTERS.some((f) => f.id === param)) setFilter(param);
+  }, [syncUrl]);
+
   useEffect(() => {
     if (!syncUrl) return;
     const url = new URL(window.location.href);
