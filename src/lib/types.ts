@@ -49,10 +49,20 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
+  /** ISO date (YYYY-MM-DD) for SEO structured data + <time>. */
+  isoDate?: string;
   readingTime: string;
   tag: string;
-  /** Article body as an ordered list of section blocks. */
+  /** SEO keywords for metadata + JSON-LD. */
+  keywords?: string[];
+  /** OG/preview image (usually a relevant pack image). */
+  heroImage?: string;
+  /** Article body. Paragraphs support inline markdown links [text](url) and **bold**. */
   body: { heading?: string; paragraphs: string[] }[];
+  /** Prominent call-to-action box (drives to shop/Etsy). */
+  cta?: { heading: string; text: string; href: string; label: string };
+  /** Helpful links shown at the end of the post. */
+  resources?: { label: string; href: string }[];
 }
 
 export interface FaqEntry {

@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock } from "lucide-react";
+import { ArrowLeft, Clock, ArrowRight, ExternalLink, BookOpen } from "lucide-react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { Reveal } from "@/components/ui/Reveal";
 import { NewsletterCTA } from "@/components/NewsletterCTA";
 import { BlogCard } from "@/components/BlogCard";
+import { RichText } from "@/components/blog/RichText";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { BLOG_POSTS, getPost } from "@/data/blog";
+import { SITE } from "@/data/site";
 
 interface PageProps {
   params: { slug: string };
@@ -21,15 +24,25 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const post = getPost(params.slug);
   if (!post) return { title: "Post not found" };
+  const image = post.heroImage ?? SITE.avatar;
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: post.keywords,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       type: "article",
       title: post.title,
       description: post.excerpt,
-      publishedTime: post.date,
+      url: `${SITE.url}/blog/${post.slug}`,
+      publishedTime: post.isoDate ?? post.date,
+      images: [{ url: image, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [image],
     },
   };
 }
@@ -40,8 +53,26 @@ export default function BlogPostPage({ params }: PageProps) {
 
   const related = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.isoDate ?? post.date,
+    image: [post.heroImage ?? SITE.avatar],
+    author: { "@type": "Organization", name: SITE.shop, url: SITE.url },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.name,
+      logo: { "@type": "ImageObject", url: SITE.avatar },
+    },
+    mainEntityOfPage: `${SITE.url}/blog/${post.slug}`,
+    ...(post.keywords ? { keywords: post.keywords.join(", ") } : {}),
+  };
+
   return (
     <>
+      <JsonLd data={articleLd} />
       <Nav />
       <main>
         <article>
@@ -88,7 +119,7 @@ export default function BlogPostPage({ params }: PageProps) {
                           key={j}
                           className="text-[17px] leading-relaxed text-body"
                         >
-                          {p}
+                          <RichText text={p} />
                         </p>
                       ))}
                     </div>
@@ -96,6 +127,73 @@ export default function BlogPostPage({ params }: PageProps) {
                 </Reveal>
               ))}
             </div>
+
+            {/* Primary call-to-action — drive readers to the shop / Etsy */}
+            {post.cta && (
+              <Reveal>
+                <div className="mt-12 overflow-hidden rounded-2xl border border-lavender/30 bg-gradient-to-br from-surface-2 to-surface p-7 shadow-card">
+                  <h2 className="text-xl font-extrabold text-heading md:text-2xl">
+                    {post.cta.heading}
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-body">{post.cta.text}</p>
+                  {/^https?:/i.test(post.cta.href) ? (
+                    <a
+                      href={post.cta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent-gradient px-6 py-3 text-sm font-bold text-base shadow-glow transition-transform hover:-translate-y-0.5"
+                    >
+                      {post.cta.label} <ExternalLink size={15} />
+                    </a>
+                  ) : (
+                    <Link
+                      href={post.cta.href}
+                      className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent-gradient px-6 py-3 text-sm font-bold text-base shadow-glow transition-transform hover:-translate-y-0.5"
+                    >
+                      {post.cta.label} <ArrowRight size={15} />
+                    </Link>
+                  )}
+                </div>
+              </Reveal>
+            )}
+
+            {/* Helpful resources */}
+            {post.resources && post.resources.length > 0 && (
+              <Reveal>
+                <section className="mt-10 rounded-2xl border border-subtle bg-surface/40 p-6">
+                  <h2 className="flex items-center gap-2 text-lg font-bold text-heading">
+                    <BookOpen size={18} className="text-lavender" /> Helpful
+                    resources
+                  </h2>
+                  <ul className="mt-4 flex flex-col gap-2.5">
+                    {post.resources.map((r) => {
+                      const external = /^https?:/i.test(r.href);
+                      return (
+                        <li key={r.href}>
+                          {external ? (
+                            <a
+                              href={r.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 text-body transition-colors hover:text-lavender"
+                            >
+                              {r.label} <ExternalLink size={13} />
+                            </a>
+                          ) : (
+                            <Link
+                              href={r.href}
+                              className="inline-flex items-center gap-1.5 text-body transition-colors hover:text-lavender"
+                            >
+                              {r.label} <ArrowRight size={13} />
+                            </Link>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+              </Reveal>
+            )}
           </div>
         </article>
 
