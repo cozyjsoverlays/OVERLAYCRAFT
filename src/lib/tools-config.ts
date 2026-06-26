@@ -4,7 +4,7 @@
  */
 
 import { LucideIcon } from "lucide-react";
-import { Sparkles, Crop, Gauge, Palette, LayoutPanelTop, Gift } from "lucide-react";
+import { Sparkles, Crop, Palette } from "lucide-react";
 
 export const ETSY_SHOP_URL = "https://cozyjsstudio.etsy.com";
 
@@ -56,31 +56,10 @@ export const TOOLS: ToolDef[] = [
     live: true,
   },
   {
-    slug: "bitrate-calculator",
-    name: "Bitrate & Settings Calculator",
-    blurb: "Find the right OBS bitrate for your upload speed and resolution.",
-    icon: Gauge,
-    live: true,
-  },
-  {
     slug: "palette-generator",
     name: "Cozy Color Palette Generator",
     blurb: "Generate cottagecore, kawaii, witchy and lofi color palettes.",
     icon: Palette,
-    live: true,
-  },
-  {
-    slug: "panel-maker",
-    name: "Twitch Panel Size Helper",
-    blurb: "Make correctly-sized 320px panels for a tidy channel page.",
-    icon: LayoutPanelTop,
-    live: true,
-  },
-  {
-    slug: "channel-point-ideas",
-    name: "Channel Point Reward Ideas",
-    blurb: "A copyable list of cozy channel-point rewards and costs.",
-    icon: Gift,
     live: true,
   },
 ];
