@@ -4,7 +4,7 @@
  */
 
 import { LucideIcon } from "lucide-react";
-import { Sparkles, Crop, Palette } from "lucide-react";
+import { Sparkles, Crop, Palette, Wand2 } from "lucide-react";
 
 export const ETSY_SHOP_URL = "https://cozyjsstudio.etsy.com";
 
@@ -60,6 +60,13 @@ export const TOOLS: ToolDef[] = [
     name: "Cozy Color Palette Generator",
     blurb: "Generate cottagecore, kawaii, witchy and lofi color palettes.",
     icon: Palette,
+    live: true,
+  },
+  {
+    slug: "overlay-brief",
+    name: "Overlay Brief Generator",
+    blurb: "Turn a few answers into a ready-to-use custom overlay brief.",
+    icon: Wand2,
     live: true,
   },
 ];
