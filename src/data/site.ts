@@ -27,7 +27,8 @@ export const ETSY_SHOP_URL = "https://cozyjsstudio.etsy.com";
  *   Kit example: https://app.kit.com/forms/0000000/subscriptions
  * Leave empty to keep the popup in demo mode (it shows success but won't capture).
  */
-export const NEWSLETTER_FORM_ACTION = "";
+export const NEWSLETTER_FORM_ACTION =
+  "https://app.kit.com/forms/9623698/subscriptions";
 
 export const LINKS = {
   etsy: "https://cozyjsstudio.etsy.com",

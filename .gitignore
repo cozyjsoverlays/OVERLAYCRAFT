@@ -40,3 +40,6 @@ next-env.d.ts
 # Claude Code local (machine-specific) settings
 .claude/settings.local.json
 /out
+
+# MCP server config (contains credentials — never commit)
+.mcp.json
