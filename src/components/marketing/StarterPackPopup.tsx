@@ -131,7 +131,7 @@ export function StarterPackPopup({ open, onClose, onSubmit }: StarterPackPopupPr
               <div className="cz-body">
                 <div className="cz-eyebrow">Free overlay drop</div>
                 <h2 className="cz-title">
-                  CozyJS Studio has a <span>gift</span> for you
+                  Make your stream feel like <span>home</span>
                 </h2>
                 <p className="cz-sub">
                   Grab a free Cozy Starter Pack: Starting Soon, Be Right Back,
