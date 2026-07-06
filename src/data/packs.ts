@@ -31,7 +31,7 @@ export const PACKS: Pack[] = [
     price: "$499.00",
     description: "Custom Full Bundle — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/ec62d3/8051291023/il_fullxfull.8051291023_50oc.jpg",
-    etsy: "https://cozyjsstudio.etsy.com",
+    etsy: "https://cozyjsstudio.etsy.com/listing/4500763545",
     features: ["Animated Screens","Alerts","Panels","Emotes","Sub Badges"],
   },
   {
@@ -51,7 +51,7 @@ export const PACKS: Pack[] = [
     price: "$13.85",
     description: "Forest Wolf : , YouTube, Kick — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/a6b6d6/7535689210/il_fullxfull.7535689210_jqdo.jpg",
-    etsy: "https://cozyjsstudio.etsy.com",
+    etsy: "https://cozyjsstudio.etsy.com/listing/4429185127",
     features: ["Animated Screens","Alerts","Panels","Emotes"],
   },
   {
@@ -151,7 +151,7 @@ export const PACKS: Pack[] = [
     price: "$13.85",
     description: "Starry Forest Dragon : , YouTube, Kick — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/ca313f/7859035077/il_fullxfull.7859035077_5pc0.jpg",
-    etsy: "https://cozyjsstudio.etsy.com",
+    etsy: "https://cozyjsstudio.etsy.com/listing/4472823464",
     features: ["Animated Screens","Alerts","Panels","Emotes","Sub Badges"],
   },
   {
@@ -671,7 +671,7 @@ export const PACKS: Pack[] = [
     price: "$13.85",
     description: "Sakura Wolf Setup : , YouTube, Kick — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/207433/8010828929/il_fullxfull.8010828929_1jws.jpg",
-    etsy: "https://cozyjsstudio.etsy.com",
+    etsy: "https://cozyjsstudio.etsy.com/listing/4496346074",
     features: ["Animated Screens","Alerts","Panels","Emotes","Sub Badges"],
   },
   {
@@ -1231,7 +1231,7 @@ export const PACKS: Pack[] = [
     price: "$13.85",
     description: "Swan Forest Magic — cozy animated overlays: screens, alerts, panels & emotes.",
     image: "https://i.etsystatic.com/61635066/r/il/70120e/7846513934/il_fullxfull.7846513934_qdq5.jpg",
-    etsy: "https://cozyjsstudio.etsy.com",
+    etsy: "https://cozyjsstudio.etsy.com/listing/4478228909",
     features: ["Animated Screens","Alerts","Panels","Emotes","Sub Badges"],
   },
   {

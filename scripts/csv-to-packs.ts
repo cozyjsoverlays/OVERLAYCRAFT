@@ -31,6 +31,14 @@ const KNOWN_LISTINGS: Array<[string, string]> = [
   ["otter-forest", "4480782954"],
   ["dream-sakura", "4438531426"],
   ["midnight-cozy-cat", "4440435657"],
+  // From the shop's official RSS feed (most recent listings):
+  ["cozy-cats-jars", "4533092634"],
+  ["sakura-wolf", "4496346074"],
+  ["swan-forest", "4478228909"],
+  ["starry-forest-dragon", "4472823464"],
+  ["forest-wolf", "4429185127"],
+  ["cozy-garden", "4532079977"],
+  ["custom-animated-twitch-stream-overlay", "4500763545"],
 ];
 
 function etsyUrlFor(slug: string): string {
