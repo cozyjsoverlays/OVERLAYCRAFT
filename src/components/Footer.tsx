@@ -1,150 +1,117 @@
-import Link from "next/link";
-import { Youtube, Send, Instagram } from "lucide-react";
-import { LINKS, SITE } from "@/data/site";
-import { PACKS } from "@/data/packs";
-import { CATEGORIES } from "@/data/categories";
-import { XIcon, PinterestIcon, EtsyIcon } from "@/components/icons";
+"use client";
 
-const SOCIALS = [
-  { href: LINKS.twitter, label: "X (Twitter)", icon: <XIcon className="h-[18px] w-[18px]" /> },
-  { href: LINKS.instagram, label: "Instagram", icon: <Instagram size={18} /> },
-  { href: LINKS.pinterest, label: "Pinterest", icon: <PinterestIcon className="h-[18px] w-[18px]" /> },
-  { href: LINKS.youtube, label: "YouTube", icon: <Youtube size={18} /> },
-  { href: LINKS.telegram, label: "Telegram", icon: <Send size={18} /> },
-  { href: LINKS.etsy, label: "Etsy", icon: <EtsyIcon className="h-[18px] w-[18px]" /> },
-];
+import Link from "next/link";
+import { useState } from "react";
+import { ETSY_SHOP_URL, SITE } from "@/data/site";
+import { Logo } from "./Logo";
+
+const FOOTER_LINKS = {
+  Shop: [
+    { label: "All Overlays", href: "/overlays" },
+    { label: "Latest Drops", href: "/overlays/latest-drops" },
+    { label: "Custom Overlays", href: "/custom" },
+    { label: "Saved", href: "/saved" },
+  ],
+  Studio: [
+    { label: "About", href: "/about" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Contact", href: "/contact" },
+    { label: "Blog", href: "/blog" },
+  ],
+  Legal: [
+    { label: "Terms", href: "/terms" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "License", href: "/license" },
+  ],
+};
 
 export function Footer() {
-  const topPacks = PACKS.slice(0, 5);
-  const browse = CATEGORIES.slice(0, 6);
+  const [email, setEmail] = useState("");
+  const [done, setDone] = useState(false);
 
   return (
-    <footer className="relative overflow-hidden border-t border-subtle bg-surface/40">
-      <div
-        aria-hidden
-        className="glow-blob absolute -top-32 left-1/2 h-72 w-[40rem] -translate-x-1/2 bg-lavender opacity-15"
-      />
-      <div className="container-page relative py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
-          {/* Brand */}
-          <div>
-            <Link
-              href="/#top"
-              className="flex items-center gap-2 text-lg font-extrabold text-heading"
+    <footer className="border-t border-veil bg-ink">
+      {/* Email capture */}
+      <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
+        <div className="rounded-2xl border border-veil bg-ink2/70 p-8 text-center backdrop-blur md:p-12">
+          <h2 className="font-display text-2xl text-blush md:text-3xl">
+            Get new drops <span className="bg-gradient-to-r from-lilac to-volt bg-clip-text text-transparent">+ a free overlay</span>
+          </h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-mist">
+            One email when a new world drops. Your welcome gift: a free animated overlay screen.
+          </p>
+          {done ? (
+            <p className="mt-6 font-body text-lilac">You&apos;re in — check your inbox. ✦</p>
+          ) : (
+            <form
+              className="mx-auto mt-6 flex max-w-md gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                // TODO: wire to email provider (Kit / Mailchimp / Resend audience)
+                if (email.includes("@")) setDone(true);
+              }}
             >
-              <span aria-hidden>🐾</span>
-              Cozy<span className="gradient-text">Overlays</span>
-            </Link>
-            <p className="mt-4 max-w-xs text-sm text-body">{SITE.tagline}</p>
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {SOCIALS.map((s) => (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-subtle text-body transition-all hover:border-lavender/40 hover:text-heading hover:shadow-glow"
-                  >
-                    {s.icon}
-                  </a>
+              <label htmlFor="footer-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="footer-email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@stream.tv"
+                className="w-full rounded-xl border border-veil bg-ink px-4 py-3 font-body text-sm text-blush placeholder:text-mist/60 focus:border-lilac/60 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="shrink-0 rounded-xl bg-volt px-5 py-3 font-body text-sm font-medium text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
+              >
+                Join
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-10 md:grid-cols-4 md:px-8">
+        <div>
+          <div className="flex items-center gap-2.5">
+            <Logo className="h-7 w-7" />
+            <span className="font-display text-blush">OverlayCraft</span>
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-mist">
+            Forged for your stream. Animated overlay worlds by {SITE.shop} — Star
+            Seller, 1,300+ streamers equipped.
+          </p>
+          <a
+            href={ETSY_SHOP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-sm text-lilac underline-offset-4 hover:underline"
+          >
+            {SITE.shop} on Etsy ↗
+          </a>
+        </div>
+        {Object.entries(FOOTER_LINKS).map(([group, links]) => (
+          <nav key={group} aria-label={group}>
+            <p className="font-display text-xs uppercase tracking-[0.3em] text-lilac">{group}</p>
+            <ul className="mt-4 space-y-2.5">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-blush/80 hover:text-lilac">
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
+        ))}
+      </div>
 
-          {/* Top Packs */}
-          <FooterCol title="Top Packs">
-            {topPacks.map((p) => (
-              <FooterLink key={p.slug} href={`/shop/${p.slug}`}>
-                {p.name
-                  .replace(" Animated Stream Package", "")
-                  .replace(" Animated Package", "")
-                  .replace(" Animated Pack", "")}
-              </FooterLink>
-            ))}
-          </FooterCol>
-
-          {/* Browse */}
-          <FooterCol title="Browse">
-            <FooterLink href="/shop">All Packs</FooterLink>
-            {browse.map((c) => (
-              <FooterLink key={c.name} href={c.href}>
-                {c.emoji} {c.name}
-              </FooterLink>
-            ))}
-          </FooterCol>
-
-          {/* Help */}
-          <FooterCol title="Help">
-            <FooterLink href="/#faq">FAQ</FooterLink>
-            <FooterLink href="/#how">How It Works</FooterLink>
-            <FooterLink href="/blog">Blog</FooterLink>
-            <FooterLink href="/refund-policy">Refund Policy</FooterLink>
-            <FooterLink href="/terms">Terms</FooterLink>
-            <FooterLink href="/privacy">Privacy</FooterLink>
-            <FooterLink href={LINKS.etsyContact} external>
-              Contact
-            </FooterLink>
-          </FooterCol>
-        </div>
-
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-subtle pt-6 text-sm text-muted sm:flex-row">
-          <p>© 2026 CozyOverlays / CozyJsStudio. All rights reserved.</p>
-          <p>Made with 🐾 for streamers everywhere.</p>
-        </div>
+      <div className="border-t border-veil py-6 text-center text-xs text-mist">
+        © {new Date().getFullYear()} {SITE.name} · {SITE.shop} · All overlays are original works.
       </div>
     </footer>
-  );
-}
-
-function FooterCol({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <h3 className="text-sm font-bold uppercase tracking-wide text-heading">
-        {title}
-      </h3>
-      <ul className="mt-4 flex flex-col gap-2.5">{children}</ul>
-    </div>
-  );
-}
-
-function FooterLink({
-  href,
-  external = false,
-  children,
-}: {
-  href: string;
-  external?: boolean;
-  children: React.ReactNode;
-}) {
-  const className =
-    "text-sm text-body transition-colors hover:text-lavender";
-  if (external) {
-    return (
-      <li>
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={className}
-        >
-          {children}
-        </a>
-      </li>
-    );
-  }
-  return (
-    <li>
-      <Link href={href} className={className}>
-        {children}
-      </Link>
-    </li>
   );
 }

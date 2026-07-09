@@ -1,42 +1,31 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/data/site";
-import { BLOG_POSTS } from "@/data/blog";
-import { PACKS } from "@/data/packs";
-import { TOOLS } from "@/lib/tools-config";
+
+export const dynamic = "force-static";
+import { CATEGORIES } from "@/data/categories";
+import { PRODUCTS } from "@/data/products";
+import { productPath } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const staticPages = ["", "/overlays", "/custom", "/about", "/faq", "/contact", "/blog", "/terms", "/privacy", "/license"].map(
+    (path) => ({
+      url: `${SITE.url}${path}`,
+      changeFrequency: "weekly" as const,
+      priority: path === "" ? 1 : 0.7,
+    })
+  );
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    { url: SITE.url, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${SITE.url}/shop`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${SITE.url}/free-tools`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${SITE.url}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
-    { url: `${SITE.url}/refund-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${SITE.url}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
-    { url: `${SITE.url}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.2 },
-  ];
-
-  const tools: MetadataRoute.Sitemap = TOOLS.filter((t) => t.live).map((t) => ({
-    url: `${SITE.url}/free-tools/${t.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
-
-  const products: MetadataRoute.Sitemap = PACKS.map((p) => ({
-    url: `${SITE.url}/shop/${p.slug}`,
-    lastModified: now,
-    changeFrequency: "weekly",
+  const categoryPages = CATEGORIES.map((c) => ({
+    url: `${SITE.url}/overlays/${c.slug}`,
+    changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
 
-  const posts: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
-    url: `${SITE.url}/blog/${post.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.5,
+  const productPages = PRODUCTS.map((p) => ({
+    url: `${SITE.url}${productPath(p)}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
   }));
 
-  return [...staticRoutes, ...tools, ...products, ...posts];
+  return [...staticPages, ...categoryPages, ...productPages];
 }

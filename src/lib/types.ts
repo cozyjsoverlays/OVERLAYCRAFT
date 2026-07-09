@@ -1,68 +1,48 @@
-export type PackCategory =
-  | "cat"
-  | "dragon"
-  | "bear"
-  | "fox"
-  | "frog"
-  | "japanese"
-  | "witchy"
-  | "room"
-  | "seasonal";
-
-export type PackFeature =
-  | "Animated Screens"
-  | "Alerts"
-  | "Panels"
-  | "Emotes"
-  | "Sub Badges";
-
-export interface Pack {
+export interface Product {
+  id: string;
   slug: string;
-  name: string;
-  category: PackCategory;
-  price: string;
+  title: string;
+  /** First entry = primary category (used in the canonical URL). */
+  category: string[];
+  price: number;
+  salePrice: number | null;
+  currency: "USD";
+  /** Real Etsy listing URL, e.g. https://www.etsy.com/listing/123456789/ */
+  etsyUrl: string;
+  previewVideo: string;
+  thumbnails: string[];
   description: string;
-  image: string;
-  video?: string;
-  etsy: string;
-  features: PackFeature[];
+  includes: string[];
+  compatibleWith: string[];
+  tags: string[];
+  featured: boolean;
   bestseller?: boolean;
-}
-
-export interface Review {
-  name: string;
-  date: string;
-  stars: number;
-  quote: string;
-  pack: string;
+  newDrop?: boolean;
+  /** Custom-commission listings link to /custom instead of a checkout. */
+  customCommission?: boolean;
+  /**
+   * Lemon Squeezy hosted-checkout URL for this product.
+   * Stubbed at launch — replace per product after creating the store.
+   */
+  lemonSqueezyUrl: string;
 }
 
 export interface Category {
+  slug: string;
   name: string;
-  emoji: string;
-  count: number;
-  href: string;
+  /** ~150-word indexable intro paragraph for the category page. */
+  intro: string;
+  /** Emoji used on the category tile until real art tiles are dropped in. */
+  glyph: string;
+  /** "lilac" for soft/cozy moods, "abyss" for dark/gothic moods. */
+  mood: "lilac" | "abyss";
 }
 
-export interface BlogPost {
-  slug: string;
-  title: string;
-  excerpt: string;
-  date: string;
-  /** ISO date (YYYY-MM-DD) for SEO structured data + <time>. */
-  isoDate?: string;
-  readingTime: string;
-  tag: string;
-  /** SEO keywords for metadata + JSON-LD. */
-  keywords?: string[];
-  /** OG/preview image (usually a relevant pack image). */
-  heroImage?: string;
-  /** Article body. Paragraphs support inline markdown links [text](url) and **bold**. */
-  body: { heading?: string; paragraphs: string[] }[];
-  /** Prominent call-to-action box (drives to shop/Etsy). */
-  cta?: { heading: string; text: string; href: string; label: string };
-  /** Helpful links shown at the end of the post. */
-  resources?: { label: string; href: string }[];
+export interface Review {
+  author: string;
+  rating: number;
+  text: string;
+  pack?: string;
 }
 
 export interface FaqEntry {

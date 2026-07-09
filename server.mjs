@@ -4,8 +4,8 @@
  *   npm run build   ->  produces ./out
  *   npm start       ->  serves ./out on $PORT
  *
- * No framework, no Prisma, no Next runtime — just static files, so it can't
- * fail to serve CSS/JS the way a misconfigured Next server can.
+ * No framework, no Next runtime — just static files, so it can't fail to
+ * serve CSS/JS the way a misconfigured Next server can.
  */
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
@@ -29,6 +29,8 @@ const TYPES = {
   ".gif": "image/gif",
   ".webp": "image/webp",
   ".ico": "image/x-icon",
+  ".mp4": "video/mp4",
+  ".webm": "video/webm",
   ".woff": "font/woff",
   ".woff2": "font/woff2",
 };
@@ -48,39 +50,29 @@ async function tryFile(p) {
   return null;
 }
 
-async function resolvePath(urlPath) {
-  // Prevent path traversal.
-  const clean = normalize(decodeURIComponent(urlPath.split("?")[0])).replace(/^(\.\.[/\\])+/, "");
-  const base = join(ROOT, clean);
-  return (
-    (await tryFile(base)) ||
-    (await tryFile(`${base}.html`)) ||
-    (await tryFile(join(base, "index.html")))
-  );
-}
-
 const server = createServer(async (req, res) => {
-  let file = await resolvePath(req.url || "/");
-  let status = 200;
+  const urlPath = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  const safe = normalize(urlPath).replace(/^(\.\.[/\\])+/, "");
+  let file = await tryFile(join(ROOT, safe));
+  if (!file && !extname(safe)) file = await tryFile(join(ROOT, `${safe}.html`));
+  if (!file) file = await tryFile(join(ROOT, "404.html"));
+
   if (!file) {
-    file = join(ROOT, "404.html");
-    status = 404;
+    res.writeHead(404, { "Content-Type": "text/plain" });
+    res.end("Not found");
+    return;
   }
-  try {
-    const body = await readFile(file);
-    const type = TYPES[extname(file)] || "application/octet-stream";
-    const immutable = file.includes(`${join("_next", "static")}`);
-    res.writeHead(status, {
-      "Content-Type": type,
-      "Cache-Control": immutable ? "public, max-age=31536000, immutable" : "public, max-age=0, must-revalidate",
-    });
-    res.end(body);
-  } catch {
-    res.writeHead(500, { "Content-Type": "text/plain" });
-    res.end("500 Internal Server Error");
-  }
+
+  const body = await readFile(file);
+  const type = TYPES[extname(file)] || "application/octet-stream";
+  const status = file.endsWith("404.html") && !safe.includes("404") ? 404 : 200;
+  res.writeHead(status, {
+    "Content-Type": type,
+    "Cache-Control": file.includes("/_next/") ? "public, max-age=31536000, immutable" : "no-cache",
+  });
+  res.end(body);
 });
 
 server.listen(PORT, () => {
-  console.log(`Serving ./out on http://localhost:${PORT}`);
+  console.log(`overlaycraft: serving ./out on :${PORT}`);
 });

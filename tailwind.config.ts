@@ -1,81 +1,53 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/app/**/*.{ts,tsx}",
-    "./src/components/**/*.{ts,tsx}",
-    "./src/data/**/*.{ts,tsx}",
-  ],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        // Backgrounds
-        base: "#0D0814",
-        surface: "#130D26",
-        "surface-2": "#1A1230",
-        // Accents
-        lavender: "#B088FF",
-        pink: "#FF6BD6",
-        cyan: "#46E5FF",
-        // Text
-        heading: "#F0ECFA",
-        body: "#C4BBD9",
-        muted: "#8A82A0",
-      },
-      borderColor: {
-        subtle: "rgba(176,136,255,.12)",
+        // Core brand (owner-locked)
+        abyss: "#3B0270", // brand deep violet — glows, tints, gradients, hovers
+        volt: "#6F00FF", // PRIMARY accent — CTAs, prices, active states, badges ONLY
+        lilac: "#E9B3FB", // soft accent — links, hearts, tags, highlights
+        blush: "#FFF1F1", // text/foreground on dark
+
+        // Derived support shades (mixed from the core 4 only)
+        ink: "#14002B", // page background
+        ink2: "#1F0440", // raised cards / surfaces
+        veil: "rgba(59, 2, 112, 0.6)", // borders & dividers
+        mist: "#C9A9E4", // secondary text
+        voltDim: "#5500C4", // volt hover/pressed
       },
       fontFamily: {
-        sans: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "serif"],
+        body: ["var(--font-body)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
-        glow: "0 0 40px -8px rgba(176,136,255,.45)",
-        "glow-pink": "0 0 40px -8px rgba(255,107,214,.45)",
-        "glow-cyan": "0 0 40px -8px rgba(70,229,255,.45)",
-        card: "0 20px 60px -20px rgba(0,0,0,.6)",
-        "card-hover":
-          "0 30px 80px -20px rgba(176,136,255,.35), 0 0 0 1px rgba(176,136,255,.25)",
+        volt: "0 0 24px rgba(111, 0, 255, 0.45)",
+        "volt-soft": "0 0 40px rgba(111, 0, 255, 0.25)",
       },
       backgroundImage: {
-        "accent-gradient":
-          "linear-gradient(120deg, #B088FF 0%, #FF6BD6 50%, #46E5FF 100%)",
+        "hero-glow":
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(59,2,112,0.65), transparent)",
+        "volt-glow":
+          "radial-gradient(ellipse 40% 30% at 50% 20%, rgba(111,0,255,0.05), transparent)",
+        "cta-gradient":
+          "linear-gradient(135deg, #6F00FF 0%, #3B0270 55%, #14002B 100%)",
       },
       keyframes: {
-        "aurora-1": {
-          "0%, 100%": { transform: "translate(0,0) scale(1)" },
-          "33%": { transform: "translate(8%, -6%) scale(1.15)" },
-          "66%": { transform: "translate(-6%, 8%) scale(0.95)" },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
-        "aurora-2": {
-          "0%, 100%": { transform: "translate(0,0) scale(1.1)" },
-          "33%": { transform: "translate(-10%, 6%) scale(0.9)" },
-          "66%": { transform: "translate(6%, -8%) scale(1.2)" },
-        },
-        "aurora-3": {
-          "0%, 100%": { transform: "translate(0,0) scale(1)" },
-          "50%": { transform: "translate(5%, 5%) scale(1.25)" },
-        },
-        float: {
-          "0%": { transform: "translateY(0)", opacity: "0" },
-          "10%": { opacity: "0.8" },
-          "90%": { opacity: "0.8" },
-          "100%": { transform: "translateY(-120vh)", opacity: "0" },
-        },
-        shimmer: {
-          "0%": { transform: "translateX(-150%)" },
-          "100%": { transform: "translateX(150%)" },
-        },
-        "gradient-pan": {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
+        drift: {
+          "0%, 100%": { transform: "translateY(0) translateX(0)", opacity: "0.5" },
+          "50%": { transform: "translateY(-18px) translateX(8px)", opacity: "1" },
         },
       },
       animation: {
-        "aurora-1": "aurora-1 22s ease-in-out infinite",
-        "aurora-2": "aurora-2 26s ease-in-out infinite",
-        "aurora-3": "aurora-3 30s ease-in-out infinite",
-        shimmer: "shimmer 1.2s ease-out",
-        "gradient-pan": "gradient-pan 6s ease infinite",
+        marquee: "marquee 45s linear infinite",
+        drift: "drift 7s ease-in-out infinite",
       },
     },
   },

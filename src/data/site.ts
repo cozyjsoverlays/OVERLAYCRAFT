@@ -1,169 +1,113 @@
-import type { FaqEntry } from "@/lib/types";
+import type { FaqEntry, Review } from "@/lib/types";
 
 export const SITE = {
-  name: "CozyOverlays",
-  shop: "CozyJsStudio",
+  name: "OverlayCraft",
+  shop: "VectorKingStudio",
   url: "https://overlaycraft.com",
-  tagline:
-    "Animated stream overlay packs that feel alive & cozy — for Twitch, YouTube, Kick & TikTok.",
-  avatar:
-    "https://i.etsystatic.com/61635066/r/isla/962937/85081868/isla_180x180.85081868_iwuxhcgu.jpg",
+  tagline: "Cinematic animated stream overlays for Twitch, YouTube, Kick & TikTok Live.",
+  description:
+    "Premium animated stream overlay packages — forged by VectorKingStudio, Etsy Star Seller with 1,300+ sales and a 4.9★ rating. Instant download. Drag into OBS. Go live.",
 } as const;
 
-/**
- * Buy model. When true, every pack's buy button links out to its Etsy listing
- * (Etsy handles payment + delivery) instead of the on-site PayPal checkout.
- * Flip to false to re-enable the built-in cart/PayPal flow.
- */
-export const BUY_ON_ETSY = true;
+export const ETSY_SHOP_URL = "https://www.etsy.com/shop/VectorKingStudio";
 
-/** Etsy shop home — fallback target when a pack has no specific listing URL. */
-export const ETSY_SHOP_URL = "https://cozyjsstudio.etsy.com";
-
-/**
- * Direct on-site purchase via PayPal Smart Buttons (runs fully in the browser —
- * static-site friendly). Paste your LIVE PayPal **Client ID** (a public value,
- * safe to commit) from https://developer.paypal.com/dashboard/ → Apps & Credentials.
- * Leave empty to hide the "Buy on Site" button (Etsy stays the only option).
- * Fulfillment is manual: PayPal emails you each sale; send the pack to the
- * buyer's PayPal email.
- */
-export const PAYPAL_CLIENT_ID = "";
-
-/**
- * Email lead-magnet (Cozy Starter Pack popup). Static site = no server, so the
- * popup posts the email straight to your provider's PUBLIC form endpoint (no
- * secret key). Paste your Kit/ConvertKit/MailerLite/Beehiiv form POST URL here.
- *   Kit example: https://app.kit.com/forms/0000000/subscriptions
- * Leave empty to keep the popup in demo mode (it shows success but won't capture).
- */
-export const NEWSLETTER_FORM_ACTION =
-  "https://app.kit.com/forms/9623698/subscriptions";
-
-export const LINKS = {
-  etsy: "https://cozyjsstudio.etsy.com",
-  etsyCats:
-    "https://www.etsy.com/shop/CozyJsStudio?section_id=56165083",
-  etsyContact: "https://www.etsy.com/messages/new?with_id=1121232907",
-  etsyCustom:
-    "https://www.etsy.com/listing/4500763545/custom-animated-twitch-stream-overlay",
-  youtube: "https://www.youtube.com/@cozyjsstudio",
-  telegram: "https://t.me/Cozyjsstudio",
-  pinterest: "https://www.pinterest.com/cozyjsstudio/",
-  instagram: "https://www.instagram.com/cozyjsstudio/",
-  twitter: "https://twitter.com/Cozyjsstudio",
-} as const;
+export const TRUST_BAR = [
+  "★ 4.9 from 193 reviews",
+  "1,300+ streamers equipped",
+  "Star Seller since 2020",
+  "Instant download",
+] as const;
 
 export const NAV_LINKS = [
-  { label: "Shop", href: "/shop" },
-  { label: "Free Tools", href: "/free-tools" },
-  { label: "Reviews", href: "/#reviews" },
-  { label: "Tutorials", href: "/#tutorials" },
+  { label: "Overlays", href: "/overlays" },
+  { label: "Custom", href: "/custom" },
+  { label: "About", href: "/about" },
+  { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "/#faq" },
-] as const;
-
-export const HERO_STATS = [
-  "686 happy streamers",
-  "⚡ Instant download",
-  "4.9★ from 91 reviews",
-  "🎮 OBS & Streamlabs ready",
-  "🌍 122 unique packs",
-] as const;
-
-export const TRUST_ITEMS = [
-  "⭐ Star Seller",
-  "91 Reviews · 4.9 avg",
-  "⚡ Instant secure download",
-  "OBS & Streamlabs",
-  ".WEBM + .PNG included",
-] as const;
-
-export const COMPATIBILITY = [
-  "Twitch",
-  "YouTube",
-  "Kick",
-  "TikTok",
-  "OBS Studio",
-  "Streamlabs",
-  "StreamElements",
-] as const;
-
-export const ABOUT_CHIPS = [
-  "122 Unique Packs",
-  "4.9★ Star Seller",
-  "686 Sales",
-  "Instant Delivery",
-  "Custom Commissions",
-  "Worldwide",
 ] as const;
 
 export const HOW_IT_WORKS = [
   {
-    title: "Pick a Pack",
-    desc: "Browse the shop and add your favorite cozy worlds to your cart.",
+    title: "Pick your world",
+    desc: "Browse the catalog and choose the pack that matches your channel's soul.",
   },
   {
-    title: "Pay with PayPal",
-    desc: "Check out securely in seconds — no account or Etsy detour required.",
+    title: "Instant download",
+    desc: "Checkout takes seconds — your files arrive immediately, no waiting.",
   },
   {
-    title: "Instant Secure Download",
-    desc: "Get private, time-limited download links on-screen and by email.",
+    title: "Drag into OBS",
+    desc: "Drop the animated screens into OBS or Streamlabs as media sources.",
   },
   {
-    title: "Add to OBS & Go Live",
-    desc: "Drop the .WEBM screens into OBS or Streamlabs and glow up your stream.",
+    title: "Go live",
+    desc: "Your stream now looks like a production. Because it is one.",
   },
 ] as const;
 
-export const TUTORIALS = [
+export const REVIEWS: Review[] = [
   {
-    title: "OBS Setup in Under 5 Minutes",
-    desc: "Add animated .WEBM overlays as browser sources the right way.",
-    tag: "Setup",
+    author: "NyxRaven_TTV",
+    rating: 5,
+    text: "The Dark Gothic Raven pack transformed my channel overnight. Viewers kept asking who designed my stream. Absolute quality.",
+    pack: "Dark Gothic Raven",
   },
   {
-    title: "Full Pack Showcase",
-    desc: "A walkthrough of every screen, alert, and panel in a cozy pack.",
-    tag: "Showcase",
+    author: "SakuraSenpai",
+    rating: 5,
+    text: "Gorgeous animations, silky smooth loops, and setup took me ten minutes. Worth every cent.",
+    pack: "Sakura Dream Wolf",
   },
   {
-    title: "Stream Tips for New Creators",
-    desc: "Small touches that make your stream feel polished from day one.",
-    tag: "Tips",
+    author: "DragonheartLive",
+    rating: 5,
+    text: "I've bought overlays from three different shops — nothing comes close to this level of polish.",
+    pack: "Violet Night Dragon",
+  },
+  {
+    author: "CozyCatCafe",
+    rating: 5,
+    text: "The cat pack is adorable and the alerts made my chat go wild the first night. Instant download worked perfectly.",
+    pack: "Midnight Magic Cat",
+  },
+  {
+    author: "KickWithKai",
+    rating: 5,
+    text: "Custom commission was worth every cent — the process was smooth and the mascot logo is unreal.",
+    pack: "Custom Full Brand",
+  },
+  {
+    author: "PhoenixPlays",
+    rating: 4,
+    text: "Beautiful pack, tiny learning curve in OBS if you're brand new — the included guide sorted me out fast.",
+    pack: "Inferno Phoenix",
   },
 ] as const;
 
 export const FAQ: FaqEntry[] = [
   {
-    question: "Will these work with OBS and Streamlabs?",
+    question: "Will these overlays work with OBS and Streamlabs?",
     answer:
-      "Yes. Every animated screen ships as a transparent .WEBM you can drop into OBS Studio, Streamlabs, or StreamElements as a browser/media source. Static .PNG versions are included too for tools that need them.",
+      "Yes. Every animated screen ships as a looping video file you drop into OBS Studio, Streamlabs, or StreamElements as a media/browser source, plus static PNG versions for tools that need them. A quick-start install guide is included in every pack.",
   },
   {
-    question: "Which platforms and sizes are supported?",
+    question: "Which platforms are supported?",
     answer:
-      "All four major platforms: Twitch, YouTube, Kick, and TikTok. The assets are sized and exported so they look crisp on each platform's layout.",
+      "Twitch, YouTube, Kick, and TikTok Live. Assets are sized and exported to look crisp on each platform's layout, and every pack lists its compatibility right on the product page.",
   },
   {
-    question: "Can I request changes to a pack?",
+    question: "How does delivery work?",
     answer:
-      "Small tweaks can often be arranged — reach out and ask. For full personalization (your own character, palette, and emotes), grab a custom commission.",
+      "Instantly. The moment your payment completes you receive a download link — no shipping, no waiting. Checkout is handled by Lemon Squeezy, our merchant of record, which also takes care of VAT and tax receipts.",
+  },
+  {
+    question: "Can I get a fully custom overlay?",
+    answer:
+      "Absolutely — custom commissions are our craft. Tiers run from $100 (overlay + screens) to $400 (full brand with emotes, sub badges, and a mascot logo). Head to the Custom Overlays page to start a brief.",
   },
   {
     question: "What's your refund policy?",
     answer:
-      "Because these are instant-download digital goods, all sales are final once the files have been downloaded. If you hit a technical problem, contact us and we'll fix it or make it right.",
+      "Because these are instant-download digital goods, sales are final once files are delivered. If anything is broken or you hit a technical snag, contact us and we'll fix it or make it right — our 4.9★ rating exists for a reason.",
   },
-  {
-    question: "Do you take custom commissions?",
-    answer:
-      "Yes! Custom packs start at $601 and include your own character or mascot, a custom palette, every screen and alert, custom emotes, a sub badge set, and matching panels and overlays.",
-  },
-  {
-    question: "I lost my download link — what now?",
-    answer:
-      "No problem. Your links are in the confirmation email we sent at purchase. If they've expired, just contact us with your order email and we'll happily re-issue them.",
-  },
-];
+] as const;

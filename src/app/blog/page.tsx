@@ -1,59 +1,46 @@
 import type { Metadata } from "next";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
-import { BlogCard } from "@/components/BlogCard";
-import { AuroraBackground } from "@/components/ui/AuroraBackground";
-import { Reveal } from "@/components/ui/Reveal";
-import { NewsletterCTA } from "@/components/NewsletterCTA";
-import { BLOG_POSTS } from "@/data/blog";
+import Link from "next/link";
+import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Blog — Stream Setup Guides & Studio Stories",
+  title: "Blog — Stream Design Notes from the Atelier",
   description:
-    "Guides, tips, and behind-the-scenes stories from CozyJsStudio — OBS setup, choosing overlays, and the making of our cozy packs.",
+    "Guides on stream overlays, OBS setup, channel branding and going live with style. New posts landing soon.",
   alternates: { canonical: "/blog" },
 };
 
-export default function BlogIndexPage() {
+/** SEO growth surface — swap PLANNED for real MDX/CMS posts when ready. */
+const PLANNED = [
+  "How to set up an animated overlay in OBS in under 5 minutes",
+  "Twitch overlay sizes & safe zones — the 2026 cheat sheet",
+  "Why animated overlays out-retain static ones (and when they don't)",
+  "Kick vs Twitch: does your overlay need to change?",
+];
+
+export default function BlogPage() {
   return (
-    <>
-      <Nav />
-      <main>
-        <section className="relative isolate overflow-hidden pb-12 pt-36 md:pt-44">
-          <AuroraBackground />
-          <div className="container-page text-center">
-            <Reveal>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-lavender">
-                The CozyOverlays Blog
-              </span>
-              <h1 className="mt-4 text-[clamp(2.4rem,6vw,4rem)] font-extrabold leading-tight text-heading">
-                Stream craft, <span className="gradient-text">cozy style</span>
-              </h1>
-              <p className="mx-auto mt-5 max-w-2xl text-lg text-body">
-                Setup walkthroughs, design tips, and the stories behind the
-                packs — everything to help your channel feel alive.
-              </p>
-            </Reveal>
-          </div>
-        </section>
-
-        <section className="section-pad pt-4">
-          <div className="container-page">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {BLOG_POSTS.map((post, i) => (
-                <Reveal key={post.slug} delay={(i % 3) * 0.06}>
-                  <BlogCard post={post} />
-                </Reveal>
-              ))}
-            </div>
-
-            <div className="mt-16">
-              <NewsletterCTA />
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+    <div className="mx-auto max-w-3xl px-4 py-16 md:px-8">
+      <SectionHeading label="From the atelier" title="Blog" />
+      <p className="mt-6 leading-relaxed text-mist">
+        Stream design notes, OBS guides and channel-branding craft — being
+        written between commissions. First posts land soon; here&apos;s what&apos;s
+        on the drafting table:
+      </p>
+      <ul className="mt-8 space-y-3">
+        {PLANNED.map((title) => (
+          <li key={title} className="rounded-xl border border-veil bg-ink2/70 px-5 py-4 text-sm text-blush/85">
+            {title}
+            <span className="ml-2 font-mono text-[10px] uppercase tracking-wider text-lilac">Soon</span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-8 text-sm text-mist">
+        Want these in your inbox?{" "}
+        <Link href="/#" className="text-lilac underline-offset-4 hover:underline">
+          Join the newsletter below
+        </Link>{" "}
+        — new drops included.
+      </p>
+    </div>
   );
 }

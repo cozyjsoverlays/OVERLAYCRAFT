@@ -3,39 +3,31 @@ import { LegalPage } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How CozyOverlays handles your data.",
+  description: "What OverlayCraft collects (very little), why, and your rights.",
   alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
   return (
     <LegalPage
+      label="Legal"
       title="Privacy Policy"
-      updated="June 2026"
       sections={[
         {
           heading: "What we collect",
-          body: [
-            "To deliver your purchase we store your email address and order details (which packs you bought and when). Your cart is kept in your own browser's local storage.",
-          ],
+          body: "As little as possible. Purchases are processed by Lemon Squeezy, which collects the billing details required to complete your order under its own privacy policy — we receive your email and order details, not your payment information. The commission intake form collects what you type into it. The newsletter form collects your email address.",
         },
         {
-          heading: "Payments",
-          body: [
-            "Payments are handled entirely by PayPal. We receive a confirmation and your payer email, but never your card or bank details.",
-          ],
+          heading: "What we use it for",
+          body: "Delivering your files, answering your messages, running commissions, and — only if you subscribed — telling you about new drops. We do not sell, rent or share your data with third parties for their marketing.",
         },
         {
-          heading: "Email",
-          body: [
-            "We use your email solely to send your download links and order-related messages. We don't sell your data.",
-          ],
+          heading: "Cookies & analytics",
+          body: "The site itself runs without tracking cookies. Wishlist saves live in your browser session, not on our servers. If privacy-friendly analytics are added later, this page will say so first.",
         },
         {
-          heading: "Your choices",
-          body: [
-            "Want your order data removed after your download window closes? Contact us and we'll take care of it.",
-          ],
+          heading: "Your rights",
+          body: "Email hello@overlaycraft.com to access, correct or delete the data we hold about you, or to unsubscribe from anything. We answer within a few days, GDPR and similar frameworks respected.",
         },
       ]}
     />

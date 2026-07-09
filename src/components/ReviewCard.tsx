@@ -1,30 +1,16 @@
-import { Star, Quote } from "lucide-react";
 import type { Review } from "@/lib/types";
+import { Stars } from "./Stars";
 
 export function ReviewCard({ review }: { review: Review }) {
   return (
-    <figure className="glass flex h-full flex-col gap-4 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-lavender/40 hover:shadow-glow">
-      <div className="flex items-center justify-between">
-        <div className="flex gap-0.5" aria-label={`${review.stars} out of 5 stars`}>
-          {Array.from({ length: review.stars }).map((_, i) => (
-            <Star key={i} size={15} className="fill-pink text-pink" />
-          ))}
-        </div>
-        <Quote size={20} className="text-lavender/30" aria-hidden />
-      </div>
-
-      <blockquote className="flex-1 text-pretty text-[15px] leading-relaxed text-body">
-        “{review.quote}”
+    <figure className="w-80 shrink-0 rounded-2xl border border-veil bg-ink2/70 p-5 backdrop-blur">
+      <Stars rating={review.rating} />
+      <blockquote className="mt-3 text-sm leading-relaxed text-blush/85">
+        &ldquo;{review.text}&rdquo;
       </blockquote>
-
-      <figcaption className="flex items-center justify-between border-t border-subtle pt-4">
-        <div>
-          <p className="text-sm font-bold text-heading">{review.name}</p>
-          <p className="text-xs text-muted">{review.date}</p>
-        </div>
-        <span className="rounded-full border border-subtle bg-surface-2/60 px-2.5 py-1 text-[11px] font-medium text-lavender">
-          {review.pack}
-        </span>
+      <figcaption className="mt-4 flex items-baseline justify-between gap-2">
+        <span className="font-body text-sm font-medium text-lilac">{review.author}</span>
+        {review.pack && <span className="font-mono text-[11px] text-mist">{review.pack}</span>}
       </figcaption>
     </figure>
   );

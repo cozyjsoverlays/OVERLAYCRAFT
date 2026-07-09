@@ -1,15 +1,11 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/data/site";
 
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      // Keep private/transactional routes out of the index.
-      disallow: ["/admin", "/api/", "/cart", "/checkout"],
-    },
+    rules: { userAgent: "*", allow: "/" },
     sitemap: `${SITE.url}/sitemap.xml`,
-    host: SITE.url,
   };
 }
