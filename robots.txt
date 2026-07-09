@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://overlaycraft.com/sitemap.xml
