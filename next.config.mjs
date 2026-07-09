@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static export → a plain ./out folder of HTML/CSS/JS. No Node/Next runtime
-  // needed at serve time, which makes deploying on Hostinger reliable. Every
-  // page is statically generated, so no server features are required.
-  output: "export",
-  trailingSlash: true,
+  // Standard Next.js server build: Hostinger's Web App platform detects the
+  // framework and runs Next's own server, which rejects `output: "export"`.
+  // Every page is still fully pre-rendered at build time (SSG).
   reactStrictMode: true,
   images: {
-    unoptimized: true, // required for static export; serves images as-is
+    unoptimized: true, // plain <img> assets; no runtime optimizer needed
     remotePatterns: [
       { protocol: "https", hostname: "i.etsystatic.com" },
       { protocol: "https", hostname: "v.etsystatic.com" },
