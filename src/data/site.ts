@@ -3,7 +3,7 @@ import type { FaqEntry } from "@/lib/types";
 export const SITE = {
   name: "CozyOverlays",
   shop: "CozyJsStudio",
-  url: "https://cozyoverlays.com",
+  url: "https://overlaycraft.com",
   tagline:
     "Animated stream overlay packs that feel alive & cozy — for Twitch, YouTube, Kick & TikTok.",
   avatar:
