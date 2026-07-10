@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Share2 } from "lucide-react";
 import { SITE } from "@/data/site";
+import { absUrl } from "@/lib/utils";
 
 interface ShareButtonProps {
   title: string;
@@ -35,7 +36,7 @@ export function ShareButton({ title, path, etsyUrl, thumbnail, className = "" }:
   const [copied, setCopied] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const url = `${SITE.url}${path}`;
-  const media = thumbnail ? `${SITE.url}${thumbnail}` : undefined;
+  const media = thumbnail ? absUrl(thumbnail) : undefined;
 
   useEffect(() => {
     if (!open) return;

@@ -72,6 +72,8 @@ export const PRODUCTS: Product[] = [
     slug: "sakura-dream-wolf-overlay",
     title: "Sakura Dream Wolf Overlay",
     category: ["wolf", "sakura"],
+    etsyUrl: "https://www.etsy.com/listing/4472564937/sakura-dream-wolf-overlay-animated",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/2579e3/7870583753/il_fullxfull.7870583753_4jng.jpg"],
     description:
       "A moonlit wolf beneath endless falling cherry blossoms. Petals drift across your BRB, blossom light pulses with every alert — the signature Sakura Dream mood with wild teeth.",
     tags: ["wolf twitch overlay", "sakura overlay", "anime stream package", "pink"],
@@ -83,6 +85,8 @@ export const PRODUCTS: Product[] = [
     slug: "midnight-magic-cat-overlay",
     title: "Midnight Magic Cat Overlay",
     category: ["cat"],
+    etsyUrl: "https://www.etsy.com/listing/4485199023/midnight-magic-cat-overlay-animated",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/7a1608/7938633069/il_fullxfull.7938633069_i8ny.jpg"],
     description:
       "A spellcasting midnight familiar with glowing eyes guards your stream. Arcane sparkles trace your webcam frame and every follower alert lands like a small enchantment.",
     tags: ["cat twitch overlay", "magic overlay", "animated stream package", "cozy"],
@@ -93,6 +97,8 @@ export const PRODUCTS: Product[] = [
     slug: "dark-gothic-raven-animated-stream-package",
     title: "Dark Gothic Raven Animated Stream Package",
     category: ["crow", "gothic"],
+    etsyUrl: "https://www.etsy.com/listing/4469704695/dark-gothic-raven-animated-stream",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/862919/7790377712/il_fullxfull.7790377712_59t8.jpg"],
     description:
       "The shop's all-time bestseller. A raven perched against a cathedral moon, feathers scattering through fog on every scene change. Deep violet gothic atmosphere that makes cam and gameplay pop from the dark.",
     tags: ["raven twitch overlay", "gothic stream package", "dark overlay", "bestseller"],
@@ -104,6 +110,8 @@ export const PRODUCTS: Product[] = [
     slug: "moonlight-raven-overlay",
     title: "Moonlight Raven Overlay",
     category: ["crow"],
+    etsyUrl: "https://www.etsy.com/listing/4444846752/moonlight-raven-animated-stream-package",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/11a231/7625844034/il_fullxfull.7625844034_uiih.jpg"],
     description:
       "The bestseller's silver sibling — a raven bathed in cold moonlight, mist rolling low across your screens. Quieter than the gothic original, twice as haunting.",
     tags: ["raven overlay", "moonlight stream package", "dark twitch overlay"],
@@ -150,6 +158,8 @@ export const PRODUCTS: Product[] = [
     slug: "cozy-dragon-overlay",
     title: "Cozy Dragon Overlay",
     category: ["dragon", "cozy"],
+    etsyUrl: "https://www.etsy.com/listing/4489189345/cozy-dragon-overlay-animated-stream",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/6aff0b/7916094460/il_fullxfull.7916094460_rgcs.jpg"],
     description:
       "A small dragon, a warm hearth, and a mug of something hot. Fantasy scale-and-ember craft turned down to fireplace temperature — cozy streams with a hoard.",
     tags: ["cozy dragon overlay", "cute stream package", "fantasy cozy"],
@@ -232,6 +242,8 @@ export const PRODUCTS: Product[] = [
     slug: "mystic-moonlight-snake-overlay",
     title: "Mystic Moonlight Snake Overlay",
     category: ["gothic"],
+    etsyUrl: "https://www.etsy.com/listing/4510497649/mystic-moonlight-snake-overlay-animated",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/ad4d70/8055338664/il_fullxfull.8055338664_3kio.jpg"],
     description:
       "A serpent winding through moonlit fog and ritual candles. Slow, hypnotic loop design that makes viewers stop scrolling — the rarest animal in the shop.",
     tags: ["snake twitch overlay", "mystic stream package", "gothic overlay"],
@@ -241,6 +253,8 @@ export const PRODUCTS: Product[] = [
     slug: "mystic-moonlight-wolf-overlay",
     title: "Mystic Moonlight Wolf Overlay",
     category: ["wolf", "gothic"],
+    etsyUrl: "https://www.etsy.com/listing/4496723571/mystic-moonlight-wolf-overlay-animated",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/f34436/8013511541/il_fullxfull.8013511541_pjwz.jpg"],
     description:
       "The Mystic Moonlight ritual meets the pack — a wolf haloed by a pale moon, arcane mist curling through every screen state.",
     tags: ["wolf overlay", "mystic twitch overlay", "moonlight stream package"],
@@ -378,6 +392,41 @@ export const PRODUCTS: Product[] = [
     description:
       "Jack-o'-lantern glow, bats across a harvest moon and alerts that cackle. Run it for spooky month, keep it forever.",
     tags: ["halloween twitch overlay", "seasonal stream package", "spooky overlay"],
+  }),
+  p({
+    id: "oc-036",
+    slug: "mystic-moonlight-dog-overlay",
+    title: "Mystic Moonlight Dog Overlay",
+    category: ["gothic"],
+    etsyUrl: "https://www.etsy.com/listing/4496797837/mystic-moonlight-dog-overlay-animated",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/1b30fa/8014033929/il_fullxfull.8014033929_lqpd.jpg"],
+    description:
+      "The most loyal member of the Mystic Moonlight line — a spectral hound under a pale moon, arcane mist trailing every scene change. Good boy; great overlay.",
+    tags: ["dog twitch overlay", "mystic stream package", "moonlight overlay"],
+    newDrop: true,
+  }),
+  p({
+    id: "oc-037",
+    slug: "cozy-wolf-overlay",
+    title: "Cozy Wolf Overlay",
+    category: ["wolf", "cozy"],
+    etsyUrl: "https://www.etsy.com/listing/4491744993/cozy-wolf-overlay-animated-stream",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/9eadec/7980905087/il_fullxfull.7980905087_93y6.jpg"],
+    description:
+      "The pack's softest side — a wolf curled by lantern light, snow falling gently past the window of every screen. Wild heart, warm den.",
+    tags: ["cozy wolf overlay", "wolf twitch overlay", "cozy stream package"],
+    newDrop: true,
+  }),
+  p({
+    id: "oc-038",
+    slug: "red-animated-stream-package",
+    title: "Red Animated Stream Package",
+    category: ["stream"],
+    etsyUrl: "https://www.etsy.com/listing/4365728007/red-animated-stream-package-for-twitch",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/889c2a/7180409732/il_fullxfull.7180409732_hkkh.jpg"],
+    description:
+      "A clean, aggressive crimson kit — facecam, panels, alerts and every screen state in one matched red-on-black identity. No mascot, all intensity.",
+    tags: ["red twitch overlay", "animated stream package", "minimal overlay"],
   }),
   p({
     id: "oc-035",

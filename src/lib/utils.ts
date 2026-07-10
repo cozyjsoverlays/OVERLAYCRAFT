@@ -1,4 +1,10 @@
 import type { Product } from "./types";
+import { SITE } from "@/data/site";
+
+/** Site-relative paths → absolute; already-absolute URLs (e.g. Etsy CDN) pass through. */
+export function absUrl(path: string): string {
+  return path.startsWith("http") ? path : `${SITE.url}${path}`;
+}
 
 export function formatPrice(value: number): string {
   return `$${value.toFixed(2)}`;

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Check, Download, Monitor } from "lucide-react";
 import { PRODUCTS, getProduct, relatedProducts } from "@/data/products";
 import { REVIEWS, SITE } from "@/data/site";
-import { discountPercent, formatPrice, currentPrice, productPath } from "@/lib/utils";
+import { absUrl, discountPercent, formatPrice, currentPrice, productPath } from "@/lib/utils";
 import { ProductGallery } from "@/components/ProductGallery";
 import { ProductCard } from "@/components/ProductCard";
 import { BuyButton } from "@/components/BuyButton";
@@ -65,7 +65,7 @@ export default async function ProductPage({ params }: Props) {
     "@type": "Product",
     name: product.title,
     description: product.description,
-    image: `${SITE.url}${product.thumbnails[0]}`,
+    image: absUrl(product.thumbnails[0]),
     url: `${SITE.url}${productPath(product)}`,
     brand: { "@type": "Brand", name: SITE.name },
     offers: {
