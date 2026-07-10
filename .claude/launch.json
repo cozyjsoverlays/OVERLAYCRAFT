@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "overlaycraft",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "C:\\Users\\Admin\\Desktop\\overlaycraft", "--", "--port", "3100"],
+      "port": 3100
+    },
+    {
       "name": "cozyoverlays-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],

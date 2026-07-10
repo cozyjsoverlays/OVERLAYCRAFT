@@ -65,7 +65,7 @@ export function StarterPackPopup({ open, onClose, onSubmit }: StarterPackPopupPr
         .cz-chip{width:22px;height:7px;border-radius:4px;background:rgba(253,247,240,.32);}
         .cz-body{padding:54px 30px 28px;text-align:center;}
         .cz-eyebrow{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#B07A57;}
-        .cz-title{font-family:'Fraunces',serif;font-weight:600;font-size:27px;line-height:1.15;margin:8px 0 10px;}
+        .cz-title{font-family:'Fraunces',serif;font-weight:600;font-size:27px;line-height:1.15;margin:8px 0 10px;color:#3B2B3A;}
         .cz-title span{color:#B05A6E;}
         .cz-sub{font-size:15px;line-height:1.5;color:#6B5A66;margin-bottom:20px;}
         .cz-field{display:flex;flex-direction:column;gap:10px;}

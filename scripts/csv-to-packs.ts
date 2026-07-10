@@ -4,8 +4,11 @@
  *
  *   npx tsx scripts/csv-to-packs.ts "C:/path/EtsyListingsDownload.csv"
  *
- * The export has no per-listing URL, so every pack's buy button points to the
- * shop home (https://www.etsy.com/shop/CozyJsStudio). Images come from IMAGE1.
+ * The export has no per-listing URLs or live sale prices, so OVERRIDES below
+ * carries known listing IDs + current sale pricing (price/compareAt), keyed by
+ * a distinctive slug fragment (first match wins — order specific → generic).
+ * EXTRA_PACKS appends listings newer than the CSV so regeneration never drops
+ * them. Everything unmatched falls back to the shop home / CSV price.
  */
 
 import { readFileSync, writeFileSync } from "fs";
@@ -14,39 +17,103 @@ import { parseCsvToObjects } from "./lib/csv";
 
 const SHOP_URL = "https://cozyjsstudio.etsy.com";
 
-// Known per-listing IDs (keyed by a distinctive slug fragment). The Etsy CSV
-// export has no listing URLs, so only these — carried over from the original
-// site — can deep-link to their exact listing. Everything else falls back to
-// the shop home. Add more here (fragment -> listing id) as you collect them.
-const KNOWN_LISTINGS: Array<[string, string]> = [
-  ["cat-forest", "4471959754"],
-  ["dragon-sakura", "4466565669"],
-  ["sakura-panda", "4464457983"],
-  ["fox-forest", "4474605659"],
-  ["frog-forest", "4480209391"],
-  ["moonlit-samurai", "4433133162"],
-  ["matcha-dragon", "4490240905"],
-  ["sakura-cat", "4443095417"],
-  ["wolf-train", "4500984671"],
-  ["otter-forest", "4480782954"],
-  ["dream-sakura", "4438531426"],
-  ["midnight-cozy-cat", "4440435657"],
-  // From the shop's official RSS feed (most recent listings):
-  ["cozy-cats-jars", "4533092634"],
-  ["sakura-wolf", "4496346074"],
-  ["swan-forest", "4478228909"],
-  ["starry-forest-dragon", "4472823464"],
-  ["forest-wolf", "4429185127"],
-  ["cozy-garden", "4532079977"],
-  ["custom-animated-twitch-stream-overlay", "4500763545"],
+interface Override {
+  id?: string; // etsy listing id
+  price?: number; // current sale price (USD)
+  compareAt?: number; // original price (sale framing)
+}
+
+// Order matters: specific fragments BEFORE generic ones they contain.
+const OVERRIDES: Array<[string, Override]> = [
+  // — specific-first collision guards —
+  ["sakura-cats-moon", { id: "4435002769", price: 3.89, compareAt: 15.55 }],
+  ["sakura-cat-animated-stream-overlay", { id: "4452517237", price: 4.14, compareAt: 16.55 }],
+  ["sakura-cat", { id: "4443095417" }],
+  ["purple-clouds-animated-tiktok", { id: "4396354259", price: 2.22, compareAt: 8.89 }],
+  ["purple-clouds", { id: "4424184954", price: 3.89, compareAt: 15.55 }],
+  // — bundles / custom —
+  ["custom-animated-twitch-stream-overlay", { id: "4500763545", price: 99.87, compareAt: 399.5 }],
+  // — cats —
+  ["cat-forest", { id: "4471959754", price: 3.89, compareAt: 15.55 }],
+  ["midnight-cozy-cat", { id: "4440435657", price: 3.89, compareAt: 15.55 }],
+  ["galaxy-eyes-cat", { id: "4497648024", price: 3.89, compareAt: 15.55 }],
+  ["green-anime-girl", { id: "4460474353", price: 4.14, compareAt: 16.55 }],
+  ["cozy-cats-jars", { id: "4533092634" }],
+  // — dragons —
+  ["dragon-sakura", { id: "4466565669", price: 4.23, compareAt: 16.94 }],
+  ["matcha-dragon", { id: "4490240905" }],
+  ["starry-forest-dragon", { id: "4472823464" }],
+  // — pandas / bears —
+  ["sakura-panda", { id: "4464457983" }],
+  ["panda-sakura", { id: "4464973290", price: 3.64, compareAt: 14.55 }],
+  ["blossom-panda", { id: "4439308189", price: 3.89, compareAt: 15.55 }],
+  ["lofi-sunset-panda", { id: "4499647421", price: 4.14, compareAt: 16.55 }],
+  ["train-sunset-panda", { id: "4501921068", price: 3.26, compareAt: 13.05 }],
+  // — wolves / foxes / otters / frogs / birds —
+  ["forest-wolf", { id: "4429185127", price: 3.89, compareAt: 15.55 }],
+  ["sakura-wolf", { id: "4496346074" }],
+  ["wolf-train", { id: "4500984671" }],
+  ["fox-forest", { id: "4474605659" }],
+  ["frog-forest", { id: "4480209391" }],
+  ["otter-under-sea", { id: "4485236580", price: 3.89, compareAt: 15.55 }],
+  ["otter-forest", { id: "4480782954", price: 3.89, compareAt: 15.55 }],
+  ["swan-forest", { id: "4478228909" }],
+  // — japanese / sakura —
+  ["moonlit-samurai", { id: "4433133162", price: 3.89, compareAt: 15.55 }],
+  ["dream-sakura", { id: "4438531426" }],
+  ["cherry-blossom", { id: "4448676932", price: 3.89, compareAt: 15.55 }],
+  ["purple-moon-sakura", { id: "4424215981", price: 4.14, compareAt: 16.55 }],
+  // — dark / witchy —
+  ["moonlit-raven", { id: "4472851841", price: 3.89, compareAt: 15.55 }],
+  ["royal-purple-night", { id: "4424177557", price: 3.89, compareAt: 15.55 }],
+  // — rooms / scenes —
+  ["animated-neon-bedroom", { id: "4504935404", price: 4.26, compareAt: 17.04 }],
+  ["magical-celestial-bedroom", { id: "4518341550", price: 4.13, compareAt: 16.54 }],
+  ["magical-night-garden", { id: "4507296377", price: 3.88, compareAt: 15.54 }],
+  ["cozy-midnight-garden", { id: "4503610815", price: 3.88, compareAt: 15.54 }],
+  ["cozy-night-animated", { id: "4462927898", price: 3.89, compareAt: 15.55 }],
+  ["cozy-garden", { id: "4532079977" }],
 ];
 
-function etsyUrlFor(slug: string): string {
-  for (const [fragment, id] of KNOWN_LISTINGS) {
-    if (slug.includes(fragment)) return `${SHOP_URL}/listing/${id}`;
+function findOverride(slug: string): Override | null {
+  for (const [fragment, o] of OVERRIDES) {
+    if (slug.includes(fragment)) return o;
   }
-  return SHOP_URL;
+  return null;
 }
+
+/** Listings newer than the CSV export (sourced from the shop's official RSS
+ *  feed). Appended on every regeneration so they're never lost. */
+const EXTRA_PACKS = [
+  {
+    slug: "cozy-cats-jars-twitch-sub-badges",
+    name: "Cozy Cats Jars Twitch Sub Badges",
+    category: "cat",
+    price: "$1.22",
+    compareAt: "$4.90",
+    description:
+      "Kawaii cats in jars under a pastel night sky — loyalty badges your subs will actually show off.",
+    image:
+      "https://i.etsystatic.com/61635066/r/il/0e9933/8215805950/il_570xN.8215805950_109n.jpg",
+    etsy: `${SHOP_URL}/listing/4533092634`,
+    features: ["Sub Badges"],
+    isNew: true,
+  },
+  {
+    slug: "cozy-garden-animated-overlay-bundle",
+    name: "Cozy Garden Animated Overlay Bundle",
+    category: "room",
+    price: "$3.88",
+    compareAt: "$15.54",
+    description:
+      "A lo-fi flower garden in gentle motion — a full bundle of screens, alerts and panels.",
+    image:
+      "https://i.etsystatic.com/61635066/r/il/fe88d6/8256317065/il_570xN.8256317065_ckqp.jpg",
+    etsy: `${SHOP_URL}/listing/4532079977`,
+    features: ["Animated Screens", "Alerts", "Panels"],
+    isNew: true,
+  },
+];
 
 type Category =
   | "cat"
@@ -99,9 +166,13 @@ function cleanName(title: string): string {
   return title.split("|")[0].replace(/\s+/g, " ").trim();
 }
 
+function money(n: number): string {
+  return `$${n.toFixed(2)}`;
+}
+
 function priceStr(raw: string): string {
   const n = parseFloat((raw || "").replace(/[^0-9.]/g, ""));
-  return Number.isFinite(n) && n > 0 ? `$${n.toFixed(2)}` : "$0.00";
+  return Number.isFinite(n) && n > 0 ? money(n) : "$0.00";
 }
 
 function describe(name: string): string {
@@ -120,6 +191,37 @@ function features(haystack: string): string[] {
   return f;
 }
 
+interface Entry {
+  slug: string;
+  name: string;
+  category: string;
+  price: string;
+  compareAt?: string;
+  description: string;
+  image: string;
+  etsy: string;
+  features: string[];
+  isNew?: boolean;
+}
+
+function emit(e: Entry): string {
+  const lines = [
+    `    slug: ${JSON.stringify(e.slug)},`,
+    `    name: ${JSON.stringify(e.name)},`,
+    `    category: ${JSON.stringify(e.category)},`,
+    `    price: ${JSON.stringify(e.price)},`,
+  ];
+  if (e.compareAt) lines.push(`    compareAt: ${JSON.stringify(e.compareAt)},`);
+  lines.push(
+    `    description: ${JSON.stringify(e.description)},`,
+    `    image: ${JSON.stringify(e.image)},`,
+    `    etsy: ${JSON.stringify(e.etsy)},`,
+    `    features: ${JSON.stringify(e.features)},`,
+  );
+  if (e.isNew) lines.push(`    isNew: true,`);
+  return `  {\n${lines.join("\n")}\n  }`;
+}
+
 function main() {
   const file = process.argv[2];
   if (!file) {
@@ -130,6 +232,8 @@ function main() {
   const rows = parseCsvToObjects(readFileSync(resolve(file), "utf8"));
   const seen = new Set<string>();
   const packs: string[] = [];
+  let deepLinked = 0;
+  let salePriced = 0;
   let skipped = 0;
 
   for (const r of rows) {
@@ -149,29 +253,31 @@ function main() {
     while (seen.has(slug)) slug = `${slug}-${seen.size}`;
     seen.add(slug);
 
-    const category = mapCategory(`${title} ${r.tags || ""}`);
-    const entry = {
-      slug,
-      name,
-      category,
-      price: priceStr(r.price),
-      description: describe(name),
-      image,
-      etsy: etsyUrlFor(slug),
-      features: features(`${title} ${r.description || ""} ${r.tags || ""}`),
-    };
+    const o = findOverride(slug);
+    if (o?.id) deepLinked++;
+    if (o?.price) salePriced++;
 
-    const body = [
-      `    slug: ${JSON.stringify(entry.slug)},`,
-      `    name: ${JSON.stringify(entry.name)},`,
-      `    category: ${JSON.stringify(entry.category)},`,
-      `    price: ${JSON.stringify(entry.price)},`,
-      `    description: ${JSON.stringify(entry.description)},`,
-      `    image: ${JSON.stringify(entry.image)},`,
-      `    etsy: ${JSON.stringify(entry.etsy)},`,
-      `    features: ${JSON.stringify(entry.features)},`,
-    ].join("\n");
-    packs.push(`  {\n${body}\n  }`);
+    packs.push(
+      emit({
+        slug,
+        name,
+        category: mapCategory(`${title} ${r.tags || ""}`),
+        price: o?.price ? money(o.price) : priceStr(r.price),
+        compareAt: o?.compareAt ? money(o.compareAt) : undefined,
+        description: describe(name),
+        image,
+        etsy: o?.id ? `${SHOP_URL}/listing/${o.id}` : SHOP_URL,
+        features: features(`${title} ${r.description || ""} ${r.tags || ""}`),
+      }),
+    );
+  }
+
+  // Newest listings not present in the CSV yet.
+  for (const extra of EXTRA_PACKS) {
+    if (!seen.has(extra.slug)) {
+      seen.add(extra.slug);
+      packs.unshift(emit(extra as Entry));
+    }
   }
 
   const out = `import type { Pack, PackCategory } from "@/lib/types";
@@ -204,13 +310,14 @@ export const PACK_FILTERS: PackFilter[] = [
 
   writeFileSync(resolve("src/data/packs.ts"), out, "utf8");
 
-  // Category breakdown for a quick sanity check.
   const counts: Record<string, number> = {};
   for (const p of packs) {
     const m = p.match(/category: "(\w+)"/);
     if (m) counts[m[1]] = (counts[m[1]] || 0) + 1;
   }
-  console.log(`✅ Wrote ${packs.length} packs to src/data/packs.ts (${skipped} skipped).`);
+  console.log(
+    `✅ Wrote ${packs.length} packs (${deepLinked} deep-linked, ${salePriced} sale-priced, ${skipped} skipped).`,
+  );
   console.log("   Categories:", counts);
 }
 

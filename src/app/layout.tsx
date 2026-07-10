@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Nunito, Fraunces } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { SITE, LINKS } from "@/data/site";
@@ -35,10 +35,17 @@ const websiteLd = {
   },
 };
 
-const poppins = Poppins({
+const nunito = Nunito({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+  variable: "--font-nunito",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
@@ -87,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={`${nunito.variable} ${fraunces.variable}`}>
       <body className="grain min-h-screen bg-base font-sans antialiased">
         <JsonLd data={organizationLd} />
         <JsonLd data={websiteLd} />

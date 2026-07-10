@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 import { NAV_LINKS, LINKS, BUY_ON_ETSY } from "@/data/site";
 import { CartButton } from "@/components/commerce/CartButton";
+import { WishlistNavButton } from "@/components/commerce/WishlistNavButton";
 import { EtsyIcon } from "@/components/icons";
 import { clsx } from "@/lib/clsx";
 
@@ -71,6 +72,7 @@ export function Nav() {
             <ArrowUpRight size={12} />
           </a>
           {!BUY_ON_ETSY && <CartButton />}
+          <WishlistNavButton />
           <Link
             href="/shop"
             className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-accent-gradient bg-[length:200%_auto] px-5 py-2.5 text-sm font-bold text-base shadow-glow transition-all hover:bg-[position:100%_50%] hover:-translate-y-0.5"
@@ -82,6 +84,7 @@ export function Nav() {
         {/* Mobile actions */}
         <div className="flex items-center gap-2 lg:hidden">
           {!BUY_ON_ETSY && <CartButton />}
+          <WishlistNavButton />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

@@ -9,11 +9,14 @@ export interface ProductDTO {
   category: string;
   description: string;
   priceCents: number;
+  /** Original price in cents when the pack is on sale (strikethrough framing). */
+  compareAtCents: number | null;
   currency: string;
   image: string;
   video: string | null;
   features: string[];
   bestseller: boolean;
+  isNew: boolean;
   etsyUrl: string | null;
 }
 
@@ -37,16 +40,23 @@ function packToDTO(p: Pack): ProductDTO {
     category: p.category,
     description: p.description,
     priceCents: priceToCents(p.price),
+    compareAtCents: p.compareAt ? priceToCents(p.compareAt) : null,
     currency: "USD",
     image: p.image,
     video: p.video ?? null,
     features: p.features,
     bestseller: p.bestseller ?? false,
+    isNew: p.isNew ?? false,
     etsyUrl: p.etsy ?? null,
   };
 }
 
 export async function getAllProducts(): Promise<ProductDTO[]> {
+  return PACKS.map(packToDTO);
+}
+
+/** Synchronous variant for client components (wishlist page etc.). */
+export function getAllProductsSync(): ProductDTO[] {
   return PACKS.map(packToDTO);
 }
 

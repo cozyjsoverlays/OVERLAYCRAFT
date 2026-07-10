@@ -8,6 +8,7 @@ import { Play, Maximize2 } from "lucide-react";
 import type { ProductDTO } from "@/lib/products";
 import { formatCents } from "@/lib/money";
 import { AddToCartButtons } from "@/components/commerce/AddToCartButtons";
+import { WishlistButton } from "@/components/commerce/WishlistButton";
 
 interface ProductCardProps {
   product: ProductDTO;
@@ -17,6 +18,11 @@ interface ProductCardProps {
 export function ProductCard({ product, onOpenMedia }: ProductCardProps) {
   const [hover, setHover] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const saleOff =
+    product.compareAtCents && product.compareAtCents > product.priceCents
+      ? Math.round(100 - (product.priceCents / product.compareAtCents) * 100)
+      : null;
 
   const handleEnter = () => {
     setHover(true);
@@ -76,12 +82,24 @@ export function ProductCard({ product, onOpenMedia }: ProductCardProps) {
           />
         )}
 
-        {product.bestseller && (
-          <span className="absolute left-3 top-3 z-10 rounded-full bg-accent-gradient px-2.5 py-1 text-[11px] font-bold text-base shadow-glow">
-            ★ Bestseller
-          </span>
-        )}
-        <span className="absolute right-3 top-3 z-10 inline-flex items-center gap-1 rounded-full bg-base/70 px-2.5 py-1 text-[11px] font-bold text-heading opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
+        <span className="absolute left-3 top-3 z-10 flex flex-wrap gap-1.5">
+          {product.bestseller && (
+            <span className="rounded-full bg-accent-gradient px-2.5 py-1 text-[11px] font-bold text-base shadow-glow">
+              ★ Bestseller
+            </span>
+          )}
+          {product.isNew && (
+            <span className="rounded-full bg-pink px-2.5 py-1 text-[11px] font-bold text-base">
+              ✦ New
+            </span>
+          )}
+          {saleOff !== null && (
+            <span className="rounded-full bg-warm px-2.5 py-1 text-[11px] font-bold text-base">
+              -{saleOff}%
+            </span>
+          )}
+        </span>
+        <span className="absolute bottom-3 right-3 z-10 inline-flex items-center gap-1 rounded-full bg-base/70 px-2.5 py-1 text-[11px] font-bold text-heading opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
           {product.video ? <Play size={12} /> : <Maximize2 size={12} />}
           {product.video ? "Preview" : "View"}
         </span>
@@ -90,6 +108,11 @@ export function ProductCard({ product, onOpenMedia }: ProductCardProps) {
           className="pointer-events-none absolute inset-0 bg-gradient-to-t from-base/70 via-transparent to-transparent"
         />
       </button>
+
+      {/* Save ♡ — sibling of the media button (valid markup), floats top-right */}
+      <span className="absolute right-3 top-3 z-20">
+        <WishlistButton slug={product.slug} name={product.name} />
+      </span>
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-3">
@@ -101,8 +124,15 @@ export function ProductCard({ product, onOpenMedia }: ProductCardProps) {
               {product.name}
             </Link>
           </h3>
-          <span className="shrink-0 rounded-full border border-subtle bg-white/5 px-2.5 py-1 text-sm font-bold text-lavender">
-            {formatCents(product.priceCents, product.currency)}
+          <span className="flex shrink-0 flex-col items-end">
+            <span className="rounded-full border border-subtle bg-white/5 px-2.5 py-1 text-sm font-bold text-warm">
+              {formatCents(product.priceCents, product.currency)}
+            </span>
+            {product.compareAtCents && (
+              <span className="mt-1 pr-1 text-xs text-muted line-through">
+                {formatCents(product.compareAtCents, product.currency)}
+              </span>
+            )}
           </span>
         </div>
 

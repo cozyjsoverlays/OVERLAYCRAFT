@@ -4,7 +4,7 @@
  */
 
 import { LucideIcon } from "lucide-react";
-import { Sparkles, Crop, Palette, Wand2 } from "lucide-react";
+import { Sparkles, Crop, Palette, Wand2, Gauge } from "lucide-react";
 
 export const ETSY_SHOP_URL = "https://cozyjsstudio.etsy.com";
 
@@ -67,6 +67,13 @@ export const TOOLS: ToolDef[] = [
     name: "Overlay Brief Generator",
     blurb: "Turn a few answers into a ready-to-use custom overlay brief.",
     icon: Wand2,
+    live: true,
+  },
+  {
+    slug: "bitrate-calculator",
+    name: "Bitrate & Settings Calculator",
+    blurb: "Find the right OBS bitrate for your upload speed and resolution.",
+    icon: Gauge,
     live: true,
   },
 ];

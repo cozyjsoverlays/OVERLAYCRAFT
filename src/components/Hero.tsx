@@ -37,18 +37,18 @@ export function Hero() {
         >
           <motion.div variants={reduce ? undefined : item}>
             <span className="inline-flex items-center gap-2 rounded-full border border-subtle bg-white/5 px-4 py-1.5 text-xs font-medium text-body backdrop-blur">
-              <Star size={14} className="fill-pink text-pink" />
-              Etsy Star Seller · 4.9 Stars · 686+ Sales
+              <Star size={14} className="fill-warm text-warm" />
+              ⭐ 4.9 (108 reviews) · 807+ streamers · Etsy Star Seller
             </span>
           </motion.div>
 
           <motion.h1
             variants={reduce ? undefined : item}
-            className="mt-6 text-balance text-[clamp(2.6rem,7vw,5.25rem)] font-extrabold leading-[1.02] tracking-tight text-heading"
+            className="mt-6 font-display text-balance text-[clamp(2.6rem,7vw,5rem)] font-semibold leading-[1.05] text-heading"
           >
-            Stream Overlays That Feel{" "}
+            Cozy overlays that make your stream{" "}
             <span className="gradient-text animate-gradient-pan">
-              Alive &amp; Cozy
+              feel like home.
             </span>
           </motion.h1>
 
@@ -56,8 +56,8 @@ export function Hero() {
             variants={reduce ? undefined : item}
             className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-body md:text-xl"
           >
-            Hand-crafted animated overlay packs for Twitch, YouTube, Kick &amp;
-            TikTok. Cozy worlds that move — screens, alerts, panels &amp; emotes
+            Animated stream packs for Twitch, Kick, TikTok &amp; YouTube —
+            clean, cute, clutter-free. Screens, alerts, panels &amp; emotes
             ready to drop into OBS in minutes.
           </motion.p>
 
@@ -66,10 +66,10 @@ export function Hero() {
             className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <Button href="/shop">
-              Browse Packs <ArrowRight size={16} />
+              Browse Overlays <ArrowRight size={16} />
             </Button>
-            <Button href="#browse" variant="secondary">
-              Find Your Animal <MoveDown size={16} />
+            <Button href="/free-pack" variant="secondary">
+              Get Free Pack <MoveDown size={16} />
             </Button>
           </motion.div>
 

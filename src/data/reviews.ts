@@ -2,6 +2,36 @@ import type { Review } from "@/lib/types";
 
 export const REVIEWS: Review[] = [
   {
+    name: "Polina",
+    date: "Jul 2026",
+    stars: 5,
+    quote:
+      "Cute and perfect for me as a new streamer! It looks like a professional.",
+    pack: "Animated Stream Package",
+  },
+  {
+    name: "Nini",
+    date: "Jul 2026",
+    stars: 5,
+    quote:
+      "I've looked for a long time for a good frog themed overlay… This is the one.",
+    pack: "Frog Forest Magic Package",
+  },
+  {
+    name: "Jen",
+    date: "Jun 2026",
+    stars: 5,
+    quote: "Instant download and great quality!",
+    pack: "Cozy Overlay Pack",
+  },
+  {
+    name: "Drakaina",
+    date: "Jun 2026",
+    stars: 5,
+    quote: "Amazing art, I love it so much!",
+    pack: "Animated Stream Package",
+  },
+  {
     name: "Theresa",
     date: "Jun 4, 2026",
     stars: 5,
@@ -65,5 +95,5 @@ export const REVIEWS: Review[] = [
 
 export const REVIEW_SUMMARY = {
   average: "4.9",
-  count: 91,
+  count: 108,
 } as const;

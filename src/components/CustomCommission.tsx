@@ -40,20 +40,33 @@ export function CustomCommission() {
                   Commission a fully bespoke animated pack designed from scratch
                   for your channel.
                 </p>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="text-sm text-muted">from</span>
-                  <span className="text-4xl font-extrabold text-heading">
-                    $601
+                <div className="mt-6 flex items-baseline gap-3">
+                  <span className="text-lg font-semibold text-muted line-through">
+                    $399.50
+                  </span>
+                  <span className="text-4xl font-extrabold text-warm">
+                    $99.87
+                  </span>
+                  <span className="rounded-full bg-pink/15 px-2.5 py-1 text-xs font-bold text-pink">
+                    -75%
                   </span>
                 </div>
-                <a
-                  href={LINKS.etsyCustom}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-accent-gradient px-6 py-3 text-sm font-bold text-base shadow-glow transition-transform hover:-translate-y-0.5"
-                >
-                  Start a Commission <ExternalLink size={15} />
-                </a>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <a
+                    href={LINKS.etsyCustom}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent-gradient px-6 py-3 text-sm font-bold text-base shadow-glow transition-transform hover:-translate-y-0.5"
+                  >
+                    Start a Commission <ExternalLink size={15} />
+                  </a>
+                  <a
+                    href="/custom"
+                    className="inline-flex items-center gap-2 rounded-full border border-subtle bg-white/5 px-6 py-3 text-sm font-bold text-heading hover:border-lavender/40"
+                  >
+                    Build your brief
+                  </a>
+                </div>
               </div>
 
               <ul className="grid gap-3 sm:grid-cols-2">

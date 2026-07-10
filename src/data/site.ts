@@ -64,16 +64,16 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO_STATS = [
-  "686 happy streamers",
+  "807+ happy streamers",
   "⚡ Instant download",
-  "4.9★ from 91 reviews",
+  "4.9★ from 108 reviews",
   "🎮 OBS & Streamlabs ready",
-  "🌍 122 unique packs",
+  "🌍 127 unique packs",
 ] as const;
 
 export const TRUST_ITEMS = [
-  "⭐ Star Seller",
-  "91 Reviews · 4.9 avg",
+  "⭐ Etsy Star Seller",
+  "108 Reviews · 4.9 avg",
   "⚡ Instant secure download",
   "OBS & Streamlabs",
   ".WEBM + .PNG included",
@@ -137,33 +137,33 @@ export const TUTORIALS = [
 
 export const FAQ: FaqEntry[] = [
   {
+    question: "How do I get my files?",
+    answer:
+      "Instant digital download — nothing physical ships. Your purchase delivers a PDF containing a direct link to a Google Drive folder with the complete package: animated .WEBM files (transparent, loop-ready) plus .PNG versions.",
+  },
+  {
     question: "Will these work with OBS and Streamlabs?",
     answer:
-      "Yes. Every animated screen ships as a transparent .WEBM you can drop into OBS Studio, Streamlabs, or StreamElements as a browser/media source. Static .PNG versions are included too for tools that need them.",
+      "Yes. Every animated screen ships as a transparent .WEBM you can drop into OBS Studio, Streamlabs, or StreamElements as a browser/media source. If Streamlabs gives you upload trouble, add the files manually the same way you would in OBS — they're standard .WEBM and .PNG.",
   },
   {
     question: "Which platforms and sizes are supported?",
     answer:
-      "All four major platforms: Twitch, YouTube, Kick, and TikTok. The assets are sized and exported so they look crisp on each platform's layout.",
+      "Twitch, Kick, YouTube, and TikTok Live. Twitch/Kick packs are 16:9 (1920×1080) and TikTok packs are vertical 9:16 (1080×1920), all at 60fps, so they look crisp on each platform's layout.",
   },
   {
-    question: "Can I request changes to a pack?",
+    question: "Can I request redesigns or extra assets?",
     answer:
-      "Small tweaks can often be arranged — reach out and ask. For full personalization (your own character, palette, and emotes), grab a custom commission.",
+      "Yes — message us! Small tweaks are often free, and bigger additions are usually a small fee. For full personalization (your own character, palette, and emotes), grab a custom commission.",
   },
   {
     question: "What's your refund policy?",
     answer:
-      "Because these are instant-download digital goods, all sales are final once the files have been downloaded. If you hit a technical problem, contact us and we'll fix it or make it right.",
+      "Because these are instant-download digital goods, orders can't be refunded — but we'll always help fix any issue. Contact us and we'll make it right.",
   },
   {
     question: "Do you take custom commissions?",
     answer:
-      "Yes! Custom packs start at $601 and include your own character or mascot, a custom palette, every screen and alert, custom emotes, a sub badge set, and matching panels and overlays.",
-  },
-  {
-    question: "I lost my download link — what now?",
-    answer:
-      "No problem. Your links are in the confirmation email we sent at purchase. If they've expired, just contact us with your order email and we'll happily re-issue them.",
+      "Yes! The Custom Full Pack Bundle is $99.87 right now (usually $399.50) and includes your own character or mascot, a custom palette, every screen and alert, custom emotes, a sub badge set, and matching panels and overlays.",
   },
 ];

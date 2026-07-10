@@ -12,6 +12,8 @@ import { getProductBySlug, getAllProducts } from "@/lib/products";
 import { formatCents } from "@/lib/money";
 import { COMPATIBILITY, BUY_ON_ETSY, SITE } from "@/data/site";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { WishlistButton } from "@/components/commerce/WishlistButton";
+import { ShareButton } from "@/components/commerce/ShareButton";
 
 // Prerender every product page as static HTML at build time (great for SEO and
 // crawl coverage). The catalog is static data, so no database is needed.
@@ -73,6 +75,10 @@ export default async function ProductDetailPage({
       : all.filter((p) => p.slug !== product.slug).slice(0, 3);
 
   const canonical = `${SITE.url}/shop/${product.slug}`;
+  const saleOff =
+    product.compareAtCents && product.compareAtCents > product.priceCents
+      ? Math.round(100 - (product.priceCents / product.compareAtCents) * 100)
+      : null;
   const productLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -124,34 +130,63 @@ export default async function ProductDetailPage({
 
               {/* Details */}
               <div>
-                {product.bestseller && (
-                  <span className="inline-flex items-center gap-1 rounded-full bg-accent-gradient px-3 py-1 text-xs font-bold text-base shadow-glow">
-                    ★ Bestseller
-                  </span>
-                )}
+                <span className="flex flex-wrap items-center gap-2">
+                  {product.bestseller && (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-accent-gradient px-3 py-1 text-xs font-bold text-base shadow-glow">
+                      ★ Bestseller
+                    </span>
+                  )}
+                  {product.isNew && (
+                    <span className="rounded-full bg-pink px-3 py-1 text-xs font-bold text-base">
+                      ✦ New
+                    </span>
+                  )}
+                  {saleOff !== null && (
+                    <span className="rounded-full bg-warm px-3 py-1 text-xs font-bold text-base">
+                      -{saleOff}% right now
+                    </span>
+                  )}
+                </span>
                 <h1 className="mt-3 text-[clamp(1.9rem,4vw,2.8rem)] font-extrabold leading-tight text-heading">
                   {product.name}
                 </h1>
                 <p className="mt-4 text-lg text-body">{product.description}</p>
 
                 <div className="mt-6 flex items-baseline gap-3">
-                  <span className="text-3xl font-extrabold text-lavender">
+                  <span className="text-3xl font-extrabold text-warm">
                     {formatCents(product.priceCents, product.currency)}
                   </span>
+                  {product.compareAtCents && (
+                    <span className="text-lg font-semibold text-muted line-through">
+                      {formatCents(product.compareAtCents, product.currency)}
+                    </span>
+                  )}
                   <span className="text-sm text-muted">one-time · yours forever</span>
                 </div>
 
-                <div className="mt-6">
-                  <AddToCartButtons
-                    item={{
-                      slug: product.slug,
-                      name: product.name,
-                      priceCents: product.priceCents,
-                      image: product.image,
-                      currency: product.currency,
-                    }}
-                    variant="detail"
-                    etsyUrl={product.etsyUrl}
+                <div className="mt-6 flex items-start gap-2">
+                  <div className="flex-1">
+                    <AddToCartButtons
+                      item={{
+                        slug: product.slug,
+                        name: product.name,
+                        priceCents: product.priceCents,
+                        image: product.image,
+                        currency: product.currency,
+                      }}
+                      variant="detail"
+                      etsyUrl={product.etsyUrl}
+                    />
+                  </div>
+                  <WishlistButton
+                    slug={product.slug}
+                    name={product.name}
+                    variant="inline"
+                  />
+                  <ShareButton
+                    slug={product.slug}
+                    name={product.name}
+                    image={product.image}
                   />
                 </div>
 
@@ -204,6 +239,35 @@ export default async function ProductDetailPage({
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* Delivery, setup & license */}
+                <div className="mt-6 flex flex-col gap-2">
+                  <details className="group rounded-2xl border border-subtle bg-surface/40 p-4 open:bg-surface/60">
+                    <summary className="cursor-pointer list-none text-sm font-bold text-heading">
+                      📦 How delivery works
+                    </summary>
+                    <p className="mt-3 text-sm text-body">
+                      Instant digital download — nothing physical ships. Your
+                      purchase delivers a PDF containing a direct link to a
+                      Google Drive folder with the complete package (animated
+                      .WEBM with transparency, plus .PNG versions), ready to
+                      drop into OBS, Streamlabs or StreamElements.
+                    </p>
+                  </details>
+                  <details className="group rounded-2xl border border-subtle bg-surface/40 p-4 open:bg-surface/60">
+                    <summary className="cursor-pointer list-none text-sm font-bold text-heading">
+                      📜 License &amp; refunds
+                    </summary>
+                    <p className="mt-3 text-sm text-body">
+                      Licensed for personal use on your own channels — resale or
+                      redistribution isn&apos;t allowed. Because these are
+                      digital products, orders can&apos;t be refunded, but
+                      we&apos;ll always help fix any issue — message us and
+                      we&apos;ll make it right. Small tweak requests are often
+                      free.
+                    </p>
+                  </details>
                 </div>
               </div>
             </div>

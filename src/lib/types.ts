@@ -21,12 +21,15 @@ export interface Pack {
   name: string;
   category: PackCategory;
   price: string;
+  /** Original price for sale framing (strikethrough + % badge). */
+  compareAt?: string;
   description: string;
   image: string;
   video?: string;
   etsy: string;
   features: PackFeature[];
   bestseller?: boolean;
+  isNew?: boolean;
 }
 
 export interface Review {
