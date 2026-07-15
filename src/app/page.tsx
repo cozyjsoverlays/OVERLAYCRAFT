@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
+import { PackArt } from "@/components/PackArt";
 import { CategoryTile } from "@/components/CategoryTile";
 import { ReviewCard } from "@/components/ReviewCard";
 import { FAQAccordion } from "@/components/FAQAccordion";
@@ -78,12 +79,7 @@ export default function HomePage() {
               href={productPath(bestseller)}
               className="block overflow-hidden rounded-2xl border border-veil shadow-volt-soft"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={bestseller.thumbnails[0]}
-                alt={bestseller.title}
-                className="aspect-video w-full bg-ink2 object-cover"
-              />
+              <PackArt product={bestseller} className="aspect-video w-full bg-ink2" />
             </Link>
           </Reveal>
           <Reveal index={1}>
@@ -136,10 +132,19 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/media/custom/before.jpg" alt="Stream before a custom overlay" className="aspect-video rounded-xl border border-veil bg-ink object-cover" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/media/custom/after.jpg" alt="Stream after a custom overlay" className="aspect-video rounded-xl border border-lilac/40 bg-ink2 object-cover shadow-volt-soft" />
+              {/* Drop real before/after client work at /media/custom/ and swap back to <img> */}
+              <div className="grid aspect-video place-items-center rounded-xl border border-veil bg-gradient-to-br from-ink to-abyss/25">
+                <div className="text-center">
+                  <span className="text-3xl" aria-hidden>🖥</span>
+                  <p className="mt-1 font-display text-[10px] uppercase tracking-[0.25em] text-mist">Before</p>
+                </div>
+              </div>
+              <div className="grid aspect-video place-items-center rounded-xl border border-volt/40 bg-gradient-to-br from-lightPink to-abyss/25 shadow-volt-soft">
+                <div className="text-center">
+                  <span className="text-3xl" aria-hidden>✨</span>
+                  <p className="mt-1 font-display text-[10px] uppercase tracking-[0.25em] text-volt">After</p>
+                </div>
+              </div>
             </div>
           </div>
         </Reveal>

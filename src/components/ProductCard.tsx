@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Product } from "@/lib/types";
-import { discountPercent, formatPrice, productAlt, productPath } from "@/lib/utils";
+import { discountPercent, formatPrice, hasRealImage, productAlt, productPath } from "@/lib/utils";
 import { VideoPreview } from "./VideoPreview";
+import { PackArt } from "./PackArt";
 import { SaveButton } from "./SaveButton";
 import { ShareButton } from "./ShareButton";
 import { EtsyLink } from "./EtsyLink";
@@ -14,12 +15,16 @@ export function ProductCard({ product }: { product: Product }) {
     <div className="group relative overflow-hidden rounded-2xl border border-veil bg-ink2/70 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-lilac/50 hover:shadow-volt-soft">
       <Link href={path} className="block" aria-label={product.etsyTitle ?? product.title}>
         <div className="relative aspect-video">
-          <VideoPreview
-            src={product.previewVideo}
-            poster={product.thumbnails[0]}
-            alt={productAlt(product, 0)}
-            className="h-full w-full"
-          />
+          {hasRealImage(product) ? (
+            <VideoPreview
+              src={product.previewVideo}
+              poster={product.thumbnails[0]}
+              alt={productAlt(product, 0)}
+              className="h-full w-full"
+            />
+          ) : (
+            <PackArt product={product} className="absolute inset-0 h-full w-full" />
+          )}
           {/* Badges */}
           <div className="absolute left-3 top-3 flex gap-2">
             {product.newDrop && (

@@ -36,6 +36,16 @@ export function productAlt(product: Product, index: number): string {
   return `${base} — ${screen}`;
 }
 
+/**
+ * True when the product has real cover art (Etsy CDN or any absolute URL).
+ * Products still on `/media/products/...` placeholder paths have no files
+ * behind them yet, so callers should render PackArt's designed placeholder
+ * instead of a broken <img>.
+ */
+export function hasRealImage(product: Product): boolean {
+  return Boolean(product.thumbnails[0]?.startsWith("http"));
+}
+
 export function formatPrice(value: number): string {
   return `$${value.toFixed(2)}`;
 }

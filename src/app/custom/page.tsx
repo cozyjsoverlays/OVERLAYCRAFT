@@ -65,17 +65,25 @@ export default function CustomPage() {
         </div>
       </div>
 
-      {/* Showcase — drop real before/after client work into /media/custom/ */}
+      {/* Showcase — drop real client work into /media/custom/ and swap back to <img> */}
       <Reveal className="mt-14">
         <div className="grid gap-4 md:grid-cols-3">
-          {["showcase-1.jpg", "showcase-2.jpg", "showcase-3.jpg"].map((img, i) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              key={img}
-              src={`/media/custom/${img}`}
-              alt={`Custom overlay commission example ${i + 1}`}
-              className="aspect-video w-full rounded-2xl border border-veil bg-ink2 object-cover"
-            />
+          {[
+            { glyph: "🐉", label: "Full brand — dragon world" },
+            { glyph: "🌸", label: "Sakura vtuber identity" },
+            { glyph: "🪶", label: "Gothic raven rebrand" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="grid aspect-video w-full place-items-center rounded-2xl border border-veil bg-gradient-to-br from-lightPink via-ink to-abyss/25"
+            >
+              <div className="text-center">
+                <span className="text-4xl" aria-hidden>{item.glyph}</span>
+                <p className="mt-2 px-4 font-display text-[10px] uppercase tracking-[0.25em] text-mist">
+                  {item.label}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </Reveal>
