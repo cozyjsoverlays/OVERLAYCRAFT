@@ -12,6 +12,18 @@ export interface Product {
   previewVideo: string;
   thumbnails: string[];
   description: string;
+  /**
+   * Full Etsy listing title (the long, keyword-loaded one). Used in <title>,
+   * OG, JSON-LD `name`. Falls back to `title` when absent.
+   */
+  etsyTitle?: string;
+  /**
+   * Full Etsy description body. When present, replaces the visible short
+   * `description` on the product page (multi-paragraph, preserved).
+   */
+  etsyDescription?: string;
+  /** Per-image alt-text override; falls back to productAlt() when absent. */
+  imageAlts?: string[];
   includes: string[];
   compatibleWith: string[];
   tags: string[];

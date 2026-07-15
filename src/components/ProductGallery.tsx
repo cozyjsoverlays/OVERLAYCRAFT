@@ -1,19 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import type { Product } from "@/lib/types";
+import { productAlt } from "@/lib/utils";
 import { VideoPreview } from "./VideoPreview";
 
-export function ProductGallery({
-  video,
-  thumbnails,
-  title,
-}: {
-  video: string;
-  thumbnails: string[];
-  title: string;
-}) {
+export function ProductGallery({ product }: { product: Product }) {
   // Index 0 = the animated preview; the rest show individual screens.
   const [selected, setSelected] = useState(0);
+  const { previewVideo: video, thumbnails } = product;
 
   return (
     <div>
@@ -22,7 +17,7 @@ export function ProductGallery({
           <VideoPreview
             src={video}
             poster={thumbnails[0]}
-            alt={`${title} — animated preview`}
+            alt={productAlt(product, 0)}
             autoplay
             className="aspect-video w-full"
           />
@@ -30,7 +25,7 @@ export function ProductGallery({
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={thumbnails[selected]}
-            alt={`${title} — screen ${selected + 1}`}
+            alt={productAlt(product, selected)}
             className="aspect-video w-full bg-ink2 object-cover"
           />
         )}
@@ -49,7 +44,7 @@ export function ProductGallery({
             }`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={thumb} alt="" className="aspect-video w-full bg-ink2 object-cover" />
+            <img src={thumb} alt={productAlt(product, i)} className="aspect-video w-full bg-ink2 object-cover" />
             {i === 0 && (
               <span className="absolute inset-0 grid place-items-center text-lg text-blush" aria-hidden>
                 ▶

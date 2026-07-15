@@ -1,6 +1,11 @@
 import { ExternalLink } from "lucide-react";
+import { etsyLink } from "@/lib/utils";
 
-/** Secondary trust-channel link to the listing's real Etsy page. */
+/**
+ * Secondary trust-channel link to the listing's Etsy page. Callers pass the
+ * canonical www.etsy.com URL; every outbound href is rewritten through
+ * vectorkingstudio.etsy.com so the visit credits the shop.
+ */
 export function EtsyLink({
   etsyUrl,
   variant = "button",
@@ -10,10 +15,11 @@ export function EtsyLink({
   variant?: "button" | "text";
   className?: string;
 }) {
+  const href = etsyLink(etsyUrl);
   if (variant === "text") {
     return (
       <a
-        href={etsyUrl}
+        href={href}
         target="_blank"
         rel="noopener noreferrer"
         className={`inline-flex items-center gap-1 text-sm text-lilac underline-offset-4 hover:underline ${className}`}
@@ -24,7 +30,7 @@ export function EtsyLink({
   }
   return (
     <a
-      href={etsyUrl}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center justify-center gap-2 rounded-xl border border-veil bg-ink2/70 px-5 py-3 font-body text-sm text-lilac transition-colors hover:border-lilac/60 hover:text-blush ${className}`}

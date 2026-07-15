@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Share2 } from "lucide-react";
 import { SITE } from "@/data/site";
-import { absUrl } from "@/lib/utils";
+import { absUrl, etsyLink } from "@/lib/utils";
 
 interface ShareButtonProps {
   title: string;
@@ -103,7 +103,7 @@ export function ShareButton({ title, path, etsyUrl, thumbnail, className = "" }:
           ))}
           <div className="my-1 border-t border-veil" />
           <a
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(etsyUrl)}&text=${encodeURIComponent(title)}`}
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(etsyLink(etsyUrl))}&text=${encodeURIComponent(title)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="block rounded-lg px-3 py-2 text-xs text-mist hover:bg-abyss/40 hover:text-lilac"

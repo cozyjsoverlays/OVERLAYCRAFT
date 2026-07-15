@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/lib/types";
-import { discountPercent, formatPrice, productPath } from "@/lib/utils";
+import { discountPercent, formatPrice, productAlt, productPath } from "@/lib/utils";
 import { VideoPreview } from "./VideoPreview";
 import { SaveButton } from "./SaveButton";
 import { ShareButton } from "./ShareButton";
@@ -12,12 +12,12 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-veil bg-ink2/70 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-lilac/50 hover:shadow-volt-soft">
-      <Link href={path} className="block" aria-label={product.title}>
+      <Link href={path} className="block" aria-label={product.etsyTitle ?? product.title}>
         <div className="relative aspect-video">
           <VideoPreview
             src={product.previewVideo}
             poster={product.thumbnails[0]}
-            alt={product.title}
+            alt={productAlt(product, 0)}
             className="h-full w-full"
           />
           {/* Badges */}

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Check, Download, Monitor } from "lucide-react";
 import { PRODUCTS, getProduct, relatedProducts } from "@/data/products";
 import { REVIEWS, SITE } from "@/data/site";
-import { absUrl, discountPercent, formatPrice, currentPrice, productPath } from "@/lib/utils";
+import { absUrl, discountPercent, etsyLink, formatPrice, currentPrice, productPath } from "@/lib/utils";
 import { ProductGallery } from "@/components/ProductGallery";
 import { ProductCard } from "@/components/ProductCard";
 import { BuyButton } from "@/components/BuyButton";
@@ -28,14 +28,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProduct(slug);
   if (!product) return {};
   const price = formatPrice(currentPrice(product));
+  const seoTitle = product.etsyTitle ?? product.title;
+  const seoDesc = product.etsyDescription ?? product.description;
+  // If the source text is long enough it stands alone; otherwise append the
+  // stock keyword-tail so meta descriptions never come out empty of context.
+  const metaDesc =
+    seoDesc.length >= 140
+      ? seoDesc.slice(0, 155)
+      : `${seoDesc.slice(0, 120)} Animated stream package for Twitch, YouTube & Kick. Instant download, OBS-ready.`;
   return {
-    title: `${product.title} — ${price} Instant Download`,
-    description: `${product.description.slice(0, 120)} Animated stream package for Twitch, YouTube & Kick. Instant download, OBS-ready.`,
+    title: `${seoTitle} — ${price} Instant Download`,
+    description: metaDesc,
+    keywords: product.tags,
     alternates: { canonical: productPath(product) },
     openGraph: {
-      title: product.title,
-      description: product.description,
-      images: [product.thumbnails[0]],
+      title: seoTitle,
+      description: metaDesc,
+      images: [absUrl(product.thumbnails[0])],
       type: "website",
     },
   };
@@ -60,11 +69,13 @@ export default async function ProductPage({ params }: Props) {
     ? REVIEWS.filter((r) => r.pack === product.title.split(" Overlay")[0])
     : REVIEWS.slice(0, 2);
 
-  const jsonLd = {
+  const seoTitle = product.etsyTitle ?? product.title;
+  const visibleDescription = product.etsyDescription ?? product.description;
+  const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: product.title,
-    description: product.description,
+    name: seoTitle,
+    description: visibleDescription,
     image: absUrl(product.thumbnails[0]),
     url: `${SITE.url}${productPath(product)}`,
     brand: { "@type": "Brand", name: SITE.name },
@@ -81,6 +92,9 @@ export default async function ProductPage({ params }: Props) {
       reviewCount: "193",
     },
   };
+  if (product.etsyTitle && product.etsyTitle !== product.title) {
+    jsonLd.alternateName = product.title;
+  }
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
@@ -102,11 +116,7 @@ export default async function ProductPage({ params }: Props) {
 
       <div className="grid gap-10 lg:grid-cols-2">
         {/* Left: gallery */}
-        <ProductGallery
-          video={product.previewVideo}
-          thumbnails={product.thumbnails}
-          title={product.title}
-        />
+        <ProductGallery product={product} />
 
         {/* Right: buy panel */}
         <div>
@@ -125,6 +135,9 @@ export default async function ProductPage({ params }: Props) {
           <h1 className="mt-4 font-display text-3xl leading-tight text-blush md:text-4xl">
             {product.title}
           </h1>
+          {product.etsyTitle && product.etsyTitle !== product.title && (
+            <span className="sr-only">{product.etsyTitle}</span>
+          )}
 
           <div className="mt-3 flex items-center gap-3">
             <Stars rating={4.9} />
@@ -138,7 +151,9 @@ export default async function ProductPage({ params }: Props) {
             )}
           </div>
 
-          <p className="mt-5 leading-relaxed text-blush/85">{product.description}</p>
+          <div className="mt-5 whitespace-pre-line leading-relaxed text-blush/85">
+            {visibleDescription}
+          </div>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <BuyButton product={product} className="flex-1" />
@@ -154,7 +169,7 @@ export default async function ProductPage({ params }: Props) {
               thumbnail={product.thumbnails[0]}
             />
             <a
-              href={product.etsyUrl}
+              href={etsyLink(product.etsyUrl)}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-lilac underline-offset-4 hover:underline"
@@ -219,6 +234,25 @@ export default async function ProductPage({ params }: Props) {
           ))}
         </aside>
       </div>
+
+      {/* Keyword tags — indexable per-listing pills */}
+      {product.tags.length > 0 && (
+        <section className="mt-14" aria-label="Keywords">
+          <h2 className="font-display text-xs uppercase tracking-[0.3em] text-lilac">
+            Also known as
+          </h2>
+          <ul className="mt-4 flex flex-wrap gap-1.5">
+            {product.tags.map((t) => (
+              <li
+                key={t}
+                className="rounded-full bg-abyss/20 px-2.5 py-1 text-[11px] text-lilac"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Related */}
       <section className="mt-20">
