@@ -4,8 +4,8 @@ export function Logo({ className = "h-8 w-8" }: { className?: string }) {
     <svg viewBox="0 0 40 40" className={className} aria-hidden focusable="false">
       <defs>
         <linearGradient id="oc-grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#E9B3FB" />
-          <stop offset="100%" stopColor="#6F00FF" />
+          <stop offset="0%" stopColor="#F02C97" />
+          <stop offset="100%" stopColor="#FF3FA5" />
         </linearGradient>
       </defs>
       {/* Crescent O */}
@@ -23,8 +23,8 @@ export function Logo({ className = "h-8 w-8" }: { className?: string }) {
         strokeLinecap="round"
       />
       {/* Volt spark at the crescent tip */}
-      <circle cx="31" cy="8" r="2.4" fill="#6F00FF" />
-      <circle cx="31" cy="8" r="4.5" fill="#6F00FF" opacity="0.25" />
+      <circle cx="31" cy="8" r="2.4" fill="#FF3FA5" />
+      <circle cx="31" cy="8" r="4.5" fill="#FF3FA5" opacity="0.25" />
     </svg>
   );
 }

@@ -9,7 +9,7 @@ import { currentPrice, formatPrice } from "@/lib/utils";
  * exists — see README).
  */
 export function BuyButton({ product, className = "" }: { product: Product; className?: string }) {
-  const cls = `inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] ${className}`;
+  const cls = `inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] ${className}`;
 
   if (product.customCommission) {
     return (

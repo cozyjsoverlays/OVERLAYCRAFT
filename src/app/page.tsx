@@ -87,7 +87,7 @@ export default function HomePage() {
             </Link>
           </Reveal>
           <Reveal index={1}>
-            <span className="rounded-full bg-lilac px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-abyss">
+            <span className="rounded-full bg-lilac px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">
               Bestseller
             </span>
             <h2 className="mt-4 font-display text-3xl text-blush md:text-4xl">{bestseller.title}</h2>
@@ -101,7 +101,7 @@ export default function HomePage() {
             </figure>
             <Link
               href={productPath(bestseller)}
-              className="mt-7 inline-block rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
+              className="mt-7 inline-block rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
             >
               See the pack
             </Link>
@@ -130,7 +130,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/custom"
-                className="mt-7 inline-block rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
+                className="mt-7 inline-block rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
               >
                 Get a Custom Design
               </Link>

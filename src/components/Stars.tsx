@@ -9,7 +9,7 @@ export function Stars({ rating, size = 14 }: { rating: number; size?: number }) 
           key={i}
           size={size}
           aria-hidden
-          className={i < Math.round(rating) ? "fill-lilac text-lilac" : "text-veil"}
+          className={i < Math.round(rating) ? "fill-softYellow text-softYellow" : "text-veil"}
         />
       ))}
     </div>

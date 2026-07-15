@@ -86,7 +86,7 @@ export function IntakeForm() {
       <div className="md:col-span-2">
         <button
           type="submit"
-          className="w-full rounded-xl bg-volt px-6 py-3.5 font-body text-sm font-medium text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] md:w-auto"
+          className="w-full rounded-xl bg-volt px-6 py-3.5 font-body text-sm font-medium text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] md:w-auto"
         >
           Send the brief
         </button>

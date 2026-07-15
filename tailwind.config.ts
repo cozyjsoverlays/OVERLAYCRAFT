@@ -5,18 +5,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Core brand (owner-locked)
-        abyss: "#3B0270", // brand deep violet — glows, tints, gradients, hovers
-        volt: "#6F00FF", // PRIMARY accent — CTAs, prices, active states, badges ONLY
-        lilac: "#E9B3FB", // soft accent — links, hearts, tags, highlights
-        blush: "#FFF1F1", // text/foreground on dark
+        // ── Cute / Modern / Friendly palette ────────────────────────────────
+        // Token names kept stable so components don't need per-file rewrites;
+        // values pivoted from the old Violet Arcana palette to pastel-pink.
 
-        // Derived support shades (mixed from the core 4 only)
-        ink: "#14002B", // page background
-        ink2: "#1F0440", // raised cards / surfaces
-        veil: "rgba(59, 2, 112, 0.6)", // borders & dividers
-        mist: "#C9A9E4", // secondary text
-        voltDim: "#5500C4", // volt hover/pressed
+        // Surfaces
+        ink: "#F7DDF4", // page background — pastel pink
+        ink2: "#FFFFFF", // raised cards / surfaces — white
+        lightPink: "#FBE9F8", // very light pink — inner sections / hovers
+
+        // Accents (the "wow" colors)
+        volt: "#FF3FA5", // PRIMARY — hot pink. CTAs, prices, active states.
+        voltDim: "#F02C97", // volt hover/pressed — dark pink
+        lilac: "#F02C97", // secondary accent — dark pink for links/tags/labels
+        abyss: "#C9B0C9", // atmospheric tint — dusty lavender (soft washes)
+
+        // Text
+        blush: "#1A1A1A", // primary text — rich black
+        mist: "#5F5F68", // secondary text — dark gray
+        muted: "#9C9CA6", // light gray text
+
+        // Structure
+        veil: "#ECECF1", // borders & dividers — soft gray
+        iconBlack: "#202020", // charcoal for icon strokes
+
+        // Additional accents (used sparingly)
+        softYellow: "#F7E46D", // stars / ratings, small highlights
+        softRed: "#F56A6A", // hearts (love/wishlist)
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
@@ -24,16 +39,16 @@ const config: Config = {
         mono: ["var(--font-mono)", "monospace"],
       },
       boxShadow: {
-        volt: "0 0 24px rgba(111, 0, 255, 0.45)",
-        "volt-soft": "0 0 40px rgba(111, 0, 255, 0.25)",
+        volt: "0 8px 24px rgba(255, 63, 165, 0.28)",
+        "volt-soft": "0 12px 40px rgba(255, 63, 165, 0.15)",
+        soft: "0 4px 20px rgba(0, 0, 0, 0.08)",
       },
       backgroundImage: {
         "hero-glow":
-          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(59,2,112,0.65), transparent)",
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,255,255,0.7), transparent)",
         "volt-glow":
-          "radial-gradient(ellipse 40% 30% at 50% 20%, rgba(111,0,255,0.05), transparent)",
-        "cta-gradient":
-          "linear-gradient(135deg, #6F00FF 0%, #3B0270 55%, #14002B 100%)",
+          "radial-gradient(ellipse 40% 30% at 50% 20%, rgba(255,63,165,0.08), transparent)",
+        "cta-gradient": "linear-gradient(135deg, #FF3FA5 0%, #F02C97 100%)",
       },
       keyframes: {
         marquee: {

@@ -48,7 +48,7 @@ export default function AboutPage() {
       <div className="mt-10 flex flex-wrap gap-3">
         <Link
           href="/overlays"
-          className="rounded-xl bg-volt px-6 py-3 font-body text-sm font-medium text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
+          className="rounded-xl bg-volt px-6 py-3 font-body text-sm font-medium text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
         >
           Browse the catalog
         </Link>

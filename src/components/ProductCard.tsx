@@ -23,17 +23,17 @@ export function ProductCard({ product }: { product: Product }) {
           {/* Badges */}
           <div className="absolute left-3 top-3 flex gap-2">
             {product.newDrop && (
-              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-blush">
+              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">
                 New Drop
               </span>
             )}
             {product.bestseller && (
-              <span className="rounded-full bg-lilac px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-abyss">
+              <span className="rounded-full bg-lilac px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">
                 Bestseller
               </span>
             )}
             {discount !== null && (
-              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-blush">
+              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">
                 -{discount}%
               </span>
             )}

@@ -22,7 +22,7 @@ export default function SavedPage() {
           </p>
           <Link
             href="/overlays"
-            className="mt-6 inline-block rounded-xl bg-volt px-6 py-3 font-body text-sm font-medium text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
+            className="mt-6 inline-block rounded-xl bg-volt px-6 py-3 font-body text-sm font-medium text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
           >
             Browse Overlays
           </Link>

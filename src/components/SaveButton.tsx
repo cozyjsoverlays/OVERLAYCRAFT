@@ -27,7 +27,7 @@ export function SaveButton({
     >
       <Heart
         size={16}
-        className={saved ? "fill-lilac text-lilac" : "text-lilac"}
+        className={saved ? "fill-softRed text-softRed" : "text-softRed"}
         aria-hidden
       />
     </button>

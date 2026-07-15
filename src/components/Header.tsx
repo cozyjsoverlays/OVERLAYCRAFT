@@ -48,14 +48,14 @@ export function Header() {
           >
             <Heart size={16} aria-hidden />
             {saved.length > 0 && (
-              <span className="absolute -right-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-volt px-1 font-mono text-[10px] text-blush">
+              <span className="absolute -right-1 -top-1 grid h-4 min-w-4 place-items-center rounded-full bg-volt px-1 font-mono text-[10px] text-white">
                 {saved.length}
               </span>
             )}
           </Link>
           <Link
             href="/overlays"
-            className="hidden rounded-xl bg-volt px-4 py-2 font-body text-sm font-medium text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] md:block"
+            className="hidden rounded-xl bg-volt px-4 py-2 font-body text-sm font-medium text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] md:block"
           >
             Browse Overlays
           </Link>
@@ -86,7 +86,7 @@ export function Header() {
           <Link
             href="/overlays"
             onClick={() => setOpen(false)}
-            className="mt-3 block rounded-xl bg-volt px-4 py-2.5 text-center font-body text-sm font-medium text-blush"
+            className="mt-3 block rounded-xl bg-volt px-4 py-2.5 text-center font-body text-sm font-medium text-white"
           >
             Browse Overlays
           </Link>

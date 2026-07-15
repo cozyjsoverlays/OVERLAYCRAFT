@@ -13,7 +13,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/overlays"
-          className="mt-8 inline-block rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
+          className="mt-8 inline-block rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
         >
           Browse Overlays
         </Link>

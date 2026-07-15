@@ -65,7 +65,7 @@ export function Footer() {
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-xl bg-volt px-5 py-3 font-body text-sm font-medium text-blush shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
+                className="shrink-0 rounded-xl bg-volt px-5 py-3 font-body text-sm font-medium text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97]"
               >
                 Join
               </button>

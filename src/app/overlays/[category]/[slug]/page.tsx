@@ -122,13 +122,13 @@ export default async function ProductPage({ params }: Props) {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             {product.newDrop && (
-              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-blush">New Drop</span>
+              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">New Drop</span>
             )}
             {product.bestseller && (
-              <span className="rounded-full bg-lilac px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-abyss">Bestseller</span>
+              <span className="rounded-full bg-lilac px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">Bestseller</span>
             )}
             {discount !== null && (
-              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-blush">-{discount}% OFF</span>
+              <span className="rounded-full bg-volt px-2.5 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">-{discount}% OFF</span>
             )}
           </div>
 

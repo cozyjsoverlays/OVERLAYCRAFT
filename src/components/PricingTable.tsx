@@ -38,7 +38,7 @@ export function PricingTable() {
           }`}
         >
           {tier.highlight && (
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-volt px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-blush">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-volt px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-wider text-white">
               Most popular
             </span>
           )}
@@ -60,7 +60,7 @@ export function PricingTable() {
             href="#intake"
             className={`mt-7 rounded-xl px-5 py-3 text-center font-body text-sm font-medium transition-all active:scale-[0.97] ${
               tier.highlight
-                ? "bg-volt text-blush shadow-volt hover:bg-voltDim"
+                ? "bg-volt text-white shadow-volt hover:bg-voltDim"
                 : "border border-veil text-lilac hover:border-lilac/60"
             }`}
           >

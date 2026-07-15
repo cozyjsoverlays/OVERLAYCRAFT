@@ -83,7 +83,7 @@ export function ShopGrid({
               onClick={() => setSort(s.key)}
               className={`shrink-0 rounded-full px-3.5 py-1.5 font-body text-xs transition-colors ${
                 sort === s.key
-                  ? "bg-volt text-blush"
+                  ? "bg-volt text-white"
                   : "border border-veil text-mist hover:text-lilac"
               }`}
             >
