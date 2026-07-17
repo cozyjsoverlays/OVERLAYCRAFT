@@ -7,6 +7,7 @@ import { useState } from "react";
 import { NAV_LINKS, SITE } from "@/data/site";
 import { useWishlist } from "./WishlistProvider";
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const pathname = usePathname();
@@ -41,6 +42,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <Link
             href="/saved"
             aria-label={`Saved overlays (${saved.length})`}

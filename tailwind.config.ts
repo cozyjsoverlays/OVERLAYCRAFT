@@ -1,37 +1,42 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Colors are driven by CSS variables (space-separated RGB channels) defined in
+ * globals.css under :root (light) and .dark (dark). This lets a single class
+ * toggle on <html> flip the whole site — every bg-ink / text-blush / border-veil
+ * re-resolves — while keeping Tailwind's /opacity modifiers working.
+ */
+const token = (v: string) => `rgb(var(${v}) / <alpha-value>)`;
+
 const config: Config = {
+  darkMode: "class",
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        // ── Cute / Modern / Friendly palette ────────────────────────────────
-        // Token names kept stable so components don't need per-file rewrites;
-        // values pivoted from the old Violet Arcana palette to pastel-pink.
-
         // Surfaces
-        ink: "#F7DDF4", // page background — pastel pink
-        ink2: "#FFFFFF", // raised cards / surfaces — white
-        lightPink: "#FBE9F8", // very light pink — inner sections / hovers
+        ink: token("--ink"), // page background
+        ink2: token("--ink2"), // raised cards / surfaces
+        lightPink: token("--light-pink"), // inner sections / hovers
 
-        // Accents (the "wow" colors)
-        volt: "#FF3FA5", // PRIMARY — hot pink. CTAs, prices, active states.
-        voltDim: "#F02C97", // volt hover/pressed — dark pink
-        lilac: "#F02C97", // secondary accent — dark pink for links/tags/labels
-        abyss: "#C9B0C9", // atmospheric tint — dusty lavender (soft washes)
+        // Accents
+        volt: token("--volt"), // PRIMARY — hot pink CTAs, prices, active
+        voltDim: token("--volt-dim"), // volt hover/pressed
+        lilac: token("--lilac"), // secondary accent — links/tags/labels
+        abyss: token("--abyss"), // atmospheric tint for washes/gradients
 
         // Text
-        blush: "#1A1A1A", // primary text — rich black
-        mist: "#5F5F68", // secondary text — dark gray
-        muted: "#9C9CA6", // light gray text
+        blush: token("--blush"), // primary text
+        mist: token("--mist"), // secondary text
+        muted: token("--muted"), // light gray text
 
         // Structure
-        veil: "#ECECF1", // borders & dividers — soft gray
-        iconBlack: "#202020", // charcoal for icon strokes
+        veil: token("--veil"), // borders & dividers
+        iconBlack: token("--icon-black"),
 
-        // Additional accents (used sparingly)
-        softYellow: "#F7E46D", // stars / ratings, small highlights
-        softRed: "#F56A6A", // hearts (love/wishlist)
+        // Fixed-hue accents (same in both modes)
+        softYellow: token("--soft-yellow"), // stars
+        softRed: token("--soft-red"), // hearts
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
@@ -45,7 +50,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-glow":
-          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,255,255,0.7), transparent)",
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgb(var(--page-glow) / 0.6), transparent)",
         "volt-glow":
           "radial-gradient(ellipse 40% 30% at 50% 20%, rgba(255,63,165,0.08), transparent)",
         "cta-gradient": "linear-gradient(135deg, #FF3FA5 0%, #F02C97 100%)",
