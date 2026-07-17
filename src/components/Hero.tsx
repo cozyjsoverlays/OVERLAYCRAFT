@@ -62,9 +62,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.06 }}
           className="mx-auto mt-5 max-w-3xl font-display text-4xl leading-tight text-blush md:text-6xl"
         >
-          Cinematic Stream Overlays.{" "}
+          Your stream is about to feel like{" "}
           <span className="bg-gradient-to-r from-lilac to-volt bg-clip-text text-transparent">
-            Instant Download.
+            a different place.
           </span>
         </motion.h1>
         <motion.p
@@ -73,7 +73,8 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.12 }}
           className="mx-auto mt-6 max-w-xl font-body text-mist md:text-lg"
         >
-          Animated packages for Twitch, YouTube &amp; Kick — trusted by 1,300+ streamers.
+          Animated overlay worlds — ravens, dragons, sakura, cozy dens — in OBS
+          and live in 5 minutes. Instant download, trusted by 1,300+ streamers.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
