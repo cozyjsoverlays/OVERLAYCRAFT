@@ -1,46 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
+import { BLOG_POSTS } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Stream Design Notes from the Atelier",
+  title: "Blog — Stream Overlay Guides & OBS Setup Tutorials",
   description:
-    "Guides on stream overlays, OBS setup, channel branding and going live with style. New posts landing soon.",
+    "Practical guides from the OverlayCraft atelier: OBS overlay setup, Twitch graphic sizes, animated vs static overlays, Kick and VTuber setups.",
   alternates: { canonical: "/blog" },
 };
 
-/** SEO growth surface — swap PLANNED for real MDX/CMS posts when ready. */
-const PLANNED = [
-  "How to set up an animated overlay in OBS in under 5 minutes",
-  "Twitch overlay sizes & safe zones — the 2026 cheat sheet",
-  "Why animated overlays out-retain static ones (and when they don't)",
-  "Kick vs Twitch: does your overlay need to change?",
-];
-
 export default function BlogPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16 md:px-8">
-      <SectionHeading label="From the atelier" title="Blog" />
-      <p className="mt-6 leading-relaxed text-mist">
-        Stream design notes, OBS guides and channel-branding craft — being
-        written between commissions. First posts land soon; here&apos;s what&apos;s
-        on the drafting table:
+    <div className="mx-auto max-w-4xl px-4 py-16 md:px-8">
+      <SectionHeading label="From the atelier" title="Stream Design Guides" />
+      <p className="mt-6 max-w-2xl leading-relaxed text-mist">
+        OBS setup, overlay sizes, and the craft of making a channel feel like a
+        place — written between commissions by the studio behind 127 overlay
+        worlds.
       </p>
-      <ul className="mt-8 space-y-3">
-        {PLANNED.map((title) => (
-          <li key={title} className="rounded-xl border border-veil bg-ink2/70 px-5 py-4 text-sm text-blush/85">
-            {title}
-            <span className="ml-2 font-mono text-[10px] uppercase tracking-wider text-lilac">Soon</span>
-          </li>
+      <div className="mt-10 space-y-5">
+        {BLOG_POSTS.map((post) => (
+          <Link
+            key={post.slug}
+            href={`/blog/${post.slug}`}
+            className="block rounded-2xl border border-veil bg-ink2/70 p-6 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-lilac/50 hover:shadow-volt-soft md:p-8"
+          >
+            <p className="font-mono text-xs text-mist">
+              {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+            </p>
+            <h2 className="mt-2 font-display text-xl text-blush md:text-2xl">{post.title}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-mist">{post.excerpt}</p>
+            <span className="mt-4 inline-block text-sm font-medium text-lilac">Read the guide →</span>
+          </Link>
         ))}
-      </ul>
-      <p className="mt-8 text-sm text-mist">
-        Want these in your inbox?{" "}
-        <Link href="/#" className="text-lilac underline-offset-4 hover:underline">
-          Join the newsletter below
-        </Link>{" "}
-        — new drops included.
-      </p>
+      </div>
     </div>
   );
 }

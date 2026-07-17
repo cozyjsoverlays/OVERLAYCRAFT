@@ -4,6 +4,7 @@ import { SITE } from "@/data/site";
 export const dynamic = "force-static";
 import { CATEGORIES } from "@/data/categories";
 import { PRODUCTS } from "@/data/products";
+import { BLOG_POSTS } from "@/data/blog";
 import { productPath } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -27,5 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...categoryPages, ...productPages];
+  const blogPages = BLOG_POSTS.map((post) => ({
+    url: `${SITE.url}/blog/${post.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...categoryPages, ...productPages, ...blogPages];
 }
