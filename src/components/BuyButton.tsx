@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { Download } from "lucide-react";
 import type { Product } from "@/lib/types";
-import { currentPrice, formatPrice } from "@/lib/utils";
+import { currentPrice, etsyLink, formatPrice } from "@/lib/utils";
 
 /**
- * Primary CTA. Custom-commission listings route to /custom; everything else
- * opens the product's Lemon Squeezy hosted checkout (stubbed until the store
- * exists — see README).
+ * Primary CTA. Custom-commission listings route to /custom. Packs with a real
+ * Lemon Squeezy hosted-checkout URL sell on-site; until that store exists the
+ * button sells through the pack's Etsy listing (shop-attributed link) so the
+ * primary CTA is never dead.
  */
 export function BuyButton({ product, className = "" }: { product: Product; className?: string }) {
   const cls = `inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] ${className}`;
@@ -19,16 +20,12 @@ export function BuyButton({ product, className = "" }: { product: Product; class
     );
   }
 
-  const stubbed = product.lemonSqueezyUrl === "LEMONSQUEEZY_URL";
+  const hasCheckout =
+    product.lemonSqueezyUrl && product.lemonSqueezyUrl !== "LEMONSQUEEZY_URL";
+  const href = hasCheckout ? product.lemonSqueezyUrl : etsyLink(product.etsyUrl);
+
   return (
-    <a
-      href={stubbed ? "#" : product.lemonSqueezyUrl}
-      target={stubbed ? undefined : "_blank"}
-      rel={stubbed ? undefined : "noopener noreferrer"}
-      aria-disabled={stubbed}
-      title={stubbed ? "Checkout goes live soon — grab it on Etsy meanwhile" : undefined}
-      className={cls}
-    >
+    <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
       <Download size={16} aria-hidden />
       Buy Now — {formatPrice(currentPrice(product))}
     </a>
