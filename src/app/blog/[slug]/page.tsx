@@ -1,9 +1,27 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Fragment, type ReactNode } from "react";
 import { BLOG_POSTS, getPost } from "@/data/blog";
 import { SITE } from "@/data/site";
+import { getProduct } from "@/data/products";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { ProductCard } from "@/components/ProductCard";
+import { SectionHeading } from "@/components/SectionHeading";
+
+/** Render inline [label](/href) links inside body copy as keyword-rich anchors. */
+function withLinks(text: string): ReactNode {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (!m) return <Fragment key={i}>{part}</Fragment>;
+    return (
+      <Link key={i} href={m[2]} className="font-medium text-lilac underline-offset-4 hover:underline">
+        {m[1]}
+      </Link>
+    );
+  });
+}
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -93,14 +111,14 @@ export default async function BlogPostPage({ params }: Props) {
           <h2 className="font-display text-2xl text-blush">{s.h2}</h2>
           {s.paragraphs?.map((para) => (
             <p key={para.slice(0, 40)} className="mt-4 leading-relaxed text-blush/85">
-              {para}
+              {withLinks(para)}
             </p>
           ))}
           {s.list &&
             (s.ordered ? (
               <ol className="mt-4 list-decimal space-y-3 pl-5 marker:font-mono marker:text-volt">
                 {s.list.map((item) => (
-                  <li key={item.slice(0, 40)} className="leading-relaxed text-blush/85">{item}</li>
+                  <li key={item.slice(0, 40)} className="leading-relaxed text-blush/85">{withLinks(item)}</li>
                 ))}
               </ol>
             ) : (
@@ -108,7 +126,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {s.list.map((item) => (
                   <li key={item.slice(0, 40)} className="flex items-start gap-2.5 leading-relaxed text-blush/85">
                     <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rotate-45 bg-lilac" aria-hidden />
-                    {item}
+                    {withLinks(item)}
                   </li>
                 ))}
               </ul>
@@ -150,6 +168,22 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* Shoppable packs from this guide */}
+      {(() => {
+        const packs = post.featuredPacks.map(getProduct).filter(Boolean);
+        if (!packs.length) return null;
+        return (
+          <section className="mt-16">
+            <SectionHeading label="Gear up" title="Packs From This Guide" />
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {packs.map((p) => (
+                <ProductCard key={p!.slug} product={p!} />
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* CTA + internal links */}
       <div className="mt-14 rounded-2xl border border-veil bg-ink2/70 p-7 text-center backdrop-blur">
