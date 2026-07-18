@@ -43,6 +43,11 @@ export function VideoPreview({
         src={poster}
         alt={alt}
         loading="lazy"
+        onError={(e) => {
+          // Dead/blocked poster must never leave a broken-image box behind the
+          // video. Hide it; the ink2 background shows until the video plays.
+          (e.currentTarget as HTMLImageElement).style.visibility = "hidden";
+        }}
         className="absolute inset-0 h-full w-full object-cover"
       />
       {active && (

@@ -8,7 +8,7 @@ import { BLOG_POSTS } from "@/data/blog";
 import { productPath } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = ["", "/overlays", "/custom", "/about", "/faq", "/contact", "/blog", "/terms", "/privacy", "/license"].map(
+  const staticPages = ["", "/overlays", "/custom", "/tutorials", "/about", "/faq", "/contact", "/blog", "/terms", "/privacy", "/license"].map(
     (path) => ({
       url: `${SITE.url}${path}`,
       changeFrequency: "weekly" as const,

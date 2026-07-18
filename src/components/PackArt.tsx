@@ -1,12 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import type { Product } from "@/lib/types";
 import { getCategory } from "@/data/categories";
 import { hasRealImage, productAlt } from "@/lib/utils";
 
 /**
- * Product artwork with a designed fallback: renders the real cover image when
- * the product has one (Etsy CDN), otherwise a cute branded placeholder —
- * category glyph on a soft pink/lavender gradient — so no card ever shows a
- * broken image while the full catalog media is being collected.
+ * Product artwork with a designed fallback. Renders the real cover image when
+ * the product has one; if that image is missing OR fails to load at runtime
+ * (dead CDN URL, unsupported format, network error), it swaps to a cute branded
+ * placeholder — category glyph on a soft gradient. So no card ever shows a
+ * broken image and a bad asset can never break the page render.
  */
 export function PackArt({
   product,
@@ -17,13 +21,18 @@ export function PackArt({
   index?: number;
   className?: string;
 }) {
-  if (hasRealImage(product) && product.thumbnails[index]) {
+  const [failed, setFailed] = useState(false);
+  const src = product.thumbnails[index];
+  const showImage = hasRealImage(product) && src && !failed;
+
+  if (showImage) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={product.thumbnails[index]}
+        src={src}
         alt={productAlt(product, index)}
         loading="lazy"
+        onError={() => setFailed(true)}
         className={`object-cover ${className}`}
       />
     );

@@ -10,7 +10,8 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { Stars } from "@/components/Stars";
 import { CATEGORIES } from "@/data/categories";
 import { PRODUCTS, productsByCategory, getProduct } from "@/data/products";
-import { FAQ, HOW_IT_WORKS, REVIEWS, TRUST_BAR } from "@/data/site";
+import { FAQ, HOW_IT_WORKS, REVIEWS, TRUST_BAR, TUTORIALS } from "@/data/site";
+import { LiteYouTube } from "@/components/LiteYouTube";
 import { productPath } from "@/lib/utils";
 
 const TILE_CATEGORIES = ["crow", "wolf", "dragon", "cat", "japanese", "sakura", "cozy", "phoenix"];
@@ -168,6 +169,22 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Tutorial teaser */}
+      <section className="mx-auto max-w-4xl px-4 pb-20 md:px-8">
+        <Reveal>
+          <SectionHeading label="New to OBS? Start here" title="Watch the Setup Tutorial" center />
+        </Reveal>
+        <Reveal index={1} className="mt-10">
+          <LiteYouTube id={TUTORIALS[0].youtubeId} title={TUTORIALS[0].title} />
+          <p className="mt-4 text-center text-sm text-mist">
+            {TUTORIALS[0].title} ·{" "}
+            <Link href="/tutorials" className="text-lilac underline-offset-4 hover:underline">
+              More tutorials
+            </Link>
+          </p>
+        </Reveal>
       </section>
 
       {/* Reviews marquee */}

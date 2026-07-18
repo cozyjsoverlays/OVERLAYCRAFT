@@ -10,6 +10,26 @@ export const SITE = {
 } as const;
 
 export const ETSY_SHOP_URL = "https://www.etsy.com/shop/VectorKingStudio";
+export const YOUTUBE_URL = "https://www.youtube.com/@vectorkingstudio1";
+
+export interface Tutorial {
+  youtubeId: string;
+  title: string;
+  description: string;
+  /** Optional upload/publish date (ISO) for VideoObject schema. */
+  date?: string;
+}
+
+/** Real tutorials from the VectorKingStudio YouTube channel. */
+export const TUTORIALS: Tutorial[] = [
+  {
+    youtubeId: "ehUUSW3tZuU",
+    title: "How to Set Up OBS for Streaming — Overlays, Facecam, Screens & Free Overlays",
+    description:
+      "The full OBS walkthrough: install and configure OBS Studio, add your animated overlay screens, frame your facecam, set up your just-chatting scene, and drop in free overlays. If you've never touched OBS, start here — you'll be live by the end.",
+    date: "2026-01-01",
+  },
+];
 
 export const TRUST_BAR = [
   "★ 4.9 from 193 reviews",
@@ -21,6 +41,7 @@ export const TRUST_BAR = [
 export const NAV_LINKS = [
   { label: "Overlays", href: "/overlays" },
   { label: "Custom", href: "/custom" },
+  { label: "Tutorials", href: "/tutorials" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },

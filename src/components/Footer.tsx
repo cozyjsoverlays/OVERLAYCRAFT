@@ -14,6 +14,7 @@ const FOOTER_LINKS = {
   ],
   Studio: [
     { label: "About", href: "/about" },
+    { label: "Tutorials", href: "/tutorials" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
     { label: "Blog", href: "/blog" },

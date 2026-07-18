@@ -36,6 +36,7 @@ export function ProductGallery({ product }: { product: Product }) {
           <img
             src={thumbnails[selected]}
             alt={productAlt(product, selected)}
+            onError={(e) => ((e.currentTarget as HTMLImageElement).style.visibility = "hidden")}
             className="aspect-video w-full bg-ink2 object-cover"
           />
         )}
