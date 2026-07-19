@@ -16,7 +16,7 @@ const DUST = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Showreel backdrop — drop the real loop at /media/showreel.mp4 */}
+      {/* Showreel backdrop - drop the real loop at /media/showreel.mp4 */}
       <video
         src="/media/showreel.mp4"
         poster="/media/showreel-poster.jpg"
@@ -73,7 +73,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.12 }}
           className="mx-auto mt-6 max-w-xl font-body text-mist md:text-lg"
         >
-          Animated overlay worlds — ravens, dragons, sakura, cozy dens — in OBS
+          Animated overlay worlds - ravens, dragons, sakura, cozy dens - in OBS
           and live in 5 minutes. Instant download, trusted by 1,300+ streamers.
         </motion.p>
         <motion.div

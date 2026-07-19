@@ -29,7 +29,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "how-to-add-overlay-to-obs",
     title: "How to Add an Overlay to OBS (in Under 5 Minutes)",
-    metaTitle: "How to Add an Overlay to OBS — Fast 2026 Setup Guide",
+    metaTitle: "How to Add an Overlay to OBS - Fast 2026 Setup Guide",
     metaDescription:
       "How to add a Twitch overlay to OBS Studio step by step: image vs media source, looping animated WebM/MP4 files, layer order and the 3 fixes for broken overlays.",
     date: "2026-07-17",
@@ -43,30 +43,30 @@ export const BLOG_POSTS: BlogPost[] = [
       "how to install stream overlay",
     ],
     excerpt:
-      "Image source or media source? Loop on or off? Here's the exact 5-minute setup for static and animated overlays in OBS Studio — plus the three mistakes that make overlays look broken.",
+      "Image source or media source? Loop on or off? Here's the exact 5-minute setup for static and animated overlays in OBS Studio - plus the three mistakes that make overlays look broken.",
     sections: [
       {
         h2: "The short answer",
         paragraphs: [
-          "Static overlay: add an Image source. Animated overlay: add a Media Source, point it at your MP4 or WebM file, and tick Loop. Drag it above your gameplay in the Sources list. That's genuinely the whole trick — everything below is the detail that makes it look right.",
+          "Static overlay: add an Image source. Animated overlay: add a Media Source, point it at your MP4 or WebM file, and tick Loop. Drag it above your gameplay in the Sources list. That's genuinely the whole trick - everything below is the detail that makes it look right.",
         ],
       },
       {
         h2: "Step-by-step: adding an animated overlay to OBS",
         ordered: true,
         list: [
-          "Open OBS Studio and select the scene you want the overlay on (or make a new one — Scenes panel, bottom left, + button).",
+          "Open OBS Studio and select the scene you want the overlay on (or make a new one - Scenes panel, bottom left, + button).",
           "In the Sources panel, click + and choose Media Source. Name it something you'll recognize, like \"Starting Soon screen\".",
-          "Click Browse and select your overlay's video file — MP4 or WebM. Every [OverlayCraft pack](/overlays) ships these ready to go, with a real preview video on each product page.",
+          "Click Browse and select your overlay's video file - MP4 or WebM. Every [OverlayCraft pack](/overlays) ships these ready to go, with a real preview video on each product page.",
           "Tick Loop. This is the one people miss: without it, your animation plays once and freezes.",
-          "Click OK. Drag the red handles to fill the canvas — a proper overlay is made at 1920×1080, so it should snap edge to edge with no stretching.",
+          "Click OK. Drag the red handles to fill the canvas - a proper overlay is made at 1920×1080, so it should snap edge to edge with no stretching.",
           "In the Sources list, drag the overlay above your game or camera source. Sources render top-down: whatever is higher in the list draws on top.",
         ],
       },
       {
         h2: "Static overlays: use an Image source instead",
         paragraphs: [
-          "For PNG frames, panels, or a static scene, the steps are the same but you pick Image instead of Media Source. PNGs keep their transparency, so your webcam frame will show the camera through the cutout automatically — as long as the frame sits above the camera in the Sources list.",
+          "For PNG frames, panels, or a static scene, the steps are the same but you pick Image instead of Media Source. PNGs keep their transparency, so your webcam frame will show the camera through the cutout automatically - as long as the frame sits above the camera in the Sources list.",
         ],
       },
       {
@@ -75,11 +75,11 @@ export const BLOG_POSTS: BlogPost[] = [
           "Think of your scene as a stack of paper. Bottom sheet: game capture or camera. Middle: facecam frame, in-game overlay. Top: alerts, since you never want a follower alert hiding behind your gameplay.",
         ],
         list: [
-          "Alerts — top",
-          "Webcam frame — above the camera",
-          "Camera — below its frame",
-          "In-game overlay — above game capture",
-          "Game capture — bottom",
+          "Alerts - top",
+          "Webcam frame - above the camera",
+          "Camera - below its frame",
+          "In-game overlay - above game capture",
+          "Game capture - bottom",
         ],
       },
       {
@@ -93,7 +93,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         h2: "Does an animated overlay slow down my stream?",
         paragraphs: [
-          "Not meaningfully. A looping media source is one of the cheapest things OBS renders — far lighter than a browser source running a web page. If your machine can run your game plus OBS, a 15-second loop won't be the thing that hurts you. Every [cozy overlay pack](/overlays/cozy) and [gothic pack](/overlays/gothic) is exported at streaming-friendly bitrates so it never shows up in your CPU graph.",
+          "Not meaningfully. A looping media source is one of the cheapest things OBS renders - far lighter than a browser source running a web page. If your machine can run your game plus OBS, a 15-second loop won't be the thing that hurts you. Every [cozy overlay pack](/overlays/cozy) and [gothic pack](/overlays/gothic) is exported at streaming-friendly bitrates so it never shows up in your CPU graph.",
         ],
       },
     ],
@@ -106,12 +106,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "Why is my overlay showing a black box?",
         answer:
-          "The file has no alpha channel — usually an MP4 used where a transparent WebM was intended. Swap in the WebM version, or use the MP4 only as a full-screen background scene.",
+          "The file has no alpha channel - usually an MP4 used where a transparent WebM was intended. Swap in the WebM version, or use the MP4 only as a full-screen background scene.",
       },
       {
         question: "Do these steps work in Streamlabs too?",
         answer:
-          "Yes. Streamlabs Desktop uses the same source system — add a Media Source for animated files, Image for static ones, and enable looping.",
+          "Yes. Streamlabs Desktop uses the same source system - add a Media Source for animated files, Image for static ones, and enable looping.",
       },
     ],
     featuredPacks: [
@@ -129,9 +129,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "twitch-overlay-size-guide",
     title: "Twitch Overlay Size Guide (2026): Every Dimension That Matters",
-    metaTitle: "Twitch Overlay Size Guide 2026 — All Dimensions & Safe Zones",
+    metaTitle: "Twitch Overlay Size Guide 2026 - All Dimensions & Safe Zones",
     metaDescription:
-      "Every Twitch graphic size in one table: overlays 1920×1080, webcam frames, alerts, panels 320px, banners and emotes — plus safe zones so chat never covers your art.",
+      "Every Twitch graphic size in one table: overlays 1920×1080, webcam frames, alerts, panels 320px, banners and emotes - plus safe zones so chat never covers your art.",
     date: "2026-07-17",
     keywords: [
       "twitch overlay size",
@@ -153,12 +153,12 @@ export const BLOG_POSTS: BlogPost[] = [
         table: {
           head: ["Graphic", "Size (px)", "Notes"],
           rows: [
-            ["Full stream overlay", "1920 × 1080", "16:9 — matches the OBS canvas"],
+            ["Full stream overlay", "1920 × 1080", "16:9 - matches the OBS canvas"],
             ["Webcam frame (16:9)", "1280 × 720", "Scale down in OBS, never up"],
             ["Webcam frame (4:3)", "800 × 600", "For older cams"],
             ["Alerts", "800 × 300", "Keep text inside the middle 80%"],
             ["Panels", "320 × 40–100", "Width fixed at 320, height flexible"],
-            ["Profile banner", "1200 × 480", "Compresses hard — avoid fine detail"],
+            ["Profile banner", "1200 × 480", "Compresses hard - avoid fine detail"],
             ["Video player banner", "1920 × 1080", "Shown when you're offline"],
             ["Emotes", "112 × 112", "Upload 112, Twitch scales to 56/28"],
           ],
@@ -167,7 +167,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         h2: "Why 1920×1080 even if you stream at 936p",
         paragraphs: [
-          "Design at full HD and let OBS scale down. Downscaling keeps lines sharp; upscaling a smaller overlay makes every edge soft. All [OverlayCraft packs](/overlays) are exported at 1920×1080 for exactly this reason — they fit the default canvas edge to edge with zero transform fiddling.",
+          "Design at full HD and let OBS scale down. Downscaling keeps lines sharp; upscaling a smaller overlay makes every edge soft. All [OverlayCraft packs](/overlays) are exported at 1920×1080 for exactly this reason - they fit the default canvas edge to edge with zero transform fiddling.",
         ],
       },
       {
@@ -184,19 +184,19 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         h2: "Webcam frames: match the frame to the camera, not the canvas",
         paragraphs: [
-          "The classic mistake is stretching a 16:9 frame over a 4:3 camera and wondering why the border doesn't line up. Check what your camera actually outputs (OBS shows it in the source properties), pick the matching frame from your pack, and size the camera to sit inside the frame's cutout — frame above camera in the source list.",
+          "The classic mistake is stretching a 16:9 frame over a 4:3 camera and wondering why the border doesn't line up. Check what your camera actually outputs (OBS shows it in the source properties), pick the matching frame from your pack, and size the camera to sit inside the frame's cutout - frame above camera in the source list.",
         ],
       },
       {
         h2: "Panels: small canvas, big first impression",
         paragraphs: [
-          "Panels are locked to 320px wide, and they're the first thing a new viewer scrolls through when deciding whether to follow. A matched set — About, Schedule, Rules, Donate — in your overlay's art style reads as \"this channel has its act together\" before you've said a word. Most packs on [OverlayCraft](/overlays) ship panels in the same world as the screens for exactly that reason.",
+          "Panels are locked to 320px wide, and they're the first thing a new viewer scrolls through when deciding whether to follow. A matched set - About, Schedule, Rules, Donate - in your overlay's art style reads as \"this channel has its act together\" before you've said a word. Most packs on [OverlayCraft](/overlays) ship panels in the same world as the screens for exactly that reason.",
         ],
       },
       {
         h2: "Streaming vertical? Different rules",
         paragraphs: [
-          "TikTok Live and vertical streams flip the whole layout — chat and UI sit in different places, and a 16:9 overlay gets cropped. Use a purpose-built [TikTok overlay pack](/overlays/tiktok) composed for 9:16 instead of forcing a desktop overlay sideways.",
+          "TikTok Live and vertical streams flip the whole layout - chat and UI sit in different places, and a 16:9 overlay gets cropped. Use a purpose-built [TikTok overlay pack](/overlays/tiktok) composed for 9:16 instead of forcing a desktop overlay sideways.",
         ],
       },
     ],
@@ -209,7 +209,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "What size are Twitch panels?",
         answer:
-          "320 pixels wide. Height is up to you — 40 to 100px works for header-style panels; taller is fine for image-heavy ones.",
+          "320 pixels wide. Height is up to you - 40 to 100px works for header-style panels; taller is fine for image-heavy ones.",
       },
       {
         question: "What's the best file size for overlays?",
@@ -232,7 +232,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "animated-vs-static-stream-overlays",
     title: "Animated vs Static Stream Overlays: Which Actually Keeps Viewers?",
-    metaTitle: "Animated vs Static Stream Overlays — What Retains Viewers",
+    metaTitle: "Animated vs Static Stream Overlays - What Retains Viewers",
     metaDescription:
       "Animated stream overlays out-retain static ones in the moments that matter: starting soon, BRB and raids. Here's why motion works, when it backfires, and what to pick.",
     date: "2026-07-17",
@@ -245,20 +245,20 @@ export const BLOG_POSTS: BlogPost[] = [
       "twitch overlay",
     ],
     excerpt:
-      "The screens where viewers decide to stay — starting soon, BRB, raid landings — are exactly the screens where motion earns its keep. And the one place animation can genuinely hurt you.",
+      "The screens where viewers decide to stay - starting soon, BRB, raid landings - are exactly the screens where motion earns its keep. And the one place animation can genuinely hurt you.",
     sections: [
       {
         h2: "The honest answer",
         paragraphs: [
           "Animated overlays win where viewers are waiting, static overlays are fine where viewers are watching. The distinction matters more than any aesthetic argument.",
-          "When your gameplay is on screen, the game is the show — a static frame does its job. But on a Starting Soon screen, a BRB, or the moment a raid of 40 strangers lands on your channel, there is nothing else to look at. A frozen image says \"nothing is happening here.\" A scene with drifting petals, flickering candlelight or a breathing character says \"the stream is alive, stay put.\"",
+          "When your gameplay is on screen, the game is the show - a static frame does its job. But on a Starting Soon screen, a BRB, or the moment a raid of 40 strangers lands on your channel, there is nothing else to look at. A frozen image says \"nothing is happening here.\" A scene with drifting petals, flickering candlelight or a breathing character says \"the stream is alive, stay put.\"",
         ],
       },
       {
         h2: "Why motion holds attention in the waiting moments",
         paragraphs: [
-          "Human eyes are wired to track movement — it's the cheapest attention signal that exists. A subtle loop gives an idle viewer's eyes something to rest on, which makes the wait feel shorter than a static screen does. That's the whole mechanism. It doesn't need to be dramatic; it needs to not be dead.",
-          "The practical difference shows up in the first 90 seconds of a stream. Viewers who arrive early sit on your Starting Soon screen. If it feels like a place — rain on a window, a cat asleep by a fire — waiting is comfortable. Browse the [animated overlay collection](/overlays) and you'll see every pack ships a preview video so you can judge the motion before you buy.",
+          "Human eyes are wired to track movement - it's the cheapest attention signal that exists. A subtle loop gives an idle viewer's eyes something to rest on, which makes the wait feel shorter than a static screen does. That's the whole mechanism. It doesn't need to be dramatic; it needs to not be dead.",
+          "The practical difference shows up in the first 90 seconds of a stream. Viewers who arrive early sit on your Starting Soon screen. If it feels like a place - rain on a window, a cat asleep by a fire - waiting is comfortable. Browse the [animated overlay collection](/overlays) and you'll see every pack ships a preview video so you can judge the motion before you buy.",
         ],
       },
       {
@@ -272,13 +272,13 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         h2: "The hybrid setup most partners actually run",
         paragraphs: [
-          "Animated: Starting Soon, BRB, Stream Ending, Offline, alerts. Static or near-static: in-game overlay and webcam frame, with at most a gentle glow. That's the layout every pack ships by default — from the atmospheric [gothic worlds](/overlays/gothic) to the comeback-energy [phoenix packs](/overlays/phoenix), full animation on every waiting screen, restraint where your content lives.",
+          "Animated: Starting Soon, BRB, Stream Ending, Offline, alerts. Static or near-static: in-game overlay and webcam frame, with at most a gentle glow. That's the layout every pack ships by default - from the atmospheric [gothic worlds](/overlays/gothic) to the comeback-energy [phoenix packs](/overlays/phoenix), full animation on every waiting screen, restraint where your content lives.",
         ],
       },
       {
         h2: "Performance: the objection that stopped being true",
         paragraphs: [
-          "A looping video source costs almost nothing in OBS — it's decoded once and replayed, far lighter than a browser source polling a webpage. On any machine built in the last six or seven years, the difference between static and animated screens is invisible in your performance stats. The \"animated overlays cause dropped frames\" advice dates from a different hardware era.",
+          "A looping video source costs almost nothing in OBS - it's decoded once and replayed, far lighter than a browser source polling a webpage. On any machine built in the last six or seven years, the difference between static and animated screens is invisible in your performance stats. The \"animated overlays cause dropped frames\" advice dates from a different hardware era.",
         ],
       },
     ],
@@ -291,12 +291,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "Should my webcam frame be animated?",
         answer:
-          "Keep it subtle. Your face is the content — a soft glow or slow shimmer works, but heavy motion around the camera competes with you.",
+          "Keep it subtle. Your face is the content - a soft glow or slow shimmer works, but heavy motion around the camera competes with you.",
       },
       {
         question: "What screens matter most to animate?",
         answer:
-          "Starting Soon and BRB, because that's where viewers are actively deciding whether to wait. Alerts are second — motion makes every follow feel like an event.",
+          "Starting Soon and BRB, because that's where viewers are actively deciding whether to wait. Alerts are second - motion makes every follow feel like an event.",
       },
     ],
     featuredPacks: [
@@ -314,9 +314,9 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "kick-stream-overlay-guide",
     title: "Kick Stream Overlays: Setup Guide + What's Different From Twitch",
-    metaTitle: "Kick Stream Overlay Guide 2026 — Setup & Twitch Differences",
+    metaTitle: "Kick Stream Overlay Guide 2026 - Setup & Twitch Differences",
     metaDescription:
-      "Kick stream overlays use the same 1920×1080 files as Twitch — the differences are alerts, panels and where the UI sits. Full OBS setup guide for streaming on Kick.",
+      "Kick stream overlays use the same 1920×1080 files as Twitch - the differences are alerts, panels and where the UI sits. Full OBS setup guide for streaming on Kick.",
     date: "2026-07-17",
     keywords: [
       "kick stream overlay",
@@ -332,31 +332,31 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         h2: "The core truth: overlays are platform-agnostic",
         paragraphs: [
-          "An overlay lives in OBS, not on the platform. Kick receives whatever OBS outputs, exactly like Twitch does — so a 1920×1080 animated pack works identically on both. Every [pack in the catalog](/overlays) is tested against Twitch, YouTube and Kick for this reason. If you're simulcasting or migrating, your visual identity moves with you untouched.",
+          "An overlay lives in OBS, not on the platform. Kick receives whatever OBS outputs, exactly like Twitch does - so a 1920×1080 animated pack works identically on both. Every [pack in the catalog](/overlays) is tested against Twitch, YouTube and Kick for this reason. If you're simulcasting or migrating, your visual identity moves with you untouched.",
         ],
       },
       {
         h2: "Setting up your overlay for Kick in OBS",
         ordered: true,
         list: [
-          "Add your animated screens as Media Sources (Loop on) and static graphics as Image sources — identical to a Twitch setup. Our [OBS overlay guide](/blog/how-to-add-overlay-to-obs) walks through every click.",
+          "Add your animated screens as Media Sources (Loop on) and static graphics as Image sources - identical to a Twitch setup. Our [OBS overlay guide](/blog/how-to-add-overlay-to-obs) walks through every click.",
           "In OBS Settings → Stream, select Kick (or Custom RTMP with your Kick stream key from the Creator Dashboard).",
           "Keep the canvas at 1920×1080. Kick's player is 16:9, same as Twitch.",
-          "Preview your scene with Kick's chat overlay in mind — on mobile, chat overlaps the lower right of the video more aggressively than Twitch's theatre mode.",
+          "Preview your scene with Kick's chat overlay in mind - on mobile, chat overlaps the lower right of the video more aggressively than Twitch's theatre mode.",
         ],
       },
       {
         h2: "What's actually different on Kick",
         list: [
-          "Alerts: Kick doesn't have Twitch's native alert ecosystem — most streamers run alerts through third-party tools that provide a browser-source URL. Your pack's alert animations plug into those tools the same way.",
+          "Alerts: Kick doesn't have Twitch's native alert ecosystem - most streamers run alerts through third-party tools that provide a browser-source URL. Your pack's alert animations plug into those tools the same way.",
           "Panels: Kick's about section uses wider image support than Twitch's rigid 320px, but 320px panel sets still look clean and consistent there.",
-          "Discoverability: Kick pushes previews of live streams harder — which means your Starting Soon screen is seen by more cold traffic. An animated, branded screen earns its keep even more there.",
+          "Discoverability: Kick pushes previews of live streams harder - which means your Starting Soon screen is seen by more cold traffic. An animated, branded screen earns its keep even more there.",
         ],
       },
       {
         h2: "Do you need a separate Kick overlay?",
         paragraphs: [
-          "No — and be suspicious of anyone selling you a \"Kick-specific\" version of the same files. What you might want is a second OBS scene collection if you simulcast with platform-specific alerts, but the art itself is one purchase, both platforms. Grab a [phoenix pack](/overlays/phoenix) or a [Japanese samurai world](/overlays/japanese) once and stream it anywhere.",
+          "No - and be suspicious of anyone selling you a \"Kick-specific\" version of the same files. What you might want is a second OBS scene collection if you simulcast with platform-specific alerts, but the art itself is one purchase, both platforms. Grab a [phoenix pack](/overlays/phoenix) or a [Japanese samurai world](/overlays/japanese) once and stream it anywhere.",
         ],
       },
     ],
@@ -368,7 +368,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         question: "What size should a Kick overlay be?",
-        answer: "1920×1080, 16:9 — the same as Twitch. Kick's player uses the standard widescreen ratio.",
+        answer: "1920×1080, 16:9 - the same as Twitch. Kick's player uses the standard widescreen ratio.",
       },
       {
         question: "How do alerts work on Kick?",
@@ -391,7 +391,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "vtuber-overlay-guide",
     title: "VTuber Overlays: How to Frame Your Model Like a Pro",
-    metaTitle: "VTuber Overlay Guide 2026 — Frame Your Model & Scene Setup",
+    metaTitle: "VTuber Overlay Guide 2026 - Frame Your Model & Scene Setup",
     metaDescription:
       "VTuber overlay setup: layer order for your model, transparent frames, chroma vs alpha, and choosing a scene world that makes a 2D model feel like it lives somewhere.",
     date: "2026-07-17",
@@ -404,7 +404,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "best vtuber overlays",
     ],
     excerpt:
-      "Your model is the centerpiece — the overlay is the stage. Layer order, transparency, and the scene-mood trick that makes a 2D model feel like it lives somewhere.",
+      "Your model is the centerpiece - the overlay is the stage. Layer order, transparency, and the scene-mood trick that makes a 2D model feel like it lives somewhere.",
     sections: [
       {
         h2: "The VTuber layer stack",
@@ -413,32 +413,32 @@ export const BLOG_POSTS: BlogPost[] = [
         ],
         ordered: true,
         list: [
-          "Alerts — top",
+          "Alerts - top",
           "Foreground overlay elements (frames, petals drifting in front)",
           "Your model capture",
           "The animated scene / background overlay",
-          "Game capture (if you're playing) — bottom, often inside a framed window",
+          "Game capture (if you're playing) - bottom, often inside a framed window",
         ],
       },
       {
         h2: "Transparency: alpha beats chroma",
         paragraphs: [
-          "Capture your model with a transparent background whenever your software supports it (Spout2 output or a transparency-capable window capture) instead of green-screening. Chroma key eats fine details — hair edges, translucent fabrics — that alpha capture keeps. Save the green screen for when you have no alternative, and if you must key, key against a color absent from your model.",
+          "Capture your model with a transparent background whenever your software supports it (Spout2 output or a transparency-capable window capture) instead of green-screening. Chroma key eats fine details - hair edges, translucent fabrics - that alpha capture keeps. Save the green screen for when you have no alternative, and if you must key, key against a color absent from your model.",
         ],
       },
       {
         h2: "Why scene mood matters more for VTubers",
         paragraphs: [
-          "A flesh-and-blood streamer's room gives their stream a setting for free. A VTuber floats in whatever you put behind them — which means the overlay isn't decoration, it's the entire physical world your character inhabits. A sakura storm, a neon alley, a candle-lit gothic study: pick the world that matches your character's lore and the whole stream reads as intentional.",
-          "This is why atmosphere-heavy packs work so well for VTubers — the expressive motion language matches the model instead of fighting it. Browse the [anime collection](/overlays/anime) and the [Japanese worlds](/overlays/japanese) and imagine your model standing in each one.",
+          "A flesh-and-blood streamer's room gives their stream a setting for free. A VTuber floats in whatever you put behind them - which means the overlay isn't decoration, it's the entire physical world your character inhabits. A sakura storm, a neon alley, a candle-lit gothic study: pick the world that matches your character's lore and the whole stream reads as intentional.",
+          "This is why atmosphere-heavy packs work so well for VTubers - the expressive motion language matches the model instead of fighting it. Browse the [anime collection](/overlays/anime) and the [Japanese worlds](/overlays/japanese) and imagine your model standing in each one.",
         ],
       },
       {
         h2: "Practical settings that keep your model crisp",
         list: [
-          "Capture the model at its native resolution and scale down in OBS — never up.",
+          "Capture the model at its native resolution and scale down in OBS - never up.",
           "Keep heavy overlay motion away from the model's silhouette; put drifting elements to the sides or in far background.",
-          "If your model idles subtly, pair it with a slow-loop scene — mismatched motion speeds (frantic background, calm model) feel wrong within seconds.",
+          "If your model idles subtly, pair it with a slow-loop scene - mismatched motion speeds (frantic background, calm model) feel wrong within seconds.",
           "Test your framing against chat overlays on mobile: models tend to stand right where mobile chat lives.",
         ],
       },
@@ -447,7 +447,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "What overlay style works best for VTubers?",
         answer:
-          "Scene-based packs with expressive but slow motion — anime, sakura, gothic and cozy worlds. The overlay becomes your character's environment, so pick one that matches their lore.",
+          "Scene-based packs with expressive but slow motion - anime, sakura, gothic and cozy worlds. The overlay becomes your character's environment, so pick one that matches their lore.",
       },
       {
         question: "Should the overlay go in front of or behind my model?",
@@ -457,7 +457,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "Do I need a special VTuber overlay?",
         answer:
-          "No — any well-made 1920×1080 animated pack works. What matters is choosing a world that suits your model and keeping busy motion off the model's silhouette.",
+          "No - any well-made 1920×1080 animated pack works. What matters is choosing a world that suits your model and keeping busy motion off the model's silhouette.",
       },
     ],
     featuredPacks: [
@@ -468,7 +468,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     related: [
       { label: "Anime overlay packs", href: "/overlays/anime" },
-      { label: "Japanese worlds — samurai & sakura", href: "/overlays/japanese" },
+      { label: "Japanese worlds - samurai & sakura", href: "/overlays/japanese" },
       { label: "Animated vs static overlays", href: "/blog/animated-vs-static-stream-overlays" },
     ],
   },
@@ -489,12 +489,12 @@ export const BLOG_POSTS: BlogPost[] = [
       "stream overlay for beginners",
     ],
     excerpt:
-      "Every piece of a stream package explained in plain language — what screens, frames, alerts and panels actually do, and the order a new streamer should get them in.",
+      "Every piece of a stream package explained in plain language - what screens, frames, alerts and panels actually do, and the order a new streamer should get them in.",
     sections: [
       {
         h2: "The plain-language definition",
         paragraphs: [
-          "A Twitch overlay is every graphic layered on top of your raw video: the frame around your webcam, the Starting Soon screen before you go live, the animation that plays when someone follows, the panels below your player. Together they're usually sold as a stream package — one matched visual identity for your whole channel.",
+          "A Twitch overlay is every graphic layered on top of your raw video: the frame around your webcam, the Starting Soon screen before you go live, the animation that plays when someone follows, the panels below your player. Together they're usually sold as a stream package - one matched visual identity for your whole channel.",
         ],
       },
       {
@@ -516,25 +516,25 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         h2: "Why overlays matter more for small streamers",
         paragraphs: [
-          "Big streamers get the benefit of the doubt; small streamers get about eight seconds of it. A new viewer landing on a channel with 4 viewers and a matched, animated identity reads it as \"this person takes this seriously\" — and stays long enough to find out if that's true. The overlay can't make your content good, but it buys your content the audition.",
+          "Big streamers get the benefit of the doubt; small streamers get about eight seconds of it. A new viewer landing on a channel with 4 viewers and a matched, animated identity reads it as \"this person takes this seriously\" - and stays long enough to find out if that's true. The overlay can't make your content good, but it buys your content the audition.",
         ],
       },
       {
         h2: "Free vs premium vs custom: honest trade-offs",
         list: [
           "Free overlays: fine for week one. The catch is that thousands of channels run the same file, so you look like a default skin.",
-          "Premium packs ($5–$30): a designed world, animated screens, matched panels — the sweet spot for most streamers. That's what the [OverlayCraft catalog](/overlays) is: 127 worlds, real preview videos, instant download.",
-          "Custom commissions ($100–$400+): your own character, palette and full brand — emotes, badges, mascot. Worth it once your channel has an identity worth building around — start a brief on the [custom overlays page](/custom).",
+          "Premium packs ($5–$30): a designed world, animated screens, matched panels - the sweet spot for most streamers. That's what the [OverlayCraft catalog](/overlays) is: 127 worlds, real preview videos, instant download.",
+          "Custom commissions ($100–$400+): your own character, palette and full brand - emotes, badges, mascot. Worth it once your channel has an identity worth building around - start a brief on the [custom overlays page](/custom).",
         ],
       },
       {
         h2: "What to get first (if budget is tight)",
         ordered: true,
         list: [
-          "A Starting Soon + BRB pair — the screens where viewers wait, and where animation earns the most.",
-          "A webcam frame — the single most-seen graphic on your whole stream.",
-          "Alerts — every follow becomes a small on-screen event.",
-          "Panels — polish for your channel page once the live experience looks right.",
+          "A Starting Soon + BRB pair - the screens where viewers wait, and where animation earns the most.",
+          "A webcam frame - the single most-seen graphic on your whole stream.",
+          "Alerts - every follow becomes a small on-screen event.",
+          "Panels - polish for your channel page once the live experience looks right.",
         ],
       },
     ],
@@ -547,12 +547,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         question: "Do overlays work on YouTube and Kick too?",
         answer:
-          "Yes — overlays live in OBS, not on the platform. The same files work for Twitch, YouTube, Kick and TikTok Live (vertical packs exist for TikTok).",
+          "Yes - overlays live in OBS, not on the platform. The same files work for Twitch, YouTube, Kick and TikTok Live (vertical packs exist for TikTok).",
       },
       {
         question: "Can I set up an overlay with no design skills?",
         answer:
-          "Yes. Packs come as ready files — you drag them into OBS as sources, tick Loop on the animated ones, and you're live. No editing software involved.",
+          "Yes. Packs come as ready files - you drag them into OBS as sources, tick Loop on the animated ones, and you're live. No editing software involved.",
       },
     ],
     featuredPacks: [

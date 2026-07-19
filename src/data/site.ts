@@ -6,11 +6,15 @@ export const SITE = {
   url: "https://overlaycraft.com",
   tagline: "Cinematic animated stream overlays for Twitch, YouTube, Kick & TikTok Live.",
   description:
-    "Premium animated stream overlay packages — forged by VectorKingStudio, Etsy Star Seller with 1,300+ sales and a 4.9★ rating. Instant download. Drag into OBS. Go live.",
+    "Premium animated stream overlay packages - forged by VectorKingStudio, Etsy Star Seller with 1,300+ sales and a 4.9★ rating. Instant download. Drag into OBS. Go live.",
 } as const;
 
 export const ETSY_SHOP_URL = "https://www.etsy.com/shop/VectorKingStudio";
 export const YOUTUBE_URL = "https://www.youtube.com/@vectorkingstudio1";
+
+/** The real custom-commission Etsy listing - all custom orders go here. */
+export const CUSTOM_ETSY_URL =
+  "https://vectorkingstudio.etsy.com/listing/4499837996/custom-twitch-overlay-stream-package";
 
 export interface Tutorial {
   youtubeId: string;
@@ -24,9 +28,9 @@ export interface Tutorial {
 export const TUTORIALS: Tutorial[] = [
   {
     youtubeId: "ehUUSW3tZuU",
-    title: "How to Set Up OBS for Streaming — Overlays, Facecam, Screens & Free Overlays",
+    title: "How to Set Up OBS for Streaming - Overlays, Facecam, Screens & Free Overlays",
     description:
-      "The full OBS walkthrough: install and configure OBS Studio, add your animated overlay screens, frame your facecam, set up your just-chatting scene, and drop in free overlays. If you've never touched OBS, start here — you'll be live by the end.",
+      "The full OBS walkthrough: install and configure OBS Studio, add your animated overlay screens, frame your facecam, set up your just-chatting scene, and drop in free overlays. If you've never touched OBS, start here - you'll be live by the end.",
     date: "2026-01-01",
   },
 ];
@@ -54,7 +58,7 @@ export const HOW_IT_WORKS = [
   },
   {
     title: "Instant download",
-    desc: "Checkout takes seconds — your files arrive immediately, no waiting.",
+    desc: "Checkout takes seconds - your files arrive immediately, no waiting.",
   },
   {
     title: "Drag into OBS",
@@ -82,7 +86,7 @@ export const REVIEWS: Review[] = [
   {
     author: "DragonheartLive",
     rating: 5,
-    text: "I've bought overlays from three different shops — nothing comes close to this level of polish.",
+    text: "I've bought overlays from three different shops - nothing comes close to this level of polish.",
     pack: "Violet Night Dragon",
   },
   {
@@ -94,13 +98,13 @@ export const REVIEWS: Review[] = [
   {
     author: "KickWithKai",
     rating: 5,
-    text: "Custom commission was worth every cent — the process was smooth and the mascot logo is unreal.",
+    text: "Custom commission was worth every cent - the process was smooth and the mascot logo is unreal.",
     pack: "Custom Full Brand",
   },
   {
     author: "PhoenixPlays",
     rating: 4,
-    text: "Beautiful pack, tiny learning curve in OBS if you're brand new — the included guide sorted me out fast.",
+    text: "Beautiful pack, tiny learning curve in OBS if you're brand new - the included guide sorted me out fast.",
     pack: "Inferno Phoenix",
   },
 ] as const;
@@ -119,16 +123,16 @@ export const FAQ: FaqEntry[] = [
   {
     question: "How does delivery work?",
     answer:
-      "Instantly. The moment your payment completes you receive a download link — no shipping, no waiting. Checkout is handled by Lemon Squeezy, our merchant of record, which also takes care of VAT and tax receipts.",
+      "Instantly. The moment your payment completes you receive a download link - no shipping, no waiting. Checkout is handled by Lemon Squeezy, our merchant of record, which also takes care of VAT and tax receipts.",
   },
   {
     question: "Can I get a fully custom overlay?",
     answer:
-      "Absolutely — custom commissions are our craft. Tiers run from $100 (overlay + screens) to $400 (full brand with emotes, sub badges, and a mascot logo). Head to the Custom Overlays page to start a brief.",
+      "Absolutely - custom commissions are our craft. Tiers run from $100 (overlay + screens) to $400 (full brand with emotes, sub badges, and a mascot logo). Head to the Custom Overlays page to start a brief.",
   },
   {
     question: "What's your refund policy?",
     answer:
-      "Because these are instant-download digital goods, sales are final once files are delivered. If anything is broken or you hit a technical snag, contact us and we'll fix it or make it right — our 4.9★ rating exists for a reason.",
+      "Because these are instant-download digital goods, sales are final once files are delivered. If anything is broken or you hit a technical snag, contact us and we'll fix it or make it right - our 4.9★ rating exists for a reason.",
   },
 ] as const;

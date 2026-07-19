@@ -9,7 +9,7 @@ import { hasRealImage, productAlt } from "@/lib/utils";
  * Product artwork with a designed fallback. Renders the real cover image when
  * the product has one; if that image is missing OR fails to load at runtime
  * (dead CDN URL, unsupported format, network error), it swaps to a cute branded
- * placeholder — category glyph on a soft gradient. So no card ever shows a
+ * placeholder - category glyph on a soft gradient. So no card ever shows a
  * broken image and a bad asset can never break the page render.
  */
 export function PackArt({

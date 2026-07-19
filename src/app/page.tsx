@@ -94,7 +94,7 @@ export default function HomePage() {
               <blockquote className="mt-2 text-sm text-blush/85">
                 &ldquo;{bestsellerReview.text}&rdquo;
               </blockquote>
-              <figcaption className="mt-2 text-xs text-lilac">— {bestsellerReview.author}</figcaption>
+              <figcaption className="mt-2 text-xs text-lilac">- {bestsellerReview.author}</figcaption>
             </figure>
             <Link
               href={productPath(bestseller)}
@@ -121,7 +121,7 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="mt-4 leading-relaxed text-mist">
-                Your character, your palette, your world — custom overlay packages
+                Your character, your palette, your world - custom overlay packages
                 forged from a brief, from <span className="font-mono text-volt">$100</span>.
                 Brief → concept → two revision rounds → delivery.
               </p>

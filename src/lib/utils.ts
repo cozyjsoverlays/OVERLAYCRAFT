@@ -33,7 +33,7 @@ export function productAlt(product: Product, index: number): string {
   if (product.imageAlts && product.imageAlts[index]) return product.imageAlts[index];
   const base = product.etsyTitle ?? product.title;
   const screen = SCREEN_NAMES[index] ?? "screen";
-  return `${base} — ${screen}`;
+  return `${base} - ${screen}`;
 }
 
 /**

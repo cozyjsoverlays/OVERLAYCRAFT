@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = getCategory(category);
   if (!cat) return {};
   return {
-    title: `${cat.name} — Animated Twitch & Kick Stream Packages`,
+    title: `${cat.name} - Animated Twitch & Kick Stream Packages`,
     description: cat.intro.slice(0, 155),
     alternates: { canonical: `/overlays/${cat.slug}` },
   };

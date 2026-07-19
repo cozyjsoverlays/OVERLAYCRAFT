@@ -4,9 +4,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ETSY_SHOP_URL } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Contact — Reach the Studio",
+  title: "Contact - Reach the Studio",
   description:
-    "Questions about a pack, a download, or a custom commission? Reach OverlayCraft / VectorKingStudio — replies within 24 hours.",
+    "Questions about a pack, a download, or a custom commission? Reach OverlayCraft / VectorKingStudio - replies within 24 hours.",
   alternates: { canonical: "/contact" },
 };
 

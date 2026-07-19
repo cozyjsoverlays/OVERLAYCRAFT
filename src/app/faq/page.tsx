@@ -5,7 +5,7 @@ import { FAQ } from "@/data/site";
 import type { FaqEntry } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "FAQ — Stream Overlay Questions, Answered",
+  title: "FAQ - Stream Overlay Questions, Answered",
   description:
     "Everything about OverlayCraft packs: OBS & Streamlabs setup, platform support, instant delivery, licenses, refunds and custom commissions.",
   alternates: { canonical: "/faq" },
@@ -15,12 +15,12 @@ const EXTRA_FAQ: FaqEntry[] = [
   {
     question: "Do the overlays work for vertical / TikTok Live streams?",
     answer:
-      "The TikTok Overlays collection is composed specifically for vertical framing. Standard desktop packs can often be adapted — contact us before buying and we'll tell you honestly whether a pack will translate.",
+      "The TikTok Overlays collection is composed specifically for vertical framing. Standard desktop packs can often be adapted - contact us before buying and we'll tell you honestly whether a pack will translate.",
   },
   {
     question: "Can I use one pack on multiple channels?",
     answer:
-      "Your license covers your own channels across platforms — the same brand streaming on Twitch, YouTube and Kick is fine. It doesn't cover sharing files with friends or using them on channels you don't own.",
+      "Your license covers your own channels across platforms - the same brand streaming on Twitch, YouTube and Kick is fine. It doesn't cover sharing files with friends or using them on channels you don't own.",
   },
   {
     question: "What file formats are included?",
@@ -30,7 +30,7 @@ const EXTRA_FAQ: FaqEntry[] = [
   {
     question: "Will these slow down my stream PC?",
     answer:
-      "No — the loops are exported at streaming-friendly bitrates and OBS media sources are very light. If you can run your game and OBS, you can run these.",
+      "No - the loops are exported at streaming-friendly bitrates and OBS media sources are very light. If you can run your game and OBS, you can run these.",
   },
 ];
 

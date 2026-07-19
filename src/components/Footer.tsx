@@ -42,7 +42,7 @@ export function Footer() {
             One email when a new world drops. Your welcome gift: a free animated overlay screen.
           </p>
           {done ? (
-            <p className="mt-6 font-body text-lilac">You&apos;re in — check your inbox. ✦</p>
+            <p className="mt-6 font-body text-lilac">You&apos;re in - check your inbox. ✦</p>
           ) : (
             <form
               className="mx-auto mt-6 flex max-w-md gap-2"
@@ -82,7 +82,7 @@ export function Footer() {
             <span className="font-display text-blush">OverlayCraft</span>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-mist">
-            Forged for your stream. Animated overlay worlds by {SITE.shop} — Star
+            Forged for your stream. Animated overlay worlds by {SITE.shop} - Star
             Seller, 1,300+ streamers equipped.
           </p>
           <a

@@ -46,7 +46,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
       </Link>
 
-      {/* Save / share — revealed on hover, always visible on touch */}
+      {/* Save / share - revealed on hover, always visible on touch */}
       <div className="absolute right-3 top-3 flex gap-2 opacity-100 transition-opacity md:opacity-0 md:group-hover:opacity-100">
         <SaveButton slug={product.slug} />
         <ShareButton

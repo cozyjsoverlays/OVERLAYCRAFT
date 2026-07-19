@@ -1,4 +1,4 @@
-/** Crescent-moon "OC" monogram — lilac→volt gradient, volt spark at the tip. */
+/** Crescent-moon "OC" monogram - lilac→volt gradient, volt spark at the tip. */
 export function Logo({ className = "h-8 w-8" }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={className} aria-hidden focusable="false">

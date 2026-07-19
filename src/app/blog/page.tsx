@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { BLOG_POSTS } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Stream Overlay Guides & OBS Setup Tutorials",
+  title: "Blog - Stream Overlay Guides & OBS Setup Tutorials",
   description:
     "Practical guides from the OverlayCraft atelier: OBS overlay setup, Twitch graphic sizes, animated vs static overlays, Kick and VTuber setups.",
   alternates: { canonical: "/blog" },
@@ -16,7 +16,7 @@ export default function BlogPage() {
       <SectionHeading label="From the atelier" title="Stream Design Guides" />
       <p className="mt-6 max-w-2xl leading-relaxed text-mist">
         OBS setup, overlay sizes, and the craft of making a channel feel like a
-        place — written between commissions by the studio behind 127 overlay
+        place - written between commissions by the studio behind 127 overlay
         worlds.
       </p>
       <div className="mt-10 space-y-5">

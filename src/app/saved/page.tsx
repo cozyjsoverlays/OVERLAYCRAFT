@@ -18,7 +18,7 @@ export default function SavedPage() {
           <p className="font-display text-xl text-blush">Nothing saved yet</p>
           <p className="mt-2 text-sm text-mist">
             Tap the ♡ on any pack to keep it here. (Saves live in this browser
-            session for now — accounts are coming.)
+            session for now - accounts are coming.)
           </p>
           <Link
             href="/overlays"

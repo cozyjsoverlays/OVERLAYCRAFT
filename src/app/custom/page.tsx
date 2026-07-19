@@ -5,18 +5,19 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { ReviewCard } from "@/components/ReviewCard";
 import { Stars } from "@/components/Stars";
+import { CUSTOM_ETSY_URL } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Custom Twitch & Kick Overlays — Commissions from $100",
+  title: "Custom Twitch & Kick Overlays - Commissions from $100",
   description:
     "Commission a one-of-one animated stream identity: custom overlay scenes, screens, alerts, panels, emotes, sub badges and mascot logos. Brief → concept → two revisions → delivery.",
   alternates: { canonical: "/custom" },
 };
 
 const PROCESS = [
-  { step: "Brief", desc: "You fill the intake form — theme, palette, references, platform. We reply within 24h." },
+  { step: "Brief", desc: "You fill the intake form - theme, palette, references, platform. We reply within 24h." },
   { step: "Concept", desc: "A concept direction of your world: composition, mood, motion notes." },
-  { step: "Revisions ×2", desc: "Two full revision rounds are included — we iterate until it's yours." },
+  { step: "Revisions ×2", desc: "Two full revision rounds are included - we iterate until it's yours." },
   { step: "Delivery", desc: "All files exported for OBS/Streamlabs, organized and install-ready." },
 ];
 
@@ -24,7 +25,7 @@ const CUSTOM_REVIEWS = [
   {
     author: "KickWithKai",
     rating: 5,
-    text: "Custom commission was worth every cent — the process was smooth and the mascot logo is unreal.",
+    text: "Custom commission was worth every cent - the process was smooth and the mascot logo is unreal.",
     pack: "Full Brand",
   },
   {
@@ -36,7 +37,7 @@ const CUSTOM_REVIEWS = [
   {
     author: "GhostOfGrimm",
     rating: 5,
-    text: "Second commission from this studio. Communication, speed, quality — all top tier. My whole brand is theirs now.",
+    text: "Second commission from this studio. Communication, speed, quality - all top tier. My whole brand is theirs now.",
     pack: "Full Brand",
   },
 ];
@@ -56,20 +57,36 @@ export default function CustomPage() {
           </span>
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-mist">
-          Your character, your palette, your world — designed from a brief and
+          Your character, your palette, your world - designed from a brief and
           animated by hand. Six years of craft, hundreds of commissions delivered.
         </p>
         <div className="mt-6 flex items-center justify-center gap-3">
           <Stars rating={4.9} />
           <span className="font-mono text-xs text-mist">4.9 · Star Seller since 2020</span>
         </div>
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href={CUSTOM_ETSY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full rounded-xl bg-volt px-8 py-4 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] sm:w-auto"
+          >
+            Order Custom on Etsy
+          </a>
+          <a
+            href="#intake"
+            className="w-full rounded-xl border border-veil px-8 py-4 font-body text-sm font-medium text-lilac transition-colors hover:border-lilac/60 hover:text-blush sm:w-auto"
+          >
+            Start your brief ↓
+          </a>
+        </div>
       </div>
 
-      {/* Showcase — drop real client work into /media/custom/ and swap back to <img> */}
+      {/* Showcase - drop real client work into /media/custom/ and swap back to <img> */}
       <Reveal className="mt-14">
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            { glyph: "🐉", label: "Full brand — dragon world" },
+            { glyph: "🐉", label: "Full brand - dragon world" },
             { glyph: "🌸", label: "Sakura vtuber identity" },
             { glyph: "🪶", label: "Gothic raven rebrand" },
           ].map((item) => (

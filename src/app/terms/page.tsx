@@ -19,11 +19,11 @@ export default function TermsPage() {
         },
         {
           heading: "Purchases & delivery",
-          body: "Checkout is processed by Lemon Squeezy as merchant of record; they handle payment processing, VAT/tax and delivery of your download link. Delivery is immediate after successful payment. Keep your receipt email — it contains your download access.",
+          body: "Checkout is processed by Lemon Squeezy as merchant of record; they handle payment processing, VAT/tax and delivery of your download link. Delivery is immediate after successful payment. Keep your receipt email - it contains your download access.",
         },
         {
           heading: "Refunds",
-          body: "Digital goods are non-refundable once downloaded, as files cannot be returned. If a file is broken, missing or you hit a technical problem, contact us within 30 days and we will fix it, replace it, or refund you — technical failures are on us.",
+          body: "Digital goods are non-refundable once downloaded, as files cannot be returned. If a file is broken, missing or you hit a technical problem, contact us within 30 days and we will fix it, replace it, or refund you - technical failures are on us.",
         },
         {
           heading: "Commissions",

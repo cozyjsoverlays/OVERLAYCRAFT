@@ -13,7 +13,7 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — Animated Twitch, YouTube & Kick Stream Overlays`,
+    default: `${SITE.name} - Animated Twitch, YouTube & Kick Stream Overlays`,
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     type: "website",
     url: SITE.url,
-    title: `${SITE.name} — Your Stream Is About to Feel Like a Different Place`,
+    title: `${SITE.name} - Your Stream Is About to Feel Like a Different Place`,
     description: SITE.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — Your Stream Is About to Feel Like a Different Place`,
+    title: `${SITE.name} - Your Stream Is About to Feel Like a Different Place`,
     description: SITE.description,
   },
   icons: { icon: "/favicon.svg" },

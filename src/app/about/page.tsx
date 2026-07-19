@@ -4,9 +4,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ETSY_SHOP_URL, SITE, TRUST_BAR } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "About — The Atelier Behind OverlayCraft",
+  title: "About - The Atelier Behind OverlayCraft",
   description:
-    "OverlayCraft is the home of VectorKingStudio — six years of animated stream overlay craft, 1,300+ streamers equipped, 4.9★ on Etsy. This is where stream worlds are forged.",
+    "OverlayCraft is the home of VectorKingStudio - six years of animated stream overlay craft, 1,300+ streamers equipped, 4.9★ on Etsy. This is where stream worlds are forged.",
   alternates: { canonical: "/about" },
 };
 
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <SectionHeading label="The atelier" title="About OverlayCraft" />
       <div className="mt-8 space-y-5 leading-relaxed text-blush/85">
         <p>
-          OverlayCraft is the home of <strong className="text-lilac">{SITE.shop}</strong> —
+          OverlayCraft is the home of <strong className="text-lilac">{SITE.shop}</strong> -
           a one-artist studio that has spent six years doing exactly one thing:
           building animated worlds for streamers.
         </p>
@@ -24,17 +24,17 @@ export default function AboutPage() {
           It started on Etsy in 2020. Since then: over 1,300 packs delivered,
           a 4.9★ average across 193 reviews, and a Star Seller badge held
           season after season. Ravens, wolves, dragons, sakura storms, cozy
-          foxes — every pack begins as a scene, not a template. Something has
+          foxes - every pack begins as a scene, not a template. Something has
           to feel alive in the corner of the frame.
         </p>
         <p>
           This site is the studio&apos;s own storefront: the full catalog with
           instant download, plus the commission desk where one-of-one stream
-          identities are forged — emotes, badges, mascots and all.
+          identities are forged - emotes, badges, mascots and all.
         </p>
         <p>
           The Etsy shop stays open, and every listing here links to its Etsy
-          twin — buy wherever you&apos;re comfortable. Same files, same craft,
+          twin - buy wherever you&apos;re comfortable. Same files, same craft,
           same artist behind both counters.
         </p>
       </div>

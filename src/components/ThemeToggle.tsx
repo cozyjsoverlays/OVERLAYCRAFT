@@ -23,7 +23,7 @@ export function ThemeToggle() {
     try {
       localStorage.setItem("theme", next ? "dark" : "light");
     } catch {
-      /* storage blocked — session-only toggle still works */
+      /* storage blocked - session-only toggle still works */
     }
     setDark(next);
   }

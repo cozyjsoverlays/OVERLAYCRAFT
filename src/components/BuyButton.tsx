@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Download } from "lucide-react";
 import type { Product } from "@/lib/types";
+import { CUSTOM_ETSY_URL } from "@/data/site";
 import { currentPrice, etsyLink, formatPrice } from "@/lib/utils";
 
 /**
@@ -13,10 +13,12 @@ export function BuyButton({ product, className = "" }: { product: Product; class
   const cls = `inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] ${className}`;
 
   if (product.customCommission) {
+    // Custom orders go straight to the real Etsy commission listing.
     return (
-      <Link href="/custom" className={cls}>
-        Start a custom brief
-      </Link>
+      <a href={CUSTOM_ETSY_URL} target="_blank" rel="noopener noreferrer" className={cls}>
+        <Download size={16} aria-hidden />
+        Order Custom - {formatPrice(currentPrice(product))}
+      </a>
     );
   }
 
@@ -27,7 +29,7 @@ export function BuyButton({ product, className = "" }: { product: Product; class
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
       <Download size={16} aria-hidden />
-      Buy Now — {formatPrice(currentPrice(product))}
+      Buy Now - {formatPrice(currentPrice(product))}
     </a>
   );
 }

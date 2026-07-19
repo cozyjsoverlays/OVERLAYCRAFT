@@ -34,7 +34,7 @@ export interface Product {
   customCommission?: boolean;
   /**
    * Lemon Squeezy hosted-checkout URL for this product.
-   * Stubbed at launch — replace per product after creating the store.
+   * Stubbed at launch - replace per product after creating the store.
    */
   lemonSqueezyUrl: string;
 }

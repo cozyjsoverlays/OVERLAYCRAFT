@@ -5,7 +5,7 @@ import { Play } from "lucide-react";
 
 /**
  * Click-to-load YouTube embed. Until the user clicks, we show only a webp
- * thumbnail (falling back to jpg if webp 404s) + a play button — no iframe, no
+ * thumbnail (falling back to jpg if webp 404s) + a play button - no iframe, no
  * YouTube JS. This keeps the page fast and private, and means a YouTube outage
  * can never break the page render. The nocookie domain is used on load.
  */

@@ -15,11 +15,11 @@ export default function PrivacyPage() {
       sections={[
         {
           heading: "What we collect",
-          body: "As little as possible. Purchases are processed by Lemon Squeezy, which collects the billing details required to complete your order under its own privacy policy — we receive your email and order details, not your payment information. The commission intake form collects what you type into it. The newsletter form collects your email address.",
+          body: "As little as possible. Purchases are processed by Lemon Squeezy, which collects the billing details required to complete your order under its own privacy policy - we receive your email and order details, not your payment information. The commission intake form collects what you type into it. The newsletter form collects your email address.",
         },
         {
           heading: "What we use it for",
-          body: "Delivering your files, answering your messages, running commissions, and — only if you subscribed — telling you about new drops. We do not sell, rent or share your data with third parties for their marketing.",
+          body: "Delivering your files, answering your messages, running commissions, and - only if you subscribed - telling you about new drops. We do not sell, rent or share your data with third parties for their marketing.",
         },
         {
           heading: "Cookies & analytics",

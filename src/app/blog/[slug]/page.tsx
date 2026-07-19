@@ -192,7 +192,7 @@ export default async function BlogPostPage({ params }: Props) {
           <span className="bg-gradient-to-r from-lilac to-volt bg-clip-text text-transparent">a place?</span>
         </h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-mist">
-          127 animated overlay worlds — real preview videos on every pack, instant download, OBS-ready.
+          127 animated overlay worlds - real preview videos on every pack, instant download, OBS-ready.
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           {post.related.map((r) => (

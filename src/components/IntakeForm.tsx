@@ -49,8 +49,8 @@ export function IntakeForm() {
       </div>
       <div>
         <label htmlFor="in-budget" className={labelCls}>Budget tier</label>
-        <select id="in-budget" name="budget" className={inputCls} defaultValue="Pro — $250">
-          {["Starter — $100", "Pro — $250", "Full Brand — $400", "Not sure yet"].map((b) => (
+        <select id="in-budget" name="budget" className={inputCls} defaultValue="Pro - $250">
+          {["Starter - $100", "Pro - $250", "Full Brand - $400", "Not sure yet"].map((b) => (
             <option key={b}>{b}</option>
           ))}
         </select>
@@ -79,7 +79,7 @@ export function IntakeForm() {
           id="in-refs"
           name="references"
           rows={3}
-          placeholder="Links to art, channels, or packs you love — one per line. (File upload lands with accounts.)"
+          placeholder="Links to art, channels, or packs you love - one per line. (File upload lands with accounts.)"
           className={inputCls}
         />
       </div>

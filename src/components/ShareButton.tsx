@@ -10,7 +10,7 @@ interface ShareButtonProps {
   /** Site-relative product path, e.g. /overlays/crow/dark-gothic-raven */
   path: string;
   etsyUrl: string;
-  /** First thumbnail — passed to Pinterest as media. */
+  /** First thumbnail - passed to Pinterest as media. */
   thumbnail?: string;
   className?: string;
 }
@@ -52,10 +52,10 @@ export function ShareButton({ title, path, etsyUrl, thumbnail, className = "" }:
     e.stopPropagation();
     if (typeof navigator !== "undefined" && navigator.share) {
       try {
-        await navigator.share({ title, text: `${title} — ${SITE.name}`, url });
+        await navigator.share({ title, text: `${title} - ${SITE.name}`, url });
         return;
       } catch {
-        /* user dismissed — fall through to popover */
+        /* user dismissed - fall through to popover */
       }
     }
     setOpen((o) => !o);

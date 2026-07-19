@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ? seoDesc.slice(0, 155)
       : `${seoDesc.slice(0, 120)} Animated stream package for Twitch, YouTube & Kick. Instant download, OBS-ready.`;
   return {
-    title: `${seoTitle} — ${price} Instant Download`,
+    title: `${seoTitle} - ${price} Instant Download`,
     description: metaDesc,
     keywords: product.tags,
     alternates: { canonical: productPath(product) },
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const INSTALL_STEPS = [
-  "Unzip the pack — screens, frames, alerts and panels are sorted into folders.",
+  "Unzip the pack - screens, frames, alerts and panels are sorted into folders.",
   "In OBS/Streamlabs: add a Media Source to your scene and select the animated file (loop enabled).",
   "Add your facecam frame as an Image source above your camera.",
   "Upload alerts to your alert tool (StreamElements/Streamlabs) and panels to your channel page.",
@@ -235,7 +235,7 @@ export default async function ProductPage({ params }: Props) {
         </aside>
       </div>
 
-      {/* Keyword tags — indexable per-listing pills */}
+      {/* Keyword tags - indexable per-listing pills */}
       {product.tags.length > 0 && (
         <section className="mt-14" aria-label="Keywords">
           <h2 className="font-display text-xs uppercase tracking-[0.3em] text-lilac">
