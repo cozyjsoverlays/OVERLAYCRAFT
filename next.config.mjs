@@ -11,6 +11,24 @@ const nextConfig = {
       { protocol: "https", hostname: "v.etsystatic.com" },
     ],
   },
+  async headers() {
+    return [
+      {
+        // HTML pages: never let the CDN hold them past a revalidation window.
+        // Next's default (s-maxage=31536000) made Hostinger's CDN serve
+        // 5-day-old HTML referencing chunk files deleted by newer deploys →
+        // "Application error" on every cached page after a deploy.
+        // Hashed /_next/static assets keep their long immutable cache.
+        source: "/((?!_next/).*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=0, s-maxage=300, stale-while-revalidate=60",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
