@@ -45,8 +45,8 @@ export const TRUST_BAR = [
 export const NAV_LINKS = [
   { label: "Overlays", href: "/overlays" },
   { label: "Custom", href: "/custom" },
+  { label: "Free Tools", href: "/free-tools" },
   { label: "Tutorials", href: "/tutorials" },
-  { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
 ] as const;

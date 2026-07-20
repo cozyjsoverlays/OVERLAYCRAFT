@@ -10,6 +10,7 @@ const FOOTER_LINKS = {
     { label: "All Overlays", href: "/overlays" },
     { label: "Latest Drops", href: "/overlays/latest-drops" },
     { label: "Custom Overlays", href: "/custom" },
+    { label: "Free Tools", href: "/free-tools" },
     { label: "Saved", href: "/saved" },
   ],
   Studio: [

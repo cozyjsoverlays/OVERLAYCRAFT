@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         },
         {
           heading: "Cookies & analytics",
-          body: "The site itself runs without tracking cookies. Wishlist saves live in your browser session, not on our servers. If privacy-friendly analytics are added later, this page will say so first.",
+          body: "We use Google Analytics (GA4) to understand how visitors use the site - which pages are popular, where people come from - in aggregate. Google sets cookies to do this; you can block them with any cookie or tracking blocker and the site still works fully. Your wishlist is stored in your own browser (localStorage), never on our servers.",
         },
         {
           heading: "Your rights",
