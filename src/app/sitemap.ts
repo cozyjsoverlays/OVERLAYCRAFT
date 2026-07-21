@@ -8,7 +8,7 @@ import { BLOG_POSTS } from "@/data/blog";
 import { productPath } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = ["", "/overlays", "/custom", "/tutorials", "/free-tools", "/free-tools/twitch-name-generator", "/free-tools/twitch-bio-generator", "/about", "/faq", "/contact", "/blog", "/terms", "/privacy", "/license"].map(
+  const staticPages = ["", "/overlays", "/custom", "/tutorials", "/free-tools", "/free-tools/emote-resizer", "/free-tools/twitch-name-generator", "/free-tools/twitch-bio-generator", "/about", "/faq", "/contact", "/blog", "/terms", "/privacy", "/license"].map(
     (path) => ({
       url: `${SITE.url}${path}`,
       changeFrequency: "weekly" as const,

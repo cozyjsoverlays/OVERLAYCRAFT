@@ -3,13 +3,19 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Free Streamer Tools - Twitch Name & Bio Generators",
+  title: "Free Streamer Tools - Emote Resizer, Twitch Name & Bio Generators",
   description:
-    "Free tools for streamers: generate a Twitch username that fits your vibe and write a bio that makes people follow. No signup, instant results.",
+    "Free tools for streamers: resize emotes, sub badges and channel point icons to every Twitch size, generate a username that fits your vibe, and write a bio that converts.",
   alternates: { canonical: "/free-tools" },
 };
 
 const TOOLS = [
+  {
+    href: "/free-tools/emote-resizer",
+    glyph: "😹",
+    title: "Emote, Badge & Channel Point Resizer",
+    desc: "Drop in one image, get every size Twitch requires for emotes, sub badges and channel point icons, plus a preview of how it reads small. Nothing leaves your browser.",
+  },
   {
     href: "/free-tools/twitch-name-generator",
     glyph: "✨",
