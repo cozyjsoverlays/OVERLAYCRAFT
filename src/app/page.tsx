@@ -63,9 +63,14 @@ export default function HomePage() {
         <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
           {TILE_CATEGORIES.map((slug, i) => {
             const cat = CATEGORIES.find((c) => c.slug === slug)!;
+            const packs = productsByCategory(slug);
+            const previews = packs
+              .filter((p) => p.thumbnails[0]?.startsWith("http"))
+              .slice(0, 4)
+              .map((p) => p.thumbnails[0]);
             return (
               <Reveal key={slug} index={i}>
-                <CategoryTile category={cat} count={productsByCategory(slug).length} />
+                <CategoryTile category={cat} count={packs.length} previews={previews} />
               </Reveal>
             );
           })}
