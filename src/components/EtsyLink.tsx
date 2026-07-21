@@ -12,10 +12,24 @@ export function EtsyLink({
   className = "",
 }: {
   etsyUrl: string;
-  variant?: "button" | "text";
+  variant?: "button" | "text" | "primary";
   className?: string;
 }) {
   const href = etsyLink(etsyUrl);
+
+  if (variant === "primary") {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`inline-flex items-center justify-center gap-2 rounded-xl bg-volt px-7 py-3.5 font-body text-sm font-semibold text-white shadow-volt transition-all hover:bg-voltDim active:scale-[0.97] ${className}`}
+      >
+        Get it on Etsy <ExternalLink size={15} aria-hidden />
+      </a>
+    );
+  }
+
   if (variant === "text") {
     return (
       <a

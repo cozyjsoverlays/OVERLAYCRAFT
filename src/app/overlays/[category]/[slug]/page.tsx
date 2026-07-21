@@ -7,7 +7,6 @@ import { REVIEWS, SITE } from "@/data/site";
 import { absUrl, discountPercent, etsyLink, formatPrice, currentPrice, productPath } from "@/lib/utils";
 import { ProductGallery } from "@/components/ProductGallery";
 import { ProductCard } from "@/components/ProductCard";
-import { BuyButton } from "@/components/BuyButton";
 import { EtsyLink } from "@/components/EtsyLink";
 import { SaveButton } from "@/components/SaveButton";
 import { ShareButton } from "@/components/ShareButton";
@@ -155,9 +154,8 @@ export default async function ProductPage({ params }: Props) {
             {visibleDescription}
           </div>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <BuyButton product={product} className="flex-1" />
-            <EtsyLink etsyUrl={product.etsyUrl} className="flex-1" />
+          <div className="mt-7">
+            <EtsyLink etsyUrl={product.etsyUrl} variant="primary" className="w-full sm:w-auto" />
           </div>
 
           <div className="mt-4 flex items-center gap-4">

@@ -48,19 +48,22 @@ Every product's `lemonSqueezyUrl` is stubbed as `"LEMONSQUEEZY_URL"`. To go live
 2. On each product: **Share → copy the hosted checkout link**
    (`https://<store>.lemonsqueezy.com/buy/<uuid>`).
 3. Paste it into that product's `lemonSqueezyUrl` in `src/data/products.ts`.
-4. The Buy button ([src/components/BuyButton.tsx](src/components/BuyButton.tsx))
-   opens the link in a new tab; until a real URL is set it renders disabled with
-   an Etsy hint. Test with Lemon Squeezy's test mode before switching the store live.
+4. Re-mount the Buy button ([src/components/BuyButton.tsx](src/components/BuyButton.tsx))
+   on the product page. It is currently **not rendered**: the product page's single
+   CTA is the primary "Get it on Etsy" link, since checkout runs through Etsy until
+   a Lemon Squeezy store exists. Test with Lemon Squeezy's test mode before going live.
 
 Optional later: swap links for the Lemon.js overlay checkout (`lemon.js` script +
 `?embed=1`) without touching the catalog shape.
 
 ## Structure notes
 
-- **No cart by design** — digital goods buy directly; `BuyButton` is the single
-  purchase entry point, so a cart can be added behind it later.
-- **Wishlist** — in-memory context ([src/components/WishlistProvider.tsx](src/components/WishlistProvider.tsx));
-  add persistence (localStorage/DB) inside the provider only.
+- **No cart by design** — digital goods buy directly. Purchases currently route to
+  each pack's Etsy listing (rewritten through `vectorkingstudio.etsy.com` by
+  `etsyLink()` so every click credits the shop).
+- **Wishlist** — persisted to localStorage in
+  ([src/components/WishlistProvider.tsx](src/components/WishlistProvider.tsx));
+  swap that storage layer for a DB/account sync later.
 - **Marketplace-ready** — products carry `id`/`category[]`; a `sellerId` field and
   seller profile routes can be added without restructuring.
 - **SEO** — per-page metadata, canonical URLs, JSON-LD Product schema on product
