@@ -45,6 +45,43 @@ export default function ContactPage() {
         </Link>
         .
       </p>
+
+      <section className="mt-12">
+        <h2 className="font-display text-xl text-blush">Find the studio elsewhere</h2>
+        <p className="mt-2 text-sm text-mist">
+          New drops, work in progress and behind-the-scenes across the web.
+        </p>
+        <div className="mt-5 grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              label: "Behance",
+              href: "https://www.behance.net/vectorkingstudio",
+              desc: "Full design portfolio and case studies.",
+            },
+            {
+              label: "Pinterest",
+              href: "https://www.pinterest.com/vectorkingstudio/",
+              desc: "Overlay inspiration boards and new art.",
+            },
+            {
+              label: "Telegram",
+              href: "https://t.me/vectorkingstudio",
+              desc: "Drop announcements the moment they land.",
+            },
+          ].map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl border border-veil bg-ink2/70 p-5 backdrop-blur transition-colors hover:border-lilac/50"
+            >
+              <p className="font-display text-lg text-blush">{s.label} ↗</p>
+              <p className="mt-2 text-sm text-mist">{s.desc}</p>
+            </a>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

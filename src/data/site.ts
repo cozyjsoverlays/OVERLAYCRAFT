@@ -12,6 +12,15 @@ export const SITE = {
 export const ETSY_SHOP_URL = "https://www.etsy.com/shop/VectorKingStudio";
 export const YOUTUBE_URL = "https://www.youtube.com/@vectorkingstudio1";
 
+/** Studio social profiles, all verified VectorKingStudio accounts. */
+export const SOCIAL_LINKS = [
+  { label: "Etsy", href: ETSY_SHOP_URL },
+  { label: "YouTube", href: YOUTUBE_URL },
+  { label: "Behance", href: "https://www.behance.net/vectorkingstudio" },
+  { label: "Pinterest", href: "https://www.pinterest.com/vectorkingstudio/" },
+  { label: "Telegram", href: "https://t.me/vectorkingstudio" },
+] as const;
+
 /** The real custom-commission Etsy listing - all custom orders go here. */
 export const CUSTOM_ETSY_URL =
   "https://vectorkingstudio.etsy.com/listing/4499837996/custom-twitch-overlay-stream-package";

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ETSY_SHOP_URL, SITE } from "@/data/site";
+import { ETSY_SHOP_URL, SITE, SOCIAL_LINKS } from "@/data/site";
 import { Logo } from "./Logo";
 
 const FOOTER_LINKS = {
@@ -94,6 +94,22 @@ export function Footer() {
           >
             {SITE.shop} on Etsy ↗
           </a>
+
+          <p className="mt-5 font-display text-xs uppercase tracking-[0.3em] text-lilac">Follow</p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {SOCIAL_LINKS.map((s) => (
+              <li key={s.href}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-lg border border-veil px-3 py-1.5 text-xs text-blush/80 transition-colors hover:border-lilac/60 hover:text-lilac"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
         {Object.entries(FOOTER_LINKS).map(([group, links]) => (
           <nav key={group} aria-label={group}>
