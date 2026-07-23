@@ -19,6 +19,8 @@ export interface BlogPost {
   excerpt: string;
   sections: BlogSection[];
   faq?: FaqEntry[];
+  /** Real VectorKingStudio YouTube videos embedded in the post. */
+  videos?: { youtubeId: string; title: string }[];
   /** Real product slugs featured as shoppable cards inside the post. */
   featuredPacks: string[];
   /** Internal links rendered in the CTA block. */
@@ -113,6 +115,9 @@ export const BLOG_POSTS: BlogPost[] = [
         answer:
           "Yes. Streamlabs Desktop uses the same source system - add a Media Source for animated files, Image for static ones, and enable looping.",
       },
+    ],
+    videos: [
+      { youtubeId: "MHUWUyOia9Q", title: "Animated Cozy Night Gaming Room Stream Package in action" },
     ],
     featuredPacks: [
       "cozy-fox-overlay-animated-stream-package",
@@ -217,6 +222,9 @@ export const BLOG_POSTS: BlogPost[] = [
           "Keep individual animated screens under ~50 MB and static graphics under a few MB. Smaller files load instantly and never stutter on scene switches.",
       },
     ],
+    videos: [
+      { youtubeId: "fvOFEco4xcE", title: "Animated Violet Night Dragon Stream Package (1920x1080)" },
+    ],
     featuredPacks: [
       "dark-gothic-raven-animated-stream-package",
       "sakura-dream-wolf-overlay",
@@ -299,6 +307,10 @@ export const BLOG_POSTS: BlogPost[] = [
           "Starting Soon and BRB, because that's where viewers are actively deciding whether to wait. Alerts are second - motion makes every follow feel like an event.",
       },
     ],
+    videos: [
+      { youtubeId: "WRUtLqFWyi8", title: "Animated Crimson Dragon Stream Package - motion demo" },
+      { youtubeId: "RgkKj2w6oew", title: "Animated Sakura Wolf Stream Overlay - the loop up close" },
+    ],
     featuredPacks: [
       "dark-gothic-raven-animated-stream-package",
       "inferno-phoenix-overlay",
@@ -375,6 +387,10 @@ export const BLOG_POSTS: BlogPost[] = [
         answer:
           "Through third-party alert tools that give you a browser-source URL for OBS. Your pack's animated alert files upload into those tools just like on Twitch.",
       },
+    ],
+    videos: [
+      { youtubeId: "Ov4CWKxQdh8", title: "Animated Dragon Stream Overlay - Twitch, Kick & YouTube" },
+      { youtubeId: "r5vNFcDZ66k", title: "Inferno Wolf Purple Animated Stream Overlay Pack" },
     ],
     featuredPacks: [
       "inferno-phoenix-overlay",
@@ -459,6 +475,10 @@ export const BLOG_POSTS: BlogPost[] = [
         answer:
           "No - any well-made 1920×1080 animated pack works. What matters is choosing a world that suits your model and keeping busy motion off the model's silhouette.",
       },
+    ],
+    videos: [
+      { youtubeId: "RgkKj2w6oew", title: "Animated Sakura Wolf Stream Overlay - Twitch, Kick & VTuber" },
+      { youtubeId: "4U1-BP0wWoY", title: "Animated Red Moon Samurai Stream Overlay - VTuber ready" },
     ],
     featuredPacks: [
       "red-moon-samurai-overlay",
@@ -554,6 +574,9 @@ export const BLOG_POSTS: BlogPost[] = [
         answer:
           "Yes. Packs come as ready files - you drag them into OBS as sources, tick Loop on the animated ones, and you're live. No editing software involved.",
       },
+    ],
+    videos: [
+      { youtubeId: "9IgXzgWVNgo", title: "Animated Green Anime & Black Cat Stream Package - full walkthrough" },
     ],
     featuredPacks: [
       "dark-gothic-raven-animated-stream-package",

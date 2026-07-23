@@ -8,6 +8,7 @@ import { getProduct } from "@/data/products";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
+import { LiteYouTube } from "@/components/LiteYouTube";
 
 /** Render inline [label](/href) links inside body copy as keyword-rich anchors. */
 function withLinks(text: string): ReactNode {
@@ -77,6 +78,19 @@ export default async function BlogPostPage({ params }: Props) {
       })),
     });
   }
+  post.videos?.forEach((v) => {
+    jsonLd.push({
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: v.title,
+      description: v.title,
+      thumbnailUrl: `https://i.ytimg.com/vi/${v.youtubeId}/maxresdefault.jpg`,
+      uploadDate: post.date,
+      contentUrl: `https://www.youtube.com/watch?v=${v.youtubeId}`,
+      embedUrl: `https://www.youtube.com/embed/${v.youtubeId}`,
+      publisher: { "@type": "Organization", name: SITE.name },
+    });
+  });
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-14 md:px-8">
@@ -159,6 +173,33 @@ export default async function BlogPostPage({ params }: Props) {
           )}
         </section>
       ))}
+
+      {/* Watch it in action */}
+      {post.videos && post.videos.length > 0 && (
+        <section className="mt-14">
+          <h2 className="font-display text-2xl text-blush">Watch It in Action</h2>
+          <p className="mt-2 text-sm text-mist">
+            Real animated packs from the{" "}
+            <a
+              href="https://www.youtube.com/@vectorkingstudio1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lilac underline-offset-4 hover:underline"
+            >
+              VectorKingStudio channel
+            </a>{" "}
+            - see the motion before you decide.
+          </p>
+          <div className={`mt-5 grid gap-5 ${post.videos.length > 1 ? "sm:grid-cols-2" : ""}`}>
+            {post.videos.map((v) => (
+              <div key={v.youtubeId}>
+                <LiteYouTube id={v.youtubeId} title={v.title} />
+                <p className="mt-2 text-sm text-mist">{v.title}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {post.faq && (
         <section className="mt-12">
