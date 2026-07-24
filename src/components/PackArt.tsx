@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Product } from "@/lib/types";
 import { getCategory } from "@/data/categories";
-import { hasRealImage, productAlt } from "@/lib/utils";
+import { etsyImage, hasRealImage, productAlt } from "@/lib/utils";
 
 /**
  * Product artwork with a designed fallback. Renders the real cover image when
@@ -29,7 +29,7 @@ export function PackArt({
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={src}
+        src={etsyImage(src)}
         alt={productAlt(product, index)}
         loading="lazy"
         onError={() => setFailed(true)}

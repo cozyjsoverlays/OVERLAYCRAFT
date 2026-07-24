@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/lib/types";
-import { discountPercent, formatPrice, hasRealImage, productAlt, productPath } from "@/lib/utils";
+import { discountPercent, etsyImage, formatPrice, hasRealImage, productAlt, productPath } from "@/lib/utils";
 import { VideoPreview } from "./VideoPreview";
 import { PackArt } from "./PackArt";
 import { SaveButton } from "./SaveButton";
@@ -18,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
           {hasRealImage(product) ? (
             <VideoPreview
               src={product.previewVideo}
-              poster={product.thumbnails[0]}
+              poster={etsyImage(product.thumbnails[0])}
               alt={productAlt(product, 0)}
               className="h-full w-full"
             />

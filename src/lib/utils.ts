@@ -18,6 +18,18 @@ export function etsyLink(url: string): string {
     .replace(/^https?:\/\/etsy\.com\//i, "https://vectorkingstudio.etsy.com/");
 }
 
+/**
+ * Rewrite an Etsy CDN image URL to a different size variant. Etsy serves the
+ * same image at many sizes via the `il_<token>` segment (il_170x135, il_600x600,
+ * il_fullxfull, il_2000xN ...). Bumping the token to `il_2000xN` gives the same
+ * high-resolution preview Etsy shows in its zoom view. Non-Etsy URLs pass
+ * through unchanged.
+ */
+export function etsyImage(url: string, token = "il_2000xN"): string {
+  if (!url || !url.includes("i.etsystatic.com")) return url;
+  return url.replace(/\/il_[^./]+\./, `/${token}.`);
+}
+
 const SCREEN_NAMES = [
   "animated preview",
   "starting soon screen",

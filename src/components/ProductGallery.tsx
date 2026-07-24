@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Product } from "@/lib/types";
-import { hasRealImage, productAlt } from "@/lib/utils";
+import { etsyImage, hasRealImage, productAlt } from "@/lib/utils";
 import { VideoPreview } from "./VideoPreview";
 import { PackArt } from "./PackArt";
 
@@ -26,7 +26,7 @@ export function ProductGallery({ product }: { product: Product }) {
         {selected === 0 ? (
           <VideoPreview
             src={video}
-            poster={thumbnails[0]}
+            poster={etsyImage(thumbnails[0])}
             alt={productAlt(product, 0)}
             autoplay
             className="aspect-video w-full"
@@ -34,7 +34,7 @@ export function ProductGallery({ product }: { product: Product }) {
         ) : (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={thumbnails[selected]}
+            src={etsyImage(thumbnails[selected])}
             alt={productAlt(product, selected)}
             onError={(e) => ((e.currentTarget as HTMLImageElement).style.visibility = "hidden")}
             className="aspect-video w-full bg-ink2 object-cover"
@@ -56,7 +56,7 @@ export function ProductGallery({ product }: { product: Product }) {
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={thumb} alt={productAlt(product, i)} className="aspect-video w-full bg-ink2 object-cover" />
+              <img src={etsyImage(thumb, "il_340xN")} alt={productAlt(product, i)} className="aspect-video w-full bg-ink2 object-cover" />
               {i === 0 && (
                 <span className="absolute inset-0 grid place-items-center text-lg text-white drop-shadow" aria-hidden>
                   ▶
