@@ -14,7 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-veil bg-ink2/70 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-lilac/50 hover:shadow-volt-soft">
       <Link href={path} className="block" aria-label={product.etsyTitle ?? product.title}>
-        <div className="relative aspect-video">
+        <div className="relative aspect-square">
           {hasRealImage(product) ? (
             <VideoPreview
               src={product.previewVideo}

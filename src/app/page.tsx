@@ -85,7 +85,7 @@ export default function HomePage() {
               href={productPath(bestseller)}
               className="block overflow-hidden rounded-2xl border border-veil shadow-volt-soft"
             >
-              <PackArt product={bestseller} className="aspect-video w-full bg-ink2" />
+              <PackArt product={bestseller} className="aspect-square w-full bg-ink2" />
             </Link>
           </Reveal>
           <Reveal index={1}>

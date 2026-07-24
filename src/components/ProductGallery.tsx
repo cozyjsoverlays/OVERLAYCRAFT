@@ -15,7 +15,7 @@ export function ProductGallery({ product }: { product: Product }) {
   if (!hasRealImage(product)) {
     return (
       <div className="overflow-hidden rounded-2xl border border-veil shadow-volt-soft">
-        <PackArt product={product} className="aspect-video w-full" />
+        <PackArt product={product} className="aspect-square w-full" />
       </div>
     );
   }
@@ -29,7 +29,7 @@ export function ProductGallery({ product }: { product: Product }) {
             poster={etsyImage(thumbnails[0])}
             alt={productAlt(product, 0)}
             autoplay
-            className="aspect-video w-full"
+            className="aspect-square w-full"
           />
         ) : (
           // eslint-disable-next-line @next/next/no-img-element
@@ -37,7 +37,7 @@ export function ProductGallery({ product }: { product: Product }) {
             src={etsyImage(thumbnails[selected])}
             alt={productAlt(product, selected)}
             onError={(e) => ((e.currentTarget as HTMLImageElement).style.visibility = "hidden")}
-            className="aspect-video w-full bg-ink2 object-cover"
+            className="aspect-square w-full bg-ink2 object-cover"
           />
         )}
       </div>
@@ -56,7 +56,7 @@ export function ProductGallery({ product }: { product: Product }) {
               }`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={etsyImage(thumb, "il_340xN")} alt={productAlt(product, i)} className="aspect-video w-full bg-ink2 object-cover" />
+              <img src={etsyImage(thumb, "il_340xN")} alt={productAlt(product, i)} className="aspect-square w-full bg-ink2 object-cover" />
               {i === 0 && (
                 <span className="absolute inset-0 grid place-items-center text-lg text-white drop-shadow" aria-hidden>
                   ▶
