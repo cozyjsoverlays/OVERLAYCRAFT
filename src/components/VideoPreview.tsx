@@ -50,7 +50,7 @@ export function VideoPreview({
         }}
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {active && (
+      {active && src && (
         <video
           src={src}
           poster={poster}

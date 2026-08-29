@@ -130,6 +130,14 @@ export const CATEGORIES: Category[] = [
       "Raccoons by the fire, dragons with tea, pandas under lamplight - cozy stream overlays that make viewers want to stay. Cozy is more than an aesthetic; it's a retention strategy: warm palettes, soft motion and lived-in scenes lower the temperature of a stream and invite chat to settle in. Each package delivers that feeling across every screen state - animated starting soon, BRB, ending and offline scenes, plus webcam frames, game overlays, alerts and panels that match. Loops are gentle and CPU-light, exported for OBS, Streamlabs and StreamElements across Twitch, YouTube, Kick and TikTok Live. For chatting streams, art channels, cozy gaming and every community that runs on warmth. Instant download.",
   },
   {
+    slug: "badges",
+    name: "Sub Badges & Emotes",
+    glyph: "🏅",
+    mood: "lilac",
+    intro:
+      "Matched sub badge and emote sets that make your chat feel like a place with its own language. These packs give returning subscribers a badge worth earning and hand your community a set of animated emotes nobody else has - designed in one coherent art style so your channel reads as intentional from the sub button to the chat line. Every set is sized and exported ready to upload straight to Twitch (and Kick), so setup is minutes, not an afternoon in an image editor. Cute, gothic, cozy or bold - pick the mood that matches your overlay and give your regulars a reason to spam. Instant download, high-resolution PNGs, drop-in ready.",
+  },
+  {
     slug: "custom",
     name: "Custom Overlays",
     glyph: "⚒",
