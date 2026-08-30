@@ -1,4 +1,5 @@
 import type { FaqEntry } from "@/lib/types";
+import { GENERATED_POSTS } from "./blog-generated";
 
 export interface BlogSection {
   h2: string;
@@ -27,7 +28,8 @@ export interface BlogPost {
   related: { label: string; href: string }[];
 }
 
-export const BLOG_POSTS: BlogPost[] = [
+/** The 6 hand-written flagship guides (richer, some with embedded videos). */
+const FLAGSHIP_POSTS: BlogPost[] = [
   {
     slug: "how-to-add-overlay-to-obs",
     title: "How to Add an Overlay to OBS (in Under 5 Minutes)",
@@ -591,6 +593,9 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 ];
+
+/** Flagship posts first (newest, richest), then the generated SEO library. */
+export const BLOG_POSTS: BlogPost[] = [...FLAGSHIP_POSTS, ...GENERATED_POSTS];
 
 export function getPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
