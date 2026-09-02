@@ -87,7 +87,7 @@ function slugify(s) {
 function moodOf(title, cats) {
   const t = title.toLowerCase();
   if (cats.includes("badges")) return "badges";
-  if (/(gothic|mystic|reaper|blood|dark|midnight|shadow|snake)/.test(t)) return "dark";
+  if (/(gothic|mystic|reaper|blood|dark|midnight|shadow|snake|halloween|spooky|witch|pumpkin|horror)/.test(t)) return "dark";
   if (/(cozy|kawaii|starry|dream|pinky|christmas|valentine)/.test(t)) return "cozy";
   if (/(inferno|crimson|red|fire)/.test(t)) return "fire";
   if (/(sakura|japanese|samurai|ninja|neon)/.test(t)) return "japanese";
@@ -104,6 +104,50 @@ const DESC = {
   badges: (n, s) => `${s} - a matched set of animated sub badges and emotes in one coherent art style. Sized and exported ready to upload straight to Twitch. Give your chat a look nobody else has.`,
   clean: (n, s) => `${s} - a complete matched stream identity: animated screens, facecam frames, game overlay, alerts and panels in one coherent look. Instant download, live in OBS in minutes.`,
 };
+
+/* ── full product-page body (etsyDescription): 4 unique, keyword-rich
+   paragraphs per pack. Google rewards substantial, non-thin product pages,
+   so every listing gets a real description instead of a single sentence.
+   No em-dashes anywhere - hyphens only. ── */
+const OPENERS = {
+  dark: (n, s) => `Set the scene with ${s}. Slow smoke, pale moonlight and a ${n} that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.`,
+  cozy: (n, s) => `Meet ${s}. Warm light, soft motion and the kind of cozy scene your chat wants to hang around in - a complete animated stream overlay that turns your channel into a comfortable little world.`,
+  fire: (n, s) => `Bring the heat with ${s}. Ember light, rising sparks and pure comeback energy across every screen - a full animated Twitch overlay built to make your big plays feel even bigger.`,
+  japanese: (n, s) => `Step into ${s}. Ink-brush skies, lantern glow and cinematic Japanese atmosphere - a complete animated stream overlay with real character in every corner of the frame.`,
+  tiktok: (n, s) => `Go live vertical with ${s}. Composed for TikTok Live and mobile-first streams so nothing fights the chat column - animated screens, frames and badges tuned for the vertical stage.`,
+  badges: (n, s) => `Give your chat something to unlock with ${s}. A matched set of animated Twitch sub badges and emotes drawn in one coherent art style, sized and exported ready to upload straight to your dashboard.`,
+  clean: (n, s) => `Meet ${s}. A complete, matched stream identity - animated screens, facecam frame, game overlay, alerts and panels in one coherent look, ready to drop into OBS today.`,
+};
+
+const INSIDE_STANDARD = (n) =>
+  `Inside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same ${n} art direction, so your whole layout looks designed by one hand.`;
+const INSIDE_BADGES = (n) =>
+  `Inside the pack: a full set of animated sub badges plus matching emotes, drawn in one consistent ${n} style and exported at the exact sizes Twitch and Kick expect. Drop them straight into your creator dashboard - no resizing, no guesswork, no mismatched art.`;
+
+const COMPAT_PARA =
+  `It works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.`;
+
+const LICENSE_PARA = (s) =>
+  `Your purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want ${s} tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.`;
+
+function longDesc(mood, noun, st, cats) {
+  const opener = (OPENERS[mood] || OPENERS.clean)(noun, st);
+  const inside = cats.includes("badges") ? INSIDE_BADGES(noun) : INSIDE_STANDARD(noun);
+  return [opener, inside, COMPAT_PARA, LICENSE_PARA(st)].join("\n\n");
+}
+
+/* per-image alt text for gallery screens (image SEO + accessibility) */
+const SCREENS = ["animated preview", "starting soon screen", "facecam frame", "alerts & panels"];
+function altsFor(noun, st, len) {
+  const alts = [];
+  for (let i = 0; i < len; i++) {
+    const screen = SCREENS[i] || "stream overlay screen";
+    alts.push(i === 0
+      ? `${st} - animated ${noun} Twitch stream overlay pack cover`
+      : `${st} ${screen} - ${noun} animated stream overlay`);
+  }
+  return alts;
+}
 
 function tagsFor(noun, cats) {
   const N = cap(noun);
@@ -183,6 +227,8 @@ for (const it of items) {
     previewVideo: it.video,
     thumbnails: gallery,
     description: DESC[mood](noun, st),
+    etsyDescription: o.etsyDescription || longDesc(mood, noun, st, cats),
+    imageAlts: altsFor(noun, st, gallery.length),
     tags: tagsFor(noun, cats),
     featured: !!o.featured,
     bestseller: !!o.bestseller,
@@ -207,6 +253,8 @@ const productLiteral = (p) => {
     `    previewVideo: ${JSON.stringify(p.previewVideo)},`,
     `    thumbnails: ${JSON.stringify(p.thumbnails)},`,
     `    description: ${JSON.stringify(p.description)},`,
+    `    etsyDescription: ${JSON.stringify(p.etsyDescription)},`,
+    `    imageAlts: ${JSON.stringify(p.imageAlts)},`,
     `    tags: ${JSON.stringify(p.tags)},`
   );
   if (p.featured) lines.push(`    featured: true,`);
