@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CATEGORIES, getCategory } from "@/data/categories";
 import { productsByCategory } from "@/data/products";
 import { ShopGrid } from "@/components/ShopGrid";
+import { SITE } from "@/data/site";
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -29,6 +30,36 @@ export default async function CategoryPage({ params }: Props) {
   if (!cat) notFound();
 
   const products = productsByCategory(cat.slug);
+
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Overlays", item: `${SITE.url}/overlays` },
+        { "@type": "ListItem", position: 2, name: cat.name, item: `${SITE.url}/overlays/${cat.slug}` },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: `${cat.name} - ${SITE.name}`,
+      description: cat.intro.slice(0, 300),
+      url: `${SITE.url}/overlays/${cat.slug}`,
+      isPartOf: { "@id": `${SITE.url}/#website` },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: products.length,
+        itemListElement: products.slice(0, 24).map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${SITE.url}/overlays/${p.category[0]}/${p.slug}`,
+          name: p.title,
+        })),
+      },
+    },
+  ];
+
   // Mood-tinted page glow: soft categories lean lilac, dark ones lean abyss-deep
   const glow =
     cat.mood === "lilac"
@@ -37,6 +68,10 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div style={{ backgroundImage: glow }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
         <p className="font-display text-xs uppercase tracking-[0.3em] text-lilac">
           {cat.glyph} Collection

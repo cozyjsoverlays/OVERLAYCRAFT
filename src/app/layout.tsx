@@ -4,7 +4,7 @@ import { Cinzel, Outfit, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WishlistProvider } from "@/components/WishlistProvider";
-import { SITE } from "@/data/site";
+import { SITE, SOCIAL_LINKS } from "@/data/site";
 import "./globals.css";
 
 const display = Cinzel({ subsets: ["latin"], variable: "--font-display", weight: ["400", "500", "600"] });
@@ -18,6 +18,23 @@ export const metadata: Metadata = {
     template: `%s · ${SITE.name}`,
   },
   description: SITE.description,
+  alternates: { canonical: "/" },
+  applicationName: SITE.name,
+  authors: [{ name: SITE.shop }],
+  creator: SITE.shop,
+  publisher: SITE.shop,
+  category: "Stream Overlays & Graphics",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     siteName: SITE.name,
     type: "website",
@@ -31,6 +48,44 @@ export const metadata: Metadata = {
     description: SITE.description,
   },
   icons: { icon: "/favicon.svg" },
+};
+
+/**
+ * Site-wide structured data. One Organization node (brand identity, logo and
+ * every verified social profile via sameAs - feeds Google's brand/Knowledge
+ * panel) and one WebSite node with a SearchAction so Google can show a
+ * sitelinks search box that points into the catalog.
+ */
+const SITE_JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.name,
+      alternateName: SITE.shop,
+      url: SITE.url,
+      logo: `${SITE.url}/favicon.svg`,
+      description: SITE.description,
+      sameAs: SOCIAL_LINKS.map((s) => s.href),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      description: SITE.tagline,
+      publisher: { "@id": `${SITE.url}/#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: `${SITE.url}/overlays?q={search_term_string}`,
+        },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -49,6 +104,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(SITE_JSONLD) }}
+        />
         <WishlistProvider>
           <Header />
           <main>{children}</main>

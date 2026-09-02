@@ -95,11 +95,22 @@ export default async function ProductPage({ params }: Props) {
     jsonLd.alternateName = product.title;
   }
 
+  const cat = product.category[0];
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Overlays", item: `${SITE.url}/overlays` },
+      { "@type": "ListItem", position: 2, name: cat.replace(/-/g, " "), item: `${SITE.url}/overlays/${cat}` },
+      { "@type": "ListItem", position: 3, name: product.title, item: `${SITE.url}${productPath(product)}` },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 md:px-8">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbLd]) }}
       />
 
       {/* Breadcrumb */}

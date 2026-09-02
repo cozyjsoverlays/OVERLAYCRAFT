@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import type { Product } from "@/lib/types";
 import { CATEGORIES } from "@/data/categories";
@@ -27,6 +27,17 @@ export function ShopGrid({
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<string>(lockedCategory ?? "all");
   const [sort, setSort] = useState<SortKey>("newest");
+
+  // Seed the search box from a ?q= URL param so the sitewide WebSite
+  // SearchAction (Google sitelinks search box) lands on real results.
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(window.location.search).get("q");
+      if (q) setQuery(q);
+    } catch {
+      /* no-op: search box still works without a URL param */
+    }
+  }, []);
 
   const filtered = useMemo(() => {
     let list = [...products];
