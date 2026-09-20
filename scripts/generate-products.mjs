@@ -52,6 +52,8 @@ const OVERRIDES = {
   "4496797837": { slug: "mystic-moonlight-dog-overlay", newDrop: true },
   "4491744993": { slug: "cozy-wolf-overlay", newDrop: true },
   "4365728007": { slug: "red-animated-stream-package" },
+  "4579037123": { newDrop: true, featured: true },
+  "4577956580": { newDrop: true, featured: true },
 };
 
 /* ── theme detection from titles (drives categories, tags, descriptions) ── */

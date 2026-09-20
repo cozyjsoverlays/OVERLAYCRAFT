@@ -77,6 +77,8 @@ export const PRODUCTS: Product[] = [
     etsyDescription: "Set the scene with Halloween Otter Overlay Animated Stream Package. Slow smoke, pale moonlight and a halloween that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same halloween art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Halloween Otter Overlay Animated Stream Package tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
     imageAlts: ["Halloween Otter Overlay Animated Stream Package - animated halloween Twitch stream overlay pack cover"],
     tags: ["Halloween Twitch Overlay","Twitch Overlay Halloween","Stream Overlay Halloween","Halloween Overlay","Halloween Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Halloween Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+    featured: true,
+    newDrop: true,
   }),
   p({
     id: "oc-002",
@@ -91,6 +93,8 @@ export const PRODUCTS: Product[] = [
     etsyDescription: "Set the scene with Halloween Dragon Overlay Animated Stream Package. Slow smoke, pale moonlight and a dragon that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same dragon art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Halloween Dragon Overlay Animated Stream Package tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
     imageAlts: ["Halloween Dragon Overlay Animated Stream Package - animated dragon Twitch stream overlay pack cover"],
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+    featured: true,
+    newDrop: true,
   }),
   p({
     id: "oc-003",
