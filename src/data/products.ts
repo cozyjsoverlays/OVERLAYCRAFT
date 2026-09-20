@@ -1,7 +1,7 @@
 import type { Product } from "@/lib/types";
 
 /**
- * FULL VectorKingStudio catalog - all 155 live Etsy listings with real
+ * FULL VectorKingStudio catalog - all 157 live Etsy listings with real
  * cover art, gallery screens, preview videos, exact Etsy titles and listing
  * URLs. Re-synced from the live shop (155 listings, incl. sub badges/emotes).
  *
@@ -66,6 +66,34 @@ function p(seed: Seed): Product {
 export const PRODUCTS: Product[] = [
   p({
     id: "oc-001",
+    slug: "halloween-otter-overlay-animated-stream-package",
+    title: "Halloween Otter Overlay Animated Stream Package",
+    category: ["seasonal","anime"],
+    etsyTitle: "Halloween Otter Overlay Animated Stream Package | Spooky Purple Twitch Overlay | Emotes, Badges | Cute Otter VTuber OBS | Youtube, Kick",
+    etsyUrl: "https://www.etsy.com/listing/4579037123/halloween-otter-overlay-animated-stream",
+    previewVideo: "",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/cbdcf9/8551555110/il_fullxfull.8551555110_le8k.jpg"],
+    description: "Halloween Otter Overlay Animated Stream Package - slow smoke, pale moonlight and a halloween that owns the dark. Every screen state, facecam frame, alerts and panels animated in one gothic world, ready for OBS in minutes.",
+    etsyDescription: "Set the scene with Halloween Otter Overlay Animated Stream Package. Slow smoke, pale moonlight and a halloween that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same halloween art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Halloween Otter Overlay Animated Stream Package tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
+    imageAlts: ["Halloween Otter Overlay Animated Stream Package - animated halloween Twitch stream overlay pack cover"],
+    tags: ["Halloween Twitch Overlay","Twitch Overlay Halloween","Stream Overlay Halloween","Halloween Overlay","Halloween Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Halloween Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+  }),
+  p({
+    id: "oc-002",
+    slug: "halloween-dragon-overlay-animated-stream-package",
+    title: "Halloween Dragon Overlay Animated Stream Package",
+    category: ["seasonal","anime"],
+    etsyTitle: "Halloween Dragon Overlay Animated Stream Package | Spooky Purple Twitch Overlay | Emotes, Badges | Cute Dragon VTuber OBS | Youtube, Kick",
+    etsyUrl: "https://www.etsy.com/listing/4577956580/halloween-dragon-overlay-animated-stream",
+    previewVideo: "",
+    thumbnails: ["https://i.etsystatic.com/23257274/r/il/5e258b/8591113875/il_fullxfull.8591113875_h9cc.jpg"],
+    description: "Halloween Dragon Overlay Animated Stream Package - slow smoke, pale moonlight and a dragon that owns the dark. Every screen state, facecam frame, alerts and panels animated in one gothic world, ready for OBS in minutes.",
+    etsyDescription: "Set the scene with Halloween Dragon Overlay Animated Stream Package. Slow smoke, pale moonlight and a dragon that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same dragon art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Halloween Dragon Overlay Animated Stream Package tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
+    imageAlts: ["Halloween Dragon Overlay Animated Stream Package - animated dragon Twitch stream overlay pack cover"],
+    tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+  }),
+  p({
+    id: "oc-003",
     slug: "animated-halloween-stream-overlay-pack",
     title: "Animated Halloween Stream Overlay Pack",
     category: ["seasonal","cozy"],
@@ -79,7 +107,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Fox Twitch Overlay","Twitch Overlay Fox","Stream Overlay Fox","Fox Overlay","Fox Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Fox Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-002",
+    id: "oc-004",
     slug: "animated-halloween-stream-overlay-pack-2",
     title: "Animated Halloween Stream Overlay Pack",
     category: ["seasonal","cozy"],
@@ -93,7 +121,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-003",
+    id: "oc-005",
     slug: "animated-halloween-stream-overlay-pack-3",
     title: "Animated Halloween Stream Overlay Pack",
     category: ["seasonal","cozy"],
@@ -107,7 +135,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raccoon Twitch Overlay","Twitch Overlay Raccoon","Stream Overlay Raccoon","Raccoon Overlay","Raccoon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raccoon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-004",
+    id: "oc-006",
     slug: "animated-halloween-stream-overlay-pack-4",
     title: "Animated Halloween Stream Overlay Pack",
     category: ["seasonal","cozy"],
@@ -121,7 +149,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Ghost Twitch Overlay","Twitch Overlay Ghost","Stream Overlay Ghost","Ghost Overlay","Ghost Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Ghost Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-005",
+    id: "oc-007",
     slug: "animated-halloween-stream-overlay-pack-5",
     title: "Animated Halloween Stream Overlay Pack",
     category: ["seasonal","cozy"],
@@ -135,7 +163,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Bunny Twitch Overlay","Twitch Overlay Bunny","Stream Overlay Bunny","Bunny Overlay","Bunny Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Bunny Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-006",
+    id: "oc-008",
     slug: "animated-halloween-stream-overlay",
     title: "Animated Halloween Stream Overlay",
     category: ["seasonal","cozy"],
@@ -149,7 +177,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-007",
+    id: "oc-009",
     slug: "animated-halloween-stream-overlay-pack-6",
     title: "Animated Halloween Stream Overlay Pack",
     category: ["seasonal","cozy"],
@@ -163,7 +191,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-008",
+    id: "oc-010",
     slug: "violet-dark-gothic-raven-animated-stream-package",
     title: "Violet Dark Gothic Raven Animated Stream Package",
     category: ["crow","gothic"],
@@ -177,7 +205,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raven Twitch Overlay","Twitch Overlay Raven","Stream Overlay Raven","Raven Overlay","Raven Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raven Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-009",
+    id: "oc-011",
     slug: "baby-bottle-spider-badges-twitch-discord",
     title: "Baby Bottle Spider Badges, Twitch, Discord",
     category: ["badges"],
@@ -191,7 +219,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-010",
+    id: "oc-012",
     slug: "baby-bottle-frog-badges-twitch-discord",
     title: "Baby Bottle Frog Badges, Twitch, Discord",
     category: ["badges"],
@@ -205,7 +233,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-011",
+    id: "oc-013",
     slug: "baby-bottle-bunny-badges-twitch-discord",
     title: "Baby Bottle Bunny Badges, Twitch, Discord",
     category: ["badges"],
@@ -219,7 +247,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-012",
+    id: "oc-014",
     slug: "baby-bottle-cat-badges-twitch-discord",
     title: "Baby Bottle Cat Badges, Twitch, Discord",
     category: ["badges"],
@@ -233,7 +261,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-013",
+    id: "oc-015",
     slug: "baby-bottle-cat-badges-twitch-discord-2",
     title: "Baby Bottle Cat Badges, Twitch, Discord",
     category: ["badges"],
@@ -247,7 +275,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-014",
+    id: "oc-016",
     slug: "cozy-starry-night-cat-stream-package",
     title: "Cozy Starry Night, Cat Stream Package",
     category: ["cat","cozy"],
@@ -261,7 +289,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-015",
+    id: "oc-017",
     slug: "frog-baby-bottle-twitch-badges-discord",
     title: "Frog Baby Bottle Twitch Badges, Discord",
     category: ["badges"],
@@ -275,7 +303,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-016",
+    id: "oc-018",
     slug: "raven-baby-bottle-twitch-badges-discord",
     title: "Raven Baby Bottle Twitch Badges, Discord",
     category: ["badges"],
@@ -289,7 +317,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-017",
+    id: "oc-019",
     slug: "bat-baby-bottle-twitch-badges-discord",
     title: "Bat Baby Bottle Twitch Badges, Discord",
     category: ["badges"],
@@ -303,7 +331,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-018",
+    id: "oc-020",
     slug: "pup-baby-bottle-twitch-badges-discord",
     title: "Pup Baby Bottle Twitch Badges, Discord",
     category: ["badges"],
@@ -317,7 +345,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-019",
+    id: "oc-021",
     slug: "cat-baby-bottle-twitch-badges-discord",
     title: "Cat Baby Bottle Twitch Badges, Discord",
     category: ["badges"],
@@ -331,7 +359,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-020",
+    id: "oc-022",
     slug: "starry-night-blossom-cat-overlay-animated-stream-package",
     title: "Starry Night Blossom Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -345,7 +373,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-021",
+    id: "oc-023",
     slug: "bottle-charms-cat-twitch-badges-discord",
     title: "Bottle Charms Cat Twitch Badges, Discord",
     category: ["badges","gothic"],
@@ -359,7 +387,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-022",
+    id: "oc-024",
     slug: "crow-bottle-charms-twitch-badges-discord",
     title: "Crow Bottle Charms Twitch Badges, Discord",
     category: ["badges","gothic"],
@@ -373,7 +401,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-023",
+    id: "oc-025",
     slug: "fox-bottle-charms-twitch-badges-discord",
     title: "Fox Bottle Charms Twitch Badges, Discord",
     category: ["badges","gothic"],
@@ -387,7 +415,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-024",
+    id: "oc-026",
     slug: "dragon-bottle-charms-twitch-badges-discord",
     title: "Dragon Bottle Charms Twitch Badges, Discord",
     category: ["badges","gothic"],
@@ -401,7 +429,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-025",
+    id: "oc-027",
     slug: "night-blossom-fox-overlay-animated-stream-package",
     title: "Night Blossom Fox Overlay Animated Stream Package",
     category: ["fox","cozy"],
@@ -416,7 +444,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-026",
+    id: "oc-028",
     slug: "cat-bottle-charms-twitch-badges-discord",
     title: "Cat Bottle Charms Twitch Badges, Discord",
     category: ["badges","gothic"],
@@ -430,7 +458,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-027",
+    id: "oc-029",
     slug: "raven-bottle-charms-twitch-badges-discord",
     title: "Raven Bottle Charms Twitch Badges, Discord",
     category: ["badges","gothic"],
@@ -444,7 +472,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Twitch Sub Badges","Twitch Emotes","Animated Emotes","Sub Badge Set","Twitch Badges","Emote Pack","Twitch Emote Pack","Cute Emotes","Streamer Emotes","Bit Badges","Twitch Sub Badge","Kick Emotes","Animated Sub Badges"],
   }),
   p({
-    id: "oc-028",
+    id: "oc-030",
     slug: "night-blossom-bunny-overlay-animated-stream-package",
     title: "Night Blossom Bunny Overlay Animated Stream Package",
     category: ["cozy"],
@@ -459,7 +487,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-029",
+    id: "oc-031",
     slug: "inferno-phoenix-animated-stream-package",
     title: "Inferno Phoenix Animated Stream Package",
     category: ["phoenix","gothic"],
@@ -473,7 +501,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Phoenix Twitch Overlay","Twitch Overlay Phoenix","Stream Overlay Phoenix","Phoenix Overlay","Phoenix Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Phoenix Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-030",
+    id: "oc-032",
     slug: "gothic-midnight-raven-overlay-animated-stream-package",
     title: "Gothic Midnight Raven Overlay Animated Stream Package",
     category: ["crow","gothic"],
@@ -487,7 +515,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raven Twitch Overlay","Twitch Overlay Raven","Stream Overlay Raven","Raven Overlay","Raven Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raven Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-031",
+    id: "oc-033",
     slug: "blue-gothic-raven-overlay",
     title: "Blue Gothic Raven Animated Stream Package",
     category: ["crow","gothic"],
@@ -501,7 +529,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raven Twitch Overlay","Twitch Overlay Raven","Stream Overlay Raven","Raven Overlay","Raven Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raven Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-032",
+    id: "oc-034",
     slug: "royal-dragon-gothic-overlay-animated-stream-package",
     title: "Royal Dragon Gothic Overlay Animated Stream Package",
     category: ["dragon","gothic"],
@@ -515,7 +543,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-033",
+    id: "oc-035",
     slug: "royal-cat-gothic-overlay-animated-stream-package",
     title: "Royal Cat Gothic Overlay Animated Stream Package",
     category: ["cat","gothic"],
@@ -529,7 +557,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-034",
+    id: "oc-036",
     slug: "mystic-moonlight-reaper-overlay",
     title: "Mystic Moonlight Reaper Overlay Animated Stream Package",
     category: ["gothic"],
@@ -544,7 +572,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-035",
+    id: "oc-037",
     slug: "royal-fox-gothic-overlay-animated-stream-package",
     title: "Royal Fox Gothic Overlay Animated Stream Package",
     category: ["fox","gothic"],
@@ -558,7 +586,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Fox Twitch Overlay","Twitch Overlay Fox","Stream Overlay Fox","Fox Overlay","Fox Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Fox Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-036",
+    id: "oc-038",
     slug: "royal-panda-gothic-overlay-animated-stream-package",
     title: "Royal Panda Gothic Overlay Animated Stream Package",
     category: ["panda","gothic"],
@@ -572,7 +600,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Panda Twitch Overlay","Twitch Overlay Panda","Stream Overlay Panda","Panda Overlay","Panda Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Panda Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-037",
+    id: "oc-039",
     slug: "starry-night-cozy-fox-overlay-animated-stream-package",
     title: "Starry Night Cozy Fox Overlay Animated Stream Package",
     category: ["fox","cozy"],
@@ -586,7 +614,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Fox Twitch Overlay","Twitch Overlay Fox","Stream Overlay Fox","Fox Overlay","Fox Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Fox Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-038",
+    id: "oc-040",
     slug: "mystic-moonlight-snake-overlay",
     title: "Mystic Moonlight Snake Overlay Animated Stream Package",
     category: ["gothic"],
@@ -601,7 +629,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-039",
+    id: "oc-041",
     slug: "starry-night-cozy-panda-overlay-animated-stream-package",
     title: "Starry Night Cozy Panda Overlay Animated Stream Package",
     category: ["panda","cozy"],
@@ -615,7 +643,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Panda Twitch Overlay","Twitch Overlay Panda","Stream Overlay Panda","Panda Overlay","Panda Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Panda Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-040",
+    id: "oc-042",
     slug: "dark-anime-cyberpunk-night-neon-overlay-animated-stream-package",
     title: "Dark Anime Cyberpunk Night Neon Overlay Animated Stream Package",
     category: ["stream","anime"],
@@ -630,7 +658,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-041",
+    id: "oc-043",
     slug: "dark-neon-alley-animated-stream-overlay",
     title: "Dark Neon Alley Animated Stream Overlay",
     category: ["stream"],
@@ -645,7 +673,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-042",
+    id: "oc-044",
     slug: "starry-night-cozy-cat-overlay-animated-stream-package",
     title: "Starry Night Cozy Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -659,7 +687,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-043",
+    id: "oc-045",
     slug: "mystic-moonlight-raccoon-overlay-animated-stream-package",
     title: "Mystic Moonlight Raccoon Overlay Animated Stream Package",
     category: ["cozy","gothic"],
@@ -673,7 +701,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raccoon Twitch Overlay","Twitch Overlay Raccoon","Stream Overlay Raccoon","Raccoon Overlay","Raccoon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raccoon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-044",
+    id: "oc-046",
     slug: "custom-twitch-overlay-full-stream-package",
     title: "Custom Twitch Overlay",
     category: ["custom"],
@@ -691,7 +719,7 @@ export const PRODUCTS: Product[] = [
     includes: CUSTOM_INCLUDES,
   }),
   p({
-    id: "oc-045",
+    id: "oc-047",
     slug: "mystic-moonlight-cat-overlay-animated-stream-package",
     title: "Mystic Moonlight Cat Overlay Animated Stream Package",
     category: ["cat","gothic"],
@@ -705,7 +733,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-046",
+    id: "oc-048",
     slug: "starry-wizard-cat-overlay-animated-stream-package",
     title: "Starry Wizard Cat Overlay Animated Stream Package",
     category: ["cat"],
@@ -719,7 +747,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-047",
+    id: "oc-049",
     slug: "starry-wizard-cat-overlay",
     title: "Starry Wizard Cat Overlay Animated Stream Package",
     category: ["cat"],
@@ -733,7 +761,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-048",
+    id: "oc-050",
     slug: "mystic-moonlight-panda-overlay-animated-stream-package",
     title: "Mystic Moonlight Panda Overlay Animated Stream Package",
     category: ["panda","gothic"],
@@ -747,7 +775,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Panda Twitch Overlay","Twitch Overlay Panda","Stream Overlay Panda","Panda Overlay","Panda Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Panda Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-049",
+    id: "oc-051",
     slug: "mystic-moonlight-ghost-overlay-animated-stream-package",
     title: "Mystic Moonlight Ghost Overlay Animated Stream Package",
     category: ["cozy","gothic"],
@@ -762,7 +790,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-050",
+    id: "oc-052",
     slug: "mystic-moonlight-fox-overlay-animated-stream-package",
     title: "Mystic Moonlight Fox Overlay Animated Stream Package",
     category: ["fox","gothic"],
@@ -776,7 +804,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Fox Twitch Overlay","Twitch Overlay Fox","Stream Overlay Fox","Fox Overlay","Fox Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Fox Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-051",
+    id: "oc-053",
     slug: "mystic-moonlight-dragon-overlay",
     title: "Mystic Moonlight Dragon Overlay Animated Stream Package",
     category: ["dragon","gothic"],
@@ -790,7 +818,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-052",
+    id: "oc-054",
     slug: "mystic-moonlight-dog-overlay",
     title: "Mystic Moonlight Dog Overlay Animated Stream Package",
     category: ["gothic"],
@@ -805,7 +833,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-053",
+    id: "oc-055",
     slug: "mystic-moonlight-wolf-overlay",
     title: "Mystic Moonlight Wolf Overlay Animated Stream Package",
     category: ["wolf","gothic"],
@@ -819,7 +847,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-054",
+    id: "oc-056",
     slug: "mystic-moonlight-raven-overlay-animated-stream-package",
     title: "Mystic Moonlight Raven Overlay Animated Stream Package",
     category: ["crow","gothic"],
@@ -833,7 +861,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raven Twitch Overlay","Twitch Overlay Raven","Stream Overlay Raven","Raven Overlay","Raven Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raven Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-055",
+    id: "oc-057",
     slug: "midnight-blood-moon-magic-cat-overlay",
     title: "Midnight Blood & Moon Magic Cat Overlay Animated Stream Package",
     category: ["cat","gothic"],
@@ -847,7 +875,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-056",
+    id: "oc-058",
     slug: "celestial-bunny-cat-cozy-overlay-animated-stream-package",
     title: "Celestial Bunny & Cat Cozy Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -861,7 +889,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-057",
+    id: "oc-059",
     slug: "cozy-ghost-cat-overlay-animated-stream-package",
     title: "Cozy Ghost & Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -875,7 +903,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-058",
+    id: "oc-060",
     slug: "cozy-ghost-cat-overlay-animated-stream-package-2",
     title: "Cozy Ghost & Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -889,7 +917,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-059",
+    id: "oc-061",
     slug: "cozy-ghost-overlay-animated-stream-package",
     title: "Cozy Ghost Overlay Animated Stream Package",
     category: ["cozy"],
@@ -904,7 +932,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-060",
+    id: "oc-062",
     slug: "cozy-wolf-overlay",
     title: "Cozy Wolf Overlay Animated Stream Package",
     category: ["wolf","cozy"],
@@ -919,7 +947,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-061",
+    id: "oc-063",
     slug: "cozy-red-panda-overlay-animated-stream-package",
     title: "Cozy Red Panda Overlay Animated Stream Package",
     category: ["panda","cozy"],
@@ -933,7 +961,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Panda Twitch Overlay","Twitch Overlay Panda","Stream Overlay Panda","Panda Overlay","Panda Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Panda Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-062",
+    id: "oc-064",
     slug: "cozy-raccoon-overlay",
     title: "Cozy Raccoon Overlay Animated Stream Package",
     category: ["cozy"],
@@ -947,7 +975,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raccoon Twitch Overlay","Twitch Overlay Raccoon","Stream Overlay Raccoon","Raccoon Overlay","Raccoon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raccoon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-063",
+    id: "oc-065",
     slug: "cozy-bunny-overlay-animated-stream-package",
     title: "Cozy Bunny Overlay Animated Stream Package",
     category: ["cozy"],
@@ -962,7 +990,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-064",
+    id: "oc-066",
     slug: "kawaii-space-friends-cat-overlay-animated-stream-screens",
     title: "Kawaii Space Friends Cat Overlay Animated Stream Screens",
     category: ["cat","cozy"],
@@ -976,7 +1004,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-065",
+    id: "oc-067",
     slug: "cozy-rabbit-overlay-animated-stream-package",
     title: "Cozy rabbit Overlay Animated Stream Package",
     category: ["cozy"],
@@ -991,7 +1019,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-066",
+    id: "oc-068",
     slug: "cozy-dragon-overlay",
     title: "Cozy Dragon Overlay Animated Stream Package",
     category: ["dragon","cozy"],
@@ -1005,7 +1033,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-067",
+    id: "oc-069",
     slug: "kawaii-cozy-cat-overlay-animated-stream-package",
     title: "Kawaii Cozy Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -1019,7 +1047,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-068",
+    id: "oc-070",
     slug: "inferno-wolf-animated-stream-package",
     title: "Inferno Wolf Animated Stream Package",
     category: ["wolf"],
@@ -1033,7 +1061,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-069",
+    id: "oc-071",
     slug: "kawaii-cozy-frog-overlay-animated-stream-package",
     title: "Kawaii Cozy Frog Overlay Animated Stream Package",
     category: ["cozy"],
@@ -1048,7 +1076,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-070",
+    id: "oc-072",
     slug: "cozy-magic-cat-overlay-animated-stream-package",
     title: "Cozy Magic Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -1062,7 +1090,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-071",
+    id: "oc-073",
     slug: "midnight-magic-cat-overlay",
     title: "Midnight Magic Cat Overlay Animated Stream Package",
     category: ["cat"],
@@ -1077,7 +1105,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
   }),
   p({
-    id: "oc-072",
+    id: "oc-074",
     slug: "cozy-panda-overlay",
     title: "Cozy Panda Overlay Animated Stream Package",
     category: ["panda","cozy"],
@@ -1091,7 +1119,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Panda Twitch Overlay","Twitch Overlay Panda","Stream Overlay Panda","Panda Overlay","Panda Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Panda Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-073",
+    id: "oc-075",
     slug: "cozy-cat-overlay-animated-stream-package",
     title: "Cozy Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -1105,7 +1133,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-074",
+    id: "oc-076",
     slug: "cozy-fox-overlay-animated-stream-package",
     title: "Cozy Fox Overlay Animated Stream Package",
     category: ["fox","cozy"],
@@ -1120,7 +1148,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
   }),
   p({
-    id: "oc-075",
+    id: "oc-077",
     slug: "midnight-viking-animated-stream-screens",
     title: "Midnight Viking Animated Stream Screens",
     category: ["stream"],
@@ -1135,7 +1163,7 @@ export const PRODUCTS: Product[] = [
     newDrop: true,
   }),
   p({
-    id: "oc-076",
+    id: "oc-078",
     slug: "sakura-dream-red-panda-overlay-animated-stream-package",
     title: "Sakura Dream Red Panda Overlay Animated Stream Package",
     category: ["sakura"],
@@ -1149,7 +1177,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Panda Twitch Overlay","Twitch Overlay Panda","Stream Overlay Panda","Panda Overlay","Panda Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Panda Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-077",
+    id: "oc-079",
     slug: "sakura-dream-cat-overlay-animated-stream-package",
     title: "Sakura Dream Cat Overlay Animated Stream Package",
     category: ["cat","sakura"],
@@ -1163,7 +1191,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-078",
+    id: "oc-080",
     slug: "sakura-dream-ghost-overlay-animated-stream-package",
     title: "Sakura Dream Ghost Overlay Animated Stream Package",
     category: ["sakura"],
@@ -1177,7 +1205,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-079",
+    id: "oc-081",
     slug: "cozy-night-cat-overlay-animated-stream-package",
     title: "Cozy Night Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -1191,7 +1219,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-080",
+    id: "oc-082",
     slug: "sakura-dream-panda-overlay",
     title: "Sakura Dream Panda Overlay Animated Stream Package",
     category: ["panda","sakura"],
@@ -1206,7 +1234,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
   }),
   p({
-    id: "oc-081",
+    id: "oc-083",
     slug: "sakura-dream-raccoon-overlay-animated-stream-package",
     title: "Sakura Dream raccoon Overlay Animated Stream Package",
     category: ["sakura"],
@@ -1220,7 +1248,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-082",
+    id: "oc-084",
     slug: "sakura-dream-wolf-overlay",
     title: "Sakura Dream wolf Overlay Animated Stream Package",
     category: ["wolf","sakura"],
@@ -1235,7 +1263,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
   }),
   p({
-    id: "oc-083",
+    id: "oc-085",
     slug: "retro-drive-overlay-animated-stream-package",
     title: "Retro Drive Overlay Animated Stream Package",
     category: ["stream"],
@@ -1249,7 +1277,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-084",
+    id: "oc-086",
     slug: "dark-gothic-raven-animated-stream-package",
     title: "Dark Gothic Raven Animated Stream Package",
     category: ["crow","gothic"],
@@ -1265,7 +1293,7 @@ export const PRODUCTS: Product[] = [
     bestseller: true,
   }),
   p({
-    id: "oc-085",
+    id: "oc-087",
     slug: "celestial-wolf-overlay",
     title: "Celestial Wolf Animated Stream Package",
     category: ["wolf"],
@@ -1279,7 +1307,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-086",
+    id: "oc-088",
     slug: "moonlight-panda-animated-stream-package",
     title: "Moonlight Panda Animated Stream Package",
     category: ["panda"],
@@ -1293,7 +1321,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Panda Twitch Overlay","Twitch Overlay Panda","Stream Overlay Panda","Panda Overlay","Panda Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Panda Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-087",
+    id: "oc-089",
     slug: "shadow-dragon-overlay",
     title: "Shadow Dragon Animated Stream Package",
     category: ["dragon"],
@@ -1307,7 +1335,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-088",
+    id: "oc-090",
     slug: "moonlight-falcon-animated-stream-package",
     title: "Moonlight Falcon Animated Stream Package",
     category: ["crow"],
@@ -1321,7 +1349,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Falcon Twitch Overlay","Twitch Overlay Falcon","Stream Overlay Falcon","Falcon Overlay","Falcon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Falcon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-089",
+    id: "oc-091",
     slug: "crimson-bloom-butterfly-overlay",
     title: "Crimson Bloom Animated Stream Package",
     category: ["stream"],
@@ -1337,7 +1365,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Butterfly Twitch Overlay","Twitch Overlay Butterfly","Stream Overlay Butterfly","Butterfly Overlay","Butterfly Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Butterfly Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-090",
+    id: "oc-092",
     slug: "violet-night-dragon-overlay",
     title: "Violet Night Dragon Animated Stream Package",
     category: ["dragon"],
@@ -1352,7 +1380,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
   }),
   p({
-    id: "oc-091",
+    id: "oc-093",
     slug: "crimson-dragon-overlay",
     title: "Crimson Dragon Animated Stream Package",
     category: ["dragon"],
@@ -1366,7 +1394,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-092",
+    id: "oc-094",
     slug: "inferno-wolf-animated-stream-package-2",
     title: "Inferno Wolf Animated Stream Package",
     category: ["wolf"],
@@ -1380,7 +1408,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-093",
+    id: "oc-095",
     slug: "red-moon-night-samurai-animated-stream-package",
     title: "Red Moon Night Samurai Animated Stream Package",
     category: ["japanese","sakura"],
@@ -1394,7 +1422,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Samurai Twitch Overlay","Twitch Overlay Samurai","Stream Overlay Samurai","Samurai Overlay","Samurai Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Samurai Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-094",
+    id: "oc-096",
     slug: "inferno-dragon-animated-stream-package",
     title: "Inferno Dragon Animated Stream Package",
     category: ["dragon"],
@@ -1408,7 +1436,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-095",
+    id: "oc-097",
     slug: "blue-phoenix-animated-stream-package",
     title: "Blue Phoenix Animated Stream Package",
     category: ["phoenix"],
@@ -1422,7 +1450,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Phoenix Twitch Overlay","Twitch Overlay Phoenix","Stream Overlay Phoenix","Phoenix Overlay","Phoenix Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Phoenix Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-096",
+    id: "oc-098",
     slug: "midnight-wolf-overlay",
     title: "Midnight Wolf Animated Stream Package",
     category: ["wolf"],
@@ -1436,7 +1464,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-097",
+    id: "oc-099",
     slug: "inferno-phoenix-overlay",
     title: "Inferno Phoenix Animated Stream Package",
     category: ["phoenix"],
@@ -1451,7 +1479,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
   }),
   p({
-    id: "oc-098",
+    id: "oc-100",
     slug: "moonlight-raven-overlay",
     title: "Moonlight Raven Animated Stream Package",
     category: ["crow"],
@@ -1465,7 +1493,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Raven Twitch Overlay","Twitch Overlay Raven","Stream Overlay Raven","Raven Overlay","Raven Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Raven Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-099",
+    id: "oc-101",
     slug: "red-moon-samurai-overlay",
     title: "Red Moon Samurai Animated Stream Package",
     category: ["japanese","sakura"],
@@ -1480,7 +1508,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
   }),
   p({
-    id: "oc-100",
+    id: "oc-102",
     slug: "inferno-lion-overlay",
     title: "Inferno Lion Animated Stream Package",
     category: ["stream"],
@@ -1494,7 +1522,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Lion Twitch Overlay","Twitch Overlay Lion","Stream Overlay Lion","Lion Overlay","Lion Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Lion Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-101",
+    id: "oc-103",
     slug: "crimson-moon-sakura-animated-stream-package",
     title: "Crimson Moon Sakura Animated Stream Package",
     category: ["japanese","sakura"],
@@ -1508,7 +1536,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-102",
+    id: "oc-104",
     slug: "celestial-night-animated-stream-package",
     title: "Celestial Night Animated Stream Package",
     category: ["japanese"],
@@ -1522,7 +1550,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-103",
+    id: "oc-105",
     slug: "samurai-moon-animated-stream-package",
     title: "Samurai Moon Animated Stream Package",
     category: ["japanese"],
@@ -1536,7 +1564,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Samurai Twitch Overlay","Twitch Overlay Samurai","Stream Overlay Samurai","Samurai Overlay","Samurai Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Samurai Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-104",
+    id: "oc-106",
     slug: "blooming-sakura-animated-stream-package",
     title: "Blooming Sakura Animated Stream Package",
     category: ["japanese","sakura"],
@@ -1550,7 +1578,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-105",
+    id: "oc-107",
     slug: "samurai-moon-animated-stream-package-2",
     title: "Samurai Moon Animated Stream Package",
     category: ["japanese"],
@@ -1564,7 +1592,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Samurai Twitch Overlay","Twitch Overlay Samurai","Stream Overlay Samurai","Samurai Overlay","Samurai Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Samurai Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-106",
+    id: "oc-108",
     slug: "inferno-wolf-overlay",
     title: "Inferno Wolf Animated Stream Package",
     category: ["wolf"],
@@ -1578,7 +1606,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-107",
+    id: "oc-109",
     slug: "inferno-dragon-animated-stream-package-2",
     title: "Inferno Dragon Animated Stream Package",
     category: ["dragon"],
@@ -1592,7 +1620,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Dragon Twitch Overlay","Twitch Overlay Dragon","Stream Overlay Dragon","Dragon Overlay","Dragon Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Dragon Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-108",
+    id: "oc-110",
     slug: "cozy-cat-overlay-animated-stream-package-2",
     title: "Cozy Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -1606,7 +1634,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-109",
+    id: "oc-111",
     slug: "valentine-twitch-screens",
     title: "Valentine Twitch Screens",
     category: ["cat"],
@@ -1620,7 +1648,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-110",
+    id: "oc-112",
     slug: "y2k-retro-animated-stream-package",
     title: "Y2K Retro Animated Stream Package",
     category: ["stream"],
@@ -1634,7 +1662,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-111",
+    id: "oc-113",
     slug: "neon-sakura-animated-tiktok-stream-overlay-package-tiktok-overlays-digital-download",
     title: "Neon Sakura Animated TikTok Stream Overlay Package, TikTok Overlays (Digital Download)",
     category: ["tiktok","sakura"],
@@ -1650,7 +1678,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-112",
+    id: "oc-114",
     slug: "magical-night-cat-overlay",
     title: "Magical Night Cat Overlay Animated Stream Package",
     category: ["cat"],
@@ -1664,7 +1692,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-113",
+    id: "oc-115",
     slug: "cozy-cats-animated-tiktok-stream-overlay-package-tiktok-overlays-digital-download",
     title: "Cozy Cats Animated TikTok Stream Overlay Package, TikTok Overlays (Digital Download)",
     category: ["tiktok","cozy"],
@@ -1680,7 +1708,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-114",
+    id: "oc-116",
     slug: "samurai-moon-animated-stream-package-3",
     title: "Samurai Moon Animated Stream Package",
     category: ["japanese"],
@@ -1694,7 +1722,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Samurai Twitch Overlay","Twitch Overlay Samurai","Stream Overlay Samurai","Samurai Overlay","Samurai Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Samurai Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-115",
+    id: "oc-117",
     slug: "cozy-cat-overlay-animated-stream-package-3",
     title: "Cozy Cat Overlay Animated Stream Package",
     category: ["cat","cozy"],
@@ -1708,7 +1736,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-116",
+    id: "oc-118",
     slug: "cozy-christmas-animated-stream-package",
     title: "Cozy Christmas Animated Stream Package",
     category: ["cat","cozy"],
@@ -1722,7 +1750,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Christmas Twitch Overlay","Twitch Overlay Christmas","Stream Overlay Christmas","Christmas Overlay","Christmas Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Christmas Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-117",
+    id: "oc-119",
     slug: "cozy-christmas-cat-animated-stream-package",
     title: "Cozy Christmas Cat Animated Stream Package",
     category: ["cat","cozy"],
@@ -1736,7 +1764,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-118",
+    id: "oc-120",
     slug: "neon-sakura-animated-stream-package",
     title: "Neon Sakura Animated Stream Package",
     category: ["japanese","sakura"],
@@ -1750,7 +1778,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-119",
+    id: "oc-121",
     slug: "samurai-moon-overlay",
     title: "Samurai Moon Animated Stream Package",
     category: ["japanese"],
@@ -1764,7 +1792,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Samurai Twitch Overlay","Twitch Overlay Samurai","Stream Overlay Samurai","Samurai Overlay","Samurai Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Samurai Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-120",
+    id: "oc-122",
     slug: "christmas-snow-animated-stream-package",
     title: "Christmas Snow Animated Stream Package",
     category: ["cat"],
@@ -1778,7 +1806,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Christmas Twitch Overlay","Twitch Overlay Christmas","Stream Overlay Christmas","Christmas Overlay","Christmas Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Christmas Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-121",
+    id: "oc-123",
     slug: "red-moon-sakura-overlay",
     title: "Red Moon Sakura Animated Stream Package",
     category: ["japanese","sakura"],
@@ -1792,7 +1820,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-122",
+    id: "oc-124",
     slug: "mystic-night-tiktok-overlay-package",
     title: "Mystic Night Animated TikTok Stream Overlay Package, TikTok Overlays (Digital Download)",
     category: ["tiktok","gothic"],
@@ -1808,7 +1836,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-123",
+    id: "oc-125",
     slug: "moonrise-gear-animated-tiktok-stream-overlay-package",
     title: "Moonrise Gear Animated TikTok Stream Overlay Package",
     category: ["tiktok"],
@@ -1824,7 +1852,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-124",
+    id: "oc-126",
     slug: "royal-purple-animated-tiktok-stream-overlay-package-tiktok-overlays-digital-download",
     title: "Royal Purple Animated TikTok Stream Overlay Package, TikTok Overlays (Digital Download)",
     category: ["tiktok"],
@@ -1840,7 +1868,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-125",
+    id: "oc-127",
     slug: "cosmic-glow-animated-tiktok-stream-overlay-package",
     title: "Cosmic Glow Animated TikTok Stream Overlay Package",
     category: ["tiktok"],
@@ -1856,7 +1884,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-126",
+    id: "oc-128",
     slug: "sunset-synthwave-animated-tiktok-stream-overlay-package-tiktok-overlays-digital-download",
     title: "Sunset Synthwave Animated TikTok Stream Overlay Package, TikTok Overlays (Digital Download)",
     category: ["tiktok"],
@@ -1872,7 +1900,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-127",
+    id: "oc-129",
     slug: "moonlight-wolf-overlay",
     title: "Moonlight Wolf Animated Stream Package",
     category: ["wolf"],
@@ -1886,7 +1914,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Wolf Twitch Overlay","Twitch Overlay Wolf","Stream Overlay Wolf","Wolf Overlay","Wolf Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Wolf Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-128",
+    id: "oc-130",
     slug: "purple-chains-animated-tiktok-stream-overlay-package-tiktok-overlays-digital-download",
     title: "Purple Chains Animated TikTok Stream Overlay Package, TikTok Overlays (Digital Download)",
     category: ["tiktok"],
@@ -1902,7 +1930,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","TikTok Live Overlay"],
   }),
   p({
-    id: "oc-129",
+    id: "oc-131",
     slug: "sunset-synthwave-animated-stream-package",
     title: "Sunset Synthwave Animated Stream Package",
     category: ["stream"],
@@ -1916,7 +1944,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-130",
+    id: "oc-132",
     slug: "mystic-night-animated-stream-package",
     title: "Mystic Night Animated Stream Package",
     category: ["stream","gothic"],
@@ -1930,7 +1958,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-131",
+    id: "oc-133",
     slug: "cosmic-glow-animated-stream-package",
     title: "Cosmic Glow Animated Stream Package",
     category: ["stream"],
@@ -1944,7 +1972,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-132",
+    id: "oc-134",
     slug: "violet-clouds-animated-stream-package",
     title: "Violet Clouds Animated Stream Package",
     category: ["stream"],
@@ -1958,7 +1986,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-133",
+    id: "oc-135",
     slug: "halloween-night-animated-stream-package",
     title: "Halloween Night Animated Stream Package",
     category: ["seasonal"],
@@ -1972,7 +2000,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Halloween Twitch Overlay","Twitch Overlay Halloween","Stream Overlay Halloween","Halloween Overlay","Halloween Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Halloween Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-134",
+    id: "oc-136",
     slug: "animated-purple-stream-package",
     title: "Animated Purple Stream Package",
     category: ["stream"],
@@ -1986,7 +2014,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-135",
+    id: "oc-137",
     slug: "red-moonrise-gear-animated-stream-package",
     title: "Red Moonrise Gear Animated Stream Package",
     category: ["anime"],
@@ -2000,7 +2028,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-136",
+    id: "oc-138",
     slug: "fighter-girl-animated-stream-package",
     title: "Fighter Girl Animated Stream Package",
     category: ["anime"],
@@ -2014,7 +2042,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-137",
+    id: "oc-139",
     slug: "moon-red-night-animated-stream-package",
     title: "Moon Red Night Animated Stream Package",
     category: ["stream"],
@@ -2028,7 +2056,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-138",
+    id: "oc-140",
     slug: "sakura-night-animated-stream-package",
     title: "Sakura Night Animated Stream Package",
     category: ["japanese","sakura"],
@@ -2042,7 +2070,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Sakura Twitch Overlay","Twitch Overlay Sakura","Stream Overlay Sakura","Sakura Overlay","Sakura Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Sakura Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-139",
+    id: "oc-141",
     slug: "gold-chains-animated-stream-package",
     title: "Gold Chains Animated Stream Package",
     category: ["stream"],
@@ -2056,7 +2084,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-140",
+    id: "oc-142",
     slug: "purple-chains-animated-stream-package",
     title: "Purple Chains Animated Stream Package",
     category: ["stream"],
@@ -2070,7 +2098,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-141",
+    id: "oc-143",
     slug: "purple-petals-animated-stream-package",
     title: "Purple Petals Animated Stream Package",
     category: ["japanese"],
@@ -2084,7 +2112,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-142",
+    id: "oc-144",
     slug: "moonrise-gear-animated-stream-package",
     title: "Moonrise Gear Animated Stream Package",
     category: ["anime"],
@@ -2098,7 +2126,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-143",
+    id: "oc-145",
     slug: "green-forest-animated-stream-package",
     title: "Green Forest Animated Stream Package",
     category: ["stream"],
@@ -2112,7 +2140,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-144",
+    id: "oc-146",
     slug: "royal-purple-animated-stream-package",
     title: "Royal Purple Animated Stream Package",
     category: ["stream"],
@@ -2126,7 +2154,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-145",
+    id: "oc-147",
     slug: "dark-purple-animated-stream-package",
     title: "Dark Purple Animated Stream Package",
     category: ["stream"],
@@ -2140,7 +2168,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-146",
+    id: "oc-148",
     slug: "dream-pinky-animated-stream-package",
     title: "Dream Pinky Animated Stream Package",
     category: ["stream"],
@@ -2154,7 +2182,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-147",
+    id: "oc-149",
     slug: "yellow-green-animated-stream-package",
     title: "Yellow Green Animated Stream Package",
     category: ["stream"],
@@ -2168,7 +2196,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-148",
+    id: "oc-150",
     slug: "halloween-animated-stream-package",
     title: "Halloween Animated Stream Package",
     category: ["seasonal"],
@@ -2184,7 +2212,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Halloween Twitch Overlay","Twitch Overlay Halloween","Stream Overlay Halloween","Halloween Overlay","Halloween Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Halloween Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-149",
+    id: "oc-151",
     slug: "red-animated-stream-package",
     title: "Red Animated Stream Package",
     category: ["stream"],
@@ -2198,7 +2226,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-150",
+    id: "oc-152",
     slug: "japanese-animated-stream-package",
     title: "Japanese Animated Stream Package",
     category: ["japanese"],
@@ -2212,7 +2240,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-151",
+    id: "oc-153",
     slug: "animated-lollipop-vtuber-stream-package",
     title: "Animated Lollipop VTuber Stream Package",
     category: ["anime"],
@@ -2226,7 +2254,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-152",
+    id: "oc-154",
     slug: "girl-fighter-animated-stream-package",
     title: "Girl Fighter Animated Stream Package",
     category: ["anime"],
@@ -2240,7 +2268,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-153",
+    id: "oc-155",
     slug: "shuriken-ninja-animated-stream-package",
     title: "Shuriken Ninja Animated Stream Package",
     category: ["japanese"],
@@ -2254,7 +2282,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Ninja Twitch Overlay","Twitch Overlay Ninja","Stream Overlay Ninja","Ninja Overlay","Ninja Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Ninja Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-154",
+    id: "oc-156",
     slug: "animated-modern-abstract-stream-package",
     title: "Animated Modern Abstract Stream Package",
     category: ["stream"],
@@ -2268,7 +2296,7 @@ export const PRODUCTS: Product[] = [
     tags: ["Stream Twitch Overlay","Twitch Overlay Stream","Stream Overlay Stream","Stream Overlay","Stream Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Stream Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
   }),
   p({
-    id: "oc-155",
+    id: "oc-157",
     slug: "samurai-animated-stream-package",
     title: "Samurai Animated Stream Package",
     category: ["anime"],
