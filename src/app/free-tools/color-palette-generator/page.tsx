@@ -19,7 +19,12 @@ export default function Page() {
   return (
     <ToolShell slug="color-palette-generator" title="Stream Color Palette Generator"
       intro="Pick the vibe your channel lives in and get a cohesive five-color palette with hex codes for your overlays, alerts and panels. Click any color to copy it."
-      faq={FAQ}>
+      faq={FAQ}
+      posts={[
+        { label: "Animated vs Static Stream Overlays", href: "/blog/animated-vs-static-stream-overlays" },
+        { label: "Twitch Overlay Size Guide (2026)", href: "/blog/twitch-overlay-size-guide" },
+      ]}
+      packs={["dark-gothic-raven-animated-stream-package", "inferno-phoenix-overlay", "sakura-dream-wolf-overlay"]}>
       <ColorPaletteGenerator />
     </ToolShell>
   );

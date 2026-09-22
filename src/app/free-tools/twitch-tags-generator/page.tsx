@@ -19,7 +19,12 @@ export default function Page() {
   return (
     <ToolShell slug="twitch-tags-generator" title="Twitch Tags Generator"
       intro="Tell it what you stream and get a set of relevant Twitch discovery tags, ready to copy. Swap a couple each stream and watch which ones pull viewers."
-      faq={FAQ}>
+      faq={FAQ}
+      posts={[
+        { label: "What Is a Twitch Overlay?", href: "/blog/what-is-a-twitch-overlay" },
+        { label: "Animated vs Static Stream Overlays", href: "/blog/animated-vs-static-stream-overlays" },
+      ]}
+      packs={["dark-gothic-raven-animated-stream-package", "sakura-dream-wolf-overlay", "inferno-phoenix-overlay"]}>
       <TwitchTagsGenerator />
     </ToolShell>
   );

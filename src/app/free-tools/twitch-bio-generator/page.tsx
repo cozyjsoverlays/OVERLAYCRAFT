@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TwitchBioGenerator } from "@/components/tools/TwitchBioGenerator";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { ToolRecommend } from "@/components/tools/ToolRecommend";
 import { SITE } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -92,6 +93,14 @@ export default function TwitchBioGeneratorPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <ToolRecommend
+        posts={[
+          { label: "What Is a Twitch Overlay?", href: "/blog/what-is-a-twitch-overlay" },
+          { label: "VTuber Overlay Guide", href: "/blog/vtuber-overlay-guide" },
+        ]}
+        packs={["cozy-fox-overlay-animated-stream-package", "inferno-phoenix-overlay", "red-moon-samurai-overlay"]}
+      />
 
       <div className="mt-14 rounded-2xl border border-veil bg-ink2/70 p-7 text-center backdrop-blur">
         <h2 className="font-display text-xl text-blush">

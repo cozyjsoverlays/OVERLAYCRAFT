@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { ToolRecommend } from "@/components/tools/ToolRecommend";
 import { SITE } from "@/data/site";
 
 /**
@@ -15,12 +16,16 @@ export function ToolShell({
   intro,
   children,
   faq,
+  posts,
+  packs,
 }: {
   slug: string;
   title: string;
   intro: string;
   children: ReactNode;
   faq?: { question: string; answer: string }[];
+  posts?: { label: string; href: string }[];
+  packs?: string[];
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -55,6 +60,8 @@ export function ToolShell({
           </div>
         </section>
       )}
+
+      <ToolRecommend posts={posts} packs={packs} />
 
       <div className="mt-14 rounded-2xl border border-veil bg-ink2/70 p-7 text-center backdrop-blur">
         <h2 className="font-display text-xl text-blush">

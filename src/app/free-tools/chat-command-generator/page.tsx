@@ -19,7 +19,12 @@ export default function Page() {
   return (
     <ToolShell slug="chat-command-generator" title="Chat Command Generator"
       intro="Fill in your links, choose Nightbot or StreamElements, and copy ready-made !commands for your chat - socials, discord, tip, schedule, shoutout and more."
-      faq={FAQ}>
+      faq={FAQ}
+      posts={[
+        { label: "Kick Stream Overlay Setup Guide", href: "/blog/kick-stream-overlay-guide" },
+        { label: "How to Add an Overlay to OBS (in Under 5 Minutes)", href: "/blog/how-to-add-overlay-to-obs" },
+      ]}
+      packs={["cozy-fox-overlay-animated-stream-package", "sakura-dream-wolf-overlay", "midnight-magic-cat-overlay"]}>
       <ChatCommandGenerator />
     </ToolShell>
   );

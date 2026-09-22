@@ -19,7 +19,12 @@ export default function Page() {
   return (
     <ToolShell slug="bitrate-calculator" title="Twitch Bitrate Calculator"
       intro="Enter your upload speed and the quality you want to stream at, and get a Twitch-safe bitrate plus the OBS settings that keep your stream smooth and drop-free."
-      faq={FAQ}>
+      faq={FAQ}
+      posts={[
+        { label: "How to Add an Overlay to OBS (in Under 5 Minutes)", href: "/blog/how-to-add-overlay-to-obs" },
+        { label: "Free vs Paid Stream Overlays", href: "/blog/free-vs-paid-stream-overlays" },
+      ]}
+      packs={["inferno-phoenix-overlay", "red-moon-samurai-overlay", "sakura-dream-wolf-overlay"]}>
       <BitrateCalculator />
     </ToolShell>
   );

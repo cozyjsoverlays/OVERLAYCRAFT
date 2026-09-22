@@ -19,7 +19,12 @@ export default function Page() {
   return (
     <ToolShell slug="fancy-font-generator" title="Fancy Font Generator"
       intro="Type your name or bio and get it in bold, italic, script, bubble, square and more unicode styles. Click any style to copy it for your bio or display name."
-      faq={FAQ}>
+      faq={FAQ}
+      posts={[
+        { label: "What Is a Twitch Overlay?", href: "/blog/what-is-a-twitch-overlay" },
+        { label: "VTuber Overlay Guide", href: "/blog/vtuber-overlay-guide" },
+      ]}
+      packs={["midnight-magic-cat-overlay", "sakura-dream-wolf-overlay", "cozy-fox-overlay-animated-stream-package"]}>
       <FancyFontGenerator />
     </ToolShell>
   );

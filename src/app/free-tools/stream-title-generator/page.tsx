@@ -19,7 +19,12 @@ export default function Page() {
   return (
     <ToolShell slug="stream-title-generator" title="Stream Title Generator"
       intro="Enter what you are streaming, pick the vibe, and get catchy titles built to earn clicks in Twitch browse. Click any title to copy it."
-      faq={FAQ}>
+      faq={FAQ}
+      posts={[
+        { label: "How to Add an Overlay to OBS (in Under 5 Minutes)", href: "/blog/how-to-add-overlay-to-obs" },
+        { label: "What Is a Twitch Overlay?", href: "/blog/what-is-a-twitch-overlay" },
+      ]}
+      packs={["dark-gothic-raven-animated-stream-package", "inferno-phoenix-overlay", "red-moon-samurai-overlay"]}>
       <StreamTitleGenerator />
     </ToolShell>
   );

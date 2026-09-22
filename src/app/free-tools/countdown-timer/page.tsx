@@ -19,7 +19,12 @@ export default function Page() {
   return (
     <ToolShell slug="countdown-timer" title="Starting Soon Countdown Timer"
       intro="Set the minutes and a message, then drop it into OBS as a browser source for a clean countdown on your Starting Soon or BRB screen. Fully free."
-      faq={FAQ}>
+      faq={FAQ}
+      posts={[
+        { label: "How to Add an Overlay to OBS (in Under 5 Minutes)", href: "/blog/how-to-add-overlay-to-obs" },
+        { label: "Twitch Overlay Size Guide (2026)", href: "/blog/twitch-overlay-size-guide" },
+      ]}
+      packs={["cozy-fox-overlay-animated-stream-package", "midnight-magic-cat-overlay", "dark-gothic-raven-animated-stream-package"]}>
       <CountdownTimer />
     </ToolShell>
   );

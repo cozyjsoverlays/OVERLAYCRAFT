@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { EmoteResizer } from "@/components/tools/EmoteResizer";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { ToolRecommend } from "@/components/tools/ToolRecommend";
 import { SITE } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -137,6 +138,14 @@ export default function EmoteResizerPage() {
           <FAQAccordion items={FAQ_ITEMS} />
         </div>
       </section>
+
+      <ToolRecommend
+        posts={[
+          { label: "Twitch Overlay Size Guide (2026)", href: "/blog/twitch-overlay-size-guide" },
+          { label: "What Is a Twitch Overlay?", href: "/blog/what-is-a-twitch-overlay" },
+        ]}
+        packs={["midnight-magic-cat-overlay", "cozy-fox-overlay-animated-stream-package", "sakura-dream-wolf-overlay"]}
+      />
 
       <div className="mt-14 rounded-2xl border border-veil bg-ink2/70 p-7 text-center backdrop-blur">
         <h2 className="font-display text-xl text-blush">
