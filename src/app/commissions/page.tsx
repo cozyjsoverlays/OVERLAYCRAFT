@@ -128,13 +128,13 @@ export default function CommissionsPage() {
           <SectionHeading label="Straight from the listing" title="The Work" center />
         </Reveal>
         <Reveal className="mt-8">
-          <div className="overflow-hidden rounded-2xl border border-veil">
+          <div className="mx-auto max-w-xl overflow-hidden rounded-2xl border border-veil">
             <VideoPreview
               src={video}
               poster={etsyImage(gallery[0])}
               alt="Custom commissioned animated stream overlay preview video by VectorKingStudio"
               autoplay
-              className="aspect-video w-full"
+              className="aspect-square w-full"
             />
           </div>
         </Reveal>

@@ -4,21 +4,18 @@ import { Check } from "lucide-react";
 const TIERS = [
   {
     name: "Starter",
-    price: 100,
     tagline: "Your world, established.",
     features: ["Custom overlay scene", "All animated screens (Starting Soon, BRB, Ending, Offline)", "Facecam frame", "1 revision round"],
     highlight: false,
   },
   {
     name: "Pro",
-    price: 250,
     tagline: "The full broadcast kit.",
     features: ["Everything in Starter", "Animated alerts (follow, sub, raid, donation)", "Info panels & banners", "Stinger transitions", "2 revision rounds"],
     highlight: true,
   },
   {
     name: "Full Brand",
-    price: 400,
     tagline: "A channel identity, forged.",
     features: ["Everything in Pro", "Custom emote set", "Sub badge set", "Mascot / logo design", "Source files included"],
     highlight: false,
@@ -44,9 +41,8 @@ export function PricingTable() {
           )}
           <h3 className="font-display text-xl text-blush">{tier.name}</h3>
           <p className="mt-1 text-sm text-mist">{tier.tagline}</p>
-          <p className="mt-5 font-mono text-4xl text-volt">
-            ${tier.price}
-            <span className="text-sm text-mist"> / project</span>
+          <p className="mt-5 font-mono text-sm uppercase tracking-wider text-volt">
+            Quoted from your brief
           </p>
           <ul className="mt-6 flex-1 space-y-3">
             {tier.features.map((f) => (
