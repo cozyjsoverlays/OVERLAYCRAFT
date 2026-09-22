@@ -26,10 +26,7 @@ export default function BlogPage() {
             href={`/blog/${post.slug}`}
             className="block rounded-2xl border border-veil bg-ink2/70 p-6 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-lilac/50 hover:shadow-volt-soft md:p-8"
           >
-            <p className="font-mono text-xs text-mist">
-              {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-            </p>
-            <h2 className="mt-2 font-display text-xl text-blush md:text-2xl">{post.title}</h2>
+            <h2 className="font-display text-xl text-blush md:text-2xl">{post.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-mist">{post.excerpt}</p>
             <span className="mt-4 inline-block text-sm font-medium text-lilac">Read the guide →</span>
           </Link>

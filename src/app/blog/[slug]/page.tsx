@@ -105,10 +105,7 @@ export default async function BlogPostPage({ params }: Props) {
         <span className="text-blush/70">{post.title}</span>
       </nav>
 
-      <p className="font-mono text-xs text-mist">
-        {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-        {" · "}OverlayCraft Atelier
-      </p>
+      <p className="font-mono text-xs text-mist">OverlayCraft Atelier</p>
       <h1 className="mt-3 font-display text-3xl leading-tight text-blush md:text-4xl">
         {post.title}
       </h1>
