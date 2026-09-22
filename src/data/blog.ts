@@ -1,5 +1,6 @@
 import type { FaqEntry } from "@/lib/types";
 import { GENERATED_POSTS } from "./blog-generated";
+import { MEDIUM_POSTS } from "./blog-medium";
 
 export interface BlogSection {
   h2: string;
@@ -682,8 +683,21 @@ const FLAGSHIP_POSTS: BlogPost[] = [
   },
 ];
 
-/** Flagship posts first (newest, richest), then the generated SEO library. */
-export const BLOG_POSTS: BlogPost[] = [...FLAGSHIP_POSTS, ...GENERATED_POSTS];
+/**
+ * Flagship posts first (newest, richest), then the imported Medium articles,
+ * then the generated SEO library. Deduped on slug so an imported post never
+ * collides with a generated one (the earlier source wins).
+ */
+export const BLOG_POSTS: BlogPost[] = (() => {
+  const seen = new Set<string>();
+  const all: BlogPost[] = [];
+  for (const post of [...FLAGSHIP_POSTS, ...MEDIUM_POSTS, ...GENERATED_POSTS]) {
+    if (seen.has(post.slug)) continue;
+    seen.add(post.slug);
+    all.push(post);
+  }
+  return all;
+})();
 
 export function getPost(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
