@@ -20,11 +20,20 @@ export function ProductCard({ product }: { product: Product }) {
               src={product.previewVideo}
               poster={etsyImage(product.thumbnails[0])}
               alt={productAlt(product, 0)}
+              playInView
               className="h-full w-full"
             />
           ) : (
             <PackArt product={product} className="absolute inset-0 h-full w-full" />
           )}
+          {/* Hover reveal: gradient + view cue (own3d-style) */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="absolute inset-0 bg-gradient-to-t from-abyss/70 to-transparent" aria-hidden />
+            <span className="relative font-mono text-[11px] font-medium uppercase tracking-wider text-white">
+              View pack
+            </span>
+            <span className="relative font-body text-lg text-white">→</span>
+          </div>
           {/* Badges */}
           <div className="absolute left-3 top-3 flex gap-2">
             {product.newDrop && (
