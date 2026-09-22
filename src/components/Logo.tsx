@@ -1,7 +1,14 @@
 /** Crescent-moon "OC" monogram - lilac→volt gradient, volt spark at the tip. */
 export function Logo({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden focusable="false">
+    <svg
+      viewBox="0 0 40 40"
+      width="40"
+      height="40"
+      className={className}
+      aria-hidden
+      focusable="false"
+    >
       <defs>
         <linearGradient id="oc-grad" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#F02C97" />
