@@ -10,7 +10,7 @@ import { productPath } from "@/lib/utils";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  const staticPages = ["", "/overlays", "/custom", "/tutorials", "/free-tools", "/free-tools/emote-resizer", "/free-tools/twitch-name-generator", "/free-tools/twitch-bio-generator", "/about", "/faq", "/contact", "/blog", "/terms", "/privacy", "/license"].map(
+  const staticPages = ["", "/overlays", "/custom", "/commissions", "/tutorials", "/free-tools", "/free-tools/emote-resizer", "/free-tools/twitch-name-generator", "/free-tools/twitch-bio-generator", "/about", "/faq", "/contact", "/blog", "/terms", "/privacy", "/license"].map(
     (path) => ({
       url: `${SITE.url}${path}`,
       lastModified: now,

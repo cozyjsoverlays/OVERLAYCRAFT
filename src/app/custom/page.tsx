@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PricingTable } from "@/components/PricingTable";
 import { IntakeForm } from "@/components/IntakeForm";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -6,6 +7,8 @@ import { Reveal } from "@/components/Reveal";
 import { ReviewCard } from "@/components/ReviewCard";
 import { Stars } from "@/components/Stars";
 import { CUSTOM_ETSY_URL } from "@/data/site";
+import { CUSTOM_SHOWCASE } from "@/data/custom-showcase";
+import { etsyImage } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Custom Twitch & Kick Overlays - Commissions from $100",
@@ -82,27 +85,30 @@ export default function CustomPage() {
         </div>
       </div>
 
-      {/* Showcase - drop real client work into /media/custom/ and swap back to <img> */}
+      {/* Showcase - real commissioned work from the live listing */}
       <Reveal className="mt-14">
         <div className="grid gap-4 md:grid-cols-3">
-          {[
-            { glyph: "🐉", label: "Full brand - dragon world" },
-            { glyph: "🌸", label: "Sakura vtuber identity" },
-            { glyph: "🪶", label: "Gothic raven rebrand" },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="grid aspect-video w-full place-items-center rounded-2xl border border-veil bg-gradient-to-br from-lightPink via-ink to-abyss/25"
+          {CUSTOM_SHOWCASE.gallery.slice(0, 3).map((src, i) => (
+            <Link
+              key={src}
+              href="/commissions"
+              className="group relative block overflow-hidden rounded-2xl border border-veil"
             >
-              <div className="text-center">
-                <span className="text-4xl" aria-hidden>{item.glyph}</span>
-                <p className="mt-2 px-4 font-display text-[10px] uppercase tracking-[0.25em] text-mist">
-                  {item.label}
-                </p>
-              </div>
-            </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={etsyImage(src, "il_680xN")}
+                alt={`Real custom commissioned stream overlay ${i + 1} by VectorKingStudio`}
+                loading="lazy"
+                className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </Link>
           ))}
         </div>
+        <p className="mt-4 text-center">
+          <Link href="/commissions" className="font-body text-sm text-lilac underline-offset-4 hover:underline">
+            See the full gallery, preview video &amp; verified reviews →
+          </Link>
+        </p>
       </Reveal>
 
       {/* Pricing */}
