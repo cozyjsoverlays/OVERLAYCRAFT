@@ -48,9 +48,9 @@ export function IntakeForm() {
         </select>
       </div>
       <div>
-        <label htmlFor="in-budget" className={labelCls}>Budget tier</label>
-        <select id="in-budget" name="budget" className={inputCls} defaultValue="Pro - $250">
-          {["Starter - $100", "Pro - $250", "Full Brand - $400", "Not sure yet"].map((b) => (
+        <label htmlFor="in-budget" className={labelCls}>Scope</label>
+        <select id="in-budget" name="budget" className={inputCls} defaultValue="Pro">
+          {["Starter", "Pro", "Full Brand", "Not sure yet"].map((b) => (
             <option key={b}>{b}</option>
           ))}
         </select>
