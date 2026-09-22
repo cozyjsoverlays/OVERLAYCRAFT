@@ -60,6 +60,14 @@ export default function AboutPage() {
         >
           Visit the Etsy shop ↗
         </a>
+        <a
+          href="https://www.behance.net/vectorkingstudio"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-xl border border-veil px-6 py-3 font-body text-sm text-lilac transition-colors hover:border-lilac/60"
+        >
+          See the portfolio on Behance ↗
+        </a>
       </div>
     </div>
   );

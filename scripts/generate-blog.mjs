@@ -16,6 +16,7 @@ const CAT = JSON.parse(readFileSync(join(here, "cat-slugs.json"), "utf8"));
 
 // Slugs already used by hand-written posts — never collide with them.
 const RESERVED = new Set([
+  "vectorkingstudio-behance-portfolio",
   "how-to-add-overlay-to-obs",
   "twitch-overlay-size-guide",
   "animated-vs-static-stream-overlays",

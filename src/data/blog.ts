@@ -31,6 +31,92 @@ export interface BlogPost {
 /** The 6 hand-written flagship guides (richer, some with embedded videos). */
 const FLAGSHIP_POSTS: BlogPost[] = [
   {
+    slug: "vectorkingstudio-behance-portfolio",
+    title: "Inside the Studio: The VectorKingStudio Portfolio on Behance",
+    metaTitle: "VectorKingStudio Portfolio - Animated Stream Overlays on Behance",
+    metaDescription:
+      "See the real work behind OverlayCraft: the VectorKingStudio Behance portfolio of animated Twitch, YouTube and Kick stream overlays - full case studies, motion breakdowns and released packs you can buy today.",
+    date: "2026-09-22",
+    keywords: [
+      "vectorkingstudio",
+      "vectorkingstudio behance",
+      "stream overlay portfolio",
+      "animated twitch overlay designer",
+      "behance stream overlays",
+      "custom twitch overlay artist",
+      "stream overlay case study",
+    ],
+    excerpt:
+      "Every OverlayCraft pack starts as a scene, not a template. Our full design portfolio lives on Behance - case studies, motion breakdowns and the projects behind the packs. Here is a guided tour, with the shop link for each one.",
+    sections: [
+      {
+        h2: "Where the work lives",
+        paragraphs: [
+          "OverlayCraft is the storefront. The design studio behind it is VectorKingStudio, and the full body of work - six years of animated stream identities - is documented on [our Behance portfolio](https://www.behance.net/vectorkingstudio). If you want to see how a pack is built before you buy it, that is the place to look: full-resolution case studies, every screen state, and the motion that a thumbnail can never show.",
+          "Behance is where we post the projects as case studies rather than product listings. You get the whole world of each overlay - the raven perched in the storm, the sakura drifting past the facecam, the phoenix embers rising behind the alerts - laid out the way it was designed.",
+        ],
+      },
+      {
+        h2: "A few projects worth opening",
+        paragraphs: [
+          "These are real, released designs. Each one has a full case study on Behance and a matching animated pack in the shop, so you can study the art and then take it live.",
+        ],
+        list: [
+          "[Magical Night Cat](https://www.behance.net/gallery/240661057/Magical-Night-Cat-Twitch-Overlay) - a starry, spellbound cat world. See it in the shop as the [Magical Night Cat overlay](/overlays/cat/magical-night-cat-overlay).",
+          "[Sakura Dream Wolf](https://www.behance.net/gallery/246902479/Sakura-Dream-wolf-Overlay-Animated-Stream-Package) - petals, moonlight and a lone wolf. Live as the [Sakura Dream Wolf pack](/overlays/wolf/sakura-dream-wolf-overlay).",
+          "[Inferno Phoenix](https://www.behance.net/gallery/243151397/Inferno-Phoenix-STREAM-OVERLAY-I-TWITCH-OVERLAY) - rising embers and comeback energy. Grab the [Inferno Phoenix overlay](/overlays/phoenix/inferno-phoenix-overlay).",
+          "[Red Moon Samurai](https://www.behance.net/gallery/242646023/Red-Moon-Samurai-Stream-Overlay-Package-Twitch-Overlay) - a cinematic blood-moon duel scene. Shop the [Red Moon Samurai pack](/overlays/japanese/red-moon-samurai-overlay).",
+          "[Inferno Wolf](https://www.behance.net/gallery/244248019/Inferno-Wolf-Animated-Stream-Overlay-Pack-Twitch) - ember-lit and fierce. Live as the [Inferno Wolf overlay](/overlays/wolf/inferno-wolf-overlay).",
+          "[Crimson Bloom Butterfly](https://www.behance.net/gallery/245026349/Crimson-Bloom-Animated-Stream-Twitch-butterfly-Overlays) - soft, romantic motion. Shop the [Crimson Bloom Butterfly pack](/overlays/stream/crimson-bloom-butterfly-overlay).",
+        ],
+      },
+      {
+        h2: "Why we keep a Behance portfolio",
+        paragraphs: [
+          "A product page has to sell in five seconds. A portfolio can breathe. On [Behance](https://www.behance.net/vectorkingstudio) we show the parts that matter to anyone deciding whether to trust a designer with their brand: how the screens relate to each other, how the alerts move, how a single art direction carries across a starting-soon screen, a facecam frame and a sub badge without ever looking copy-pasted.",
+          "It is also proof. When you commission a [custom stream identity](/commissions), you are hiring the same hands that made every project in that gallery. The portfolio is the receipt.",
+        ],
+      },
+      {
+        h2: "From the portfolio to your channel",
+        paragraphs: [
+          "Found a look you love? Two paths. If it is already a released pack, it is in [the shop](/overlays) with a real preview video and instant download. If you want your own character, palette and world, the [commission desk](/commissions) turns a brief into a one-of-one identity - the same process behind every case study on Behance.",
+          "Either way, start on the portfolio. Open a project, watch how the whole world moves together, and picture your channel wearing it.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Where can I see the full VectorKingStudio portfolio?",
+        answer:
+          "On Behance at behance.net/vectorkingstudio. It holds the full case studies for our animated Twitch, YouTube and Kick overlays - every screen state and motion breakdown, updated as new packs drop.",
+      },
+      {
+        question: "Are the Behance projects real packs I can buy?",
+        answer:
+          "Yes. Most projects on the portfolio are released packs in the OverlayCraft shop with instant download, and the rest are custom commissions. Each project links to its shop page where one exists.",
+      },
+      {
+        question: "Can I commission something like the portfolio work?",
+        answer:
+          "Absolutely - that is the core of the studio. Custom commissions start from $100 and are built by the same designer behind every portfolio project. See the commissions page to view real client work and start a brief.",
+      },
+    ],
+    featuredPacks: [
+      "magical-night-cat-overlay",
+      "sakura-dream-wolf-overlay",
+      "inferno-phoenix-overlay",
+      "red-moon-samurai-overlay",
+      "inferno-wolf-overlay",
+      "crimson-bloom-butterfly-overlay",
+    ],
+    related: [
+      { label: "View the portfolio on Behance", href: "https://www.behance.net/vectorkingstudio" },
+      { label: "See real custom commission work", href: "/commissions" },
+      { label: "Browse animated overlay packs", href: "/overlays" },
+    ],
+  },
+  {
     slug: "how-to-add-overlay-to-obs",
     title: "How to Add an Overlay to OBS (in Under 5 Minutes)",
     metaTitle: "How to Add an Overlay to OBS - Fast 2026 Setup Guide",
