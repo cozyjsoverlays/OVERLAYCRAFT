@@ -54,6 +54,7 @@ const FLAGSHIP_POSTS: BlogPost[] = [
         paragraphs: [
           "OverlayCraft is the storefront. The design studio behind it is VectorKingStudio, and the full body of work - six years of animated stream identities - is documented on [our Behance portfolio](https://www.behance.net/vectorkingstudio). If you want to see how a pack is built before you buy it, that is the place to look: full-resolution case studies, every screen state, and the motion that a thumbnail can never show.",
           "Behance is where we post the projects as case studies rather than product listings. You get the whole world of each overlay - the raven perched in the storm, the sakura drifting past the facecam, the phoenix embers rising behind the alerts - laid out the way it was designed.",
+          "We also write longer guides on [our Medium](https://medium.com/@VectorKingStudio), like [Free vs Paid Stream Overlays](https://medium.com/@VectorKingStudio/free-vs-paid-stream-overlays-why-professional-streamers-never-use-free-2026-analysis-05c0ab7b449a) and [The Complete Stream Overlay Setup Guide](https://medium.com/@VectorKingStudio/the-complete-stream-overlay-setup-guide-for-twitch-youtube-kick-in-2026-0a2cce9f0a04). Behance shows the art, Medium explains the thinking.",
         ],
       },
       {
@@ -112,6 +113,7 @@ const FLAGSHIP_POSTS: BlogPost[] = [
     ],
     related: [
       { label: "View the portfolio on Behance", href: "https://www.behance.net/vectorkingstudio" },
+      { label: "Read the studio on Medium", href: "https://medium.com/@VectorKingStudio" },
       { label: "See real custom commission work", href: "/commissions" },
       { label: "Browse animated overlay packs", href: "/overlays" },
     ],

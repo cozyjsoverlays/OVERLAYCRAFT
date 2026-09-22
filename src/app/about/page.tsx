@@ -68,6 +68,14 @@ export default function AboutPage() {
         >
           See the portfolio on Behance ↗
         </a>
+        <a
+          href="https://medium.com/@VectorKingStudio"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-xl border border-veil px-6 py-3 font-body text-sm text-lilac transition-colors hover:border-lilac/60"
+        >
+          Read the studio on Medium ↗
+        </a>
       </div>
     </div>
   );

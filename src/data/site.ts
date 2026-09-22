@@ -17,6 +17,7 @@ export const SOCIAL_LINKS = [
   { label: "Etsy", href: ETSY_SHOP_URL },
   { label: "YouTube", href: YOUTUBE_URL },
   { label: "Behance", href: "https://www.behance.net/vectorkingstudio" },
+  { label: "Medium", href: "https://medium.com/@VectorKingStudio" },
   { label: "Pinterest", href: "https://www.pinterest.com/vectorkingstudio/" },
   { label: "Telegram", href: "https://t.me/vectorkingstudio" },
 ] as const;
