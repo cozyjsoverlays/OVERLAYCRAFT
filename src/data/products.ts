@@ -66,7 +66,7 @@ function p(seed: Seed): Product {
 export const PRODUCTS: Product[] = [
   p({
     id: "oc-001",
-    slug: "gothic-grim-reaper-streamer-package-neon-red-animated-stream-overlay-pack-spooky-chibi-emotes-halloween-obs-vtuber-background-youtube",
+    slug: "gothic-grim-reaper-neon-overlay",
     title: "Gothic Grim Reaper Streamer Package, Neon Red Animated Stream Overlay Pack, Spooky Chibi Emotes, Halloween/OBS VTuber Background Youtube",
     category: ["gothic","anime"],
     etsyTitle: "Gothic Grim Reaper Streamer Package, Neon Red Animated Stream Overlay Pack, Spooky Chibi Emotes, Halloween/OBS VTuber Background Youtube",
@@ -77,10 +77,11 @@ export const PRODUCTS: Product[] = [
     etsyDescription: "Set the scene with Gothic Grim Reaper Streamer Package, Neon Red Animated Stream Overlay Pack, Spooky Chibi Emotes, Halloween/OBS VTuber Background Youtube. Slow smoke, pale moonlight and a reaper that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same reaper art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Gothic Grim Reaper Streamer Package, Neon Red Animated Stream Overlay Pack, Spooky Chibi Emotes, Halloween/OBS VTuber Background Youtube tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
     imageAlts: ["Gothic Grim Reaper Streamer Package, Neon Red Animated Stream Overlay Pack, Spooky Chibi Emotes, Halloween/OBS VTuber Background Youtube - animated reaper Twitch stream overlay pack cover"],
     tags: ["Reaper Twitch Overlay","Twitch Overlay Reaper","Stream Overlay Reaper","Reaper Overlay","Reaper Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Reaper Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+    newDrop: true,
   }),
   p({
     id: "oc-002",
-    slug: "gothic-grim-reaper-animated-stream-overlay-package-purple-spooky-cozy-overlay-horror-halloween-stream-screens-obs-vtuber-youtube",
+    slug: "gothic-grim-reaper-purple-overlay",
     title: "Gothic Grim Reaper Animated Stream Overlay Package, Purple Spooky Cozy Overlay, Horror Halloween Stream Screens, OBS VTuber Youtube",
     category: ["gothic","cozy"],
     etsyTitle: "Gothic Grim Reaper Animated Stream Overlay Package, Purple Spooky Cozy Overlay, Horror Halloween Stream Screens, OBS VTuber Youtube",
@@ -91,6 +92,7 @@ export const PRODUCTS: Product[] = [
     etsyDescription: "Set the scene with Gothic Grim Reaper Animated Stream Overlay Package, Purple Spooky Cozy Overlay, Horror Halloween Stream Screens, OBS VTuber Youtube. Slow smoke, pale moonlight and a reaper that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same reaper art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Gothic Grim Reaper Animated Stream Overlay Package, Purple Spooky Cozy Overlay, Horror Halloween Stream Screens, OBS VTuber Youtube tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
     imageAlts: ["Gothic Grim Reaper Animated Stream Overlay Package, Purple Spooky Cozy Overlay, Horror Halloween Stream Screens, OBS VTuber Youtube - animated reaper Twitch stream overlay pack cover"],
     tags: ["Reaper Twitch Overlay","Twitch Overlay Reaper","Stream Overlay Reaper","Reaper Overlay","Reaper Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Reaper Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+    newDrop: true,
   }),
   p({
     id: "oc-003",
@@ -137,6 +139,7 @@ export const PRODUCTS: Product[] = [
     etsyDescription: "Set the scene with Halloween Cat Overlay Animated Stream Package. Slow smoke, pale moonlight and a cat that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same cat art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Halloween Cat Overlay Animated Stream Package tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
     imageAlts: ["Halloween Cat Overlay Animated Stream Package - animated cat Twitch stream overlay pack cover"],
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+    newDrop: true,
   }),
   p({
     id: "oc-006",
@@ -151,6 +154,7 @@ export const PRODUCTS: Product[] = [
     etsyDescription: "Set the scene with Cozy Fox Halloween Twitch Overlay Pack Animated. Slow smoke, pale moonlight and a fox that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same fox art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Cozy Fox Halloween Twitch Overlay Pack Animated tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
     imageAlts: ["Cozy Fox Halloween Twitch Overlay Pack Animated - animated fox Twitch stream overlay pack cover"],
     tags: ["Fox Twitch Overlay","Twitch Overlay Fox","Stream Overlay Fox","Fox Overlay","Fox Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Fox Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+    newDrop: true,
   }),
   p({
     id: "oc-007",
@@ -165,6 +169,7 @@ export const PRODUCTS: Product[] = [
     etsyDescription: "Set the scene with Cozy Cat Halloween Twitch Overlay Pack Animated. Slow smoke, pale moonlight and a cat that owns the dark - a full animated Twitch overlay built to make your channel feel like a place, not just a webcam on a background.\n\nInside the pack: animated Starting Soon, Be Right Back, Stream Ending and Offline screens (MP4 loops plus static PNG versions), a facecam / webcam frame, an in-game overlay, animated alerts for follows, subs, donations and raids, matching info panels and a set of bonus emotes. Every piece shares the same cat art direction, so your whole layout looks designed by one hand.\n\nIt works with OBS Studio and Streamlabs and looks right on Twitch, YouTube, Kick and Facebook Gaming. Delivery is instant: buy, download the ZIP and follow the included setup guide - most streamers are live with it in under ten minutes. No subscription, no watermark, yours to keep.\n\nYour purchase covers use on your own channels for as long as you stream. If a file ever misbehaves, message the studio and we will fix or replace it fast. Want Cozy Cat Halloween Twitch Overlay Pack Animated tuned to your exact brand colors or paired with a custom mascot, emotes and badges? The commission desk is open.",
     imageAlts: ["Cozy Cat Halloween Twitch Overlay Pack Animated - animated cat Twitch stream overlay pack cover"],
     tags: ["Cat Twitch Overlay","Twitch Overlay Cat","Stream Overlay Cat","Cat Overlay","Cat Twitch","Stream Overlay","Twitch Overlay","Twitch Overlays","Stream Overlays","Cat Twitch Pack","Animated Stream Overlay","Kick Stream Package","Vtuber Overlay"],
+    newDrop: true,
   }),
   p({
     id: "oc-008",

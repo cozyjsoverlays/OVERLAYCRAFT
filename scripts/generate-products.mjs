@@ -54,6 +54,11 @@ const OVERRIDES = {
   "4365728007": { slug: "red-animated-stream-package" },
   "4579037123": { newDrop: true, featured: true },
   "4577956580": { newDrop: true, featured: true },
+  "4586029074": { slug: "gothic-grim-reaper-neon-overlay", newDrop: true },
+  "4586001846": { slug: "gothic-grim-reaper-purple-overlay", newDrop: true },
+  "4572355767": { newDrop: true },
+  "4564919690": { newDrop: true },
+  "4564892123": { newDrop: true },
 };
 
 /* ── theme detection from titles (drives categories, tags, descriptions) ── */
