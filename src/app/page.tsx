@@ -195,7 +195,7 @@ export default function HomePage() {
       {/* Reviews marquee */}
       <section className="overflow-hidden border-y border-veil bg-ink2/30 py-16">
         <Reveal className="mx-auto max-w-7xl px-4 md:px-8">
-          <SectionHeading label="1,300+ streamers equipped" title="What Streamers Say" center />
+          <SectionHeading label="1,800+ streamers equipped" title="What Streamers Say" center />
         </Reveal>
         <div className="mt-10 flex w-max animate-marquee gap-5 pl-5 [--tw-translate-x:0] hover:[animation-play-state:paused]">
           {[...REVIEWS, ...REVIEWS].map((r, i) => (

@@ -84,7 +84,7 @@ export function Footer() {
           </div>
           <p className="mt-3 text-sm leading-relaxed text-mist">
             Forged for your stream. Animated overlay worlds by {SITE.shop} - Star
-            Seller, 1,300+ streamers equipped.
+            Seller, 1,800+ streamers equipped.
           </p>
           <a
             href={ETSY_SHOP_URL}

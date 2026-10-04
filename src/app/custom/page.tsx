@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const STATS = [
   { n: "2020", l: "Star Seller since" },
-  { n: "1,300+", l: "commissions delivered" },
+  { n: "1,800+", l: "commissions delivered" },
   { n: "4.9★", l: "average rating" },
   { n: "100%", l: "would recommend" },
 ];

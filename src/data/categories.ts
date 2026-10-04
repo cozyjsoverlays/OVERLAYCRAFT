@@ -7,7 +7,7 @@ export const CATEGORIES: Category[] = [
     glyph: "✦",
     mood: "lilac",
     intro:
-      "The newest animated stream overlays fresh from the OverlayCraft atelier. Every drop in this collection is a complete stream package - animated starting soon, be right back, stream ending and offline screens, matching webcam frames, game overlays, alerts and panels - exported for Twitch, YouTube, Kick and TikTok Live. New designs land here first, often at launch discounts, so this is the page to watch if you want your channel wearing a look nobody else has yet. Each pack installs in minutes: drag the loops into OBS Studio or Streamlabs as media sources and go live. Instant download, lifetime access, and the same 4.9★ craftsmanship 1,300+ streamers already trust.",
+      "The newest animated stream overlays fresh from the OverlayCraft atelier. Every drop in this collection is a complete stream package - animated starting soon, be right back, stream ending and offline screens, matching webcam frames, game overlays, alerts and panels - exported for Twitch, YouTube, Kick and TikTok Live. New designs land here first, often at launch discounts, so this is the page to watch if you want your channel wearing a look nobody else has yet. Each pack installs in minutes: drag the loops into OBS Studio or Streamlabs as media sources and go live. Instant download, lifetime access, and the same 4.9★ craftsmanship 1,800+ streamers already trust.",
   },
   {
     slug: "stream",

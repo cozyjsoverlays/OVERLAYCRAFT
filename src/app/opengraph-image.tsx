@@ -51,7 +51,7 @@ export default function OpengraphImage() {
           {"Animated Stream Overlays for Twitch, YouTube & Kick"}
         </div>
         <div style={{ fontSize: 34, color: "#b9b2c9", maxWidth: 880 }}>
-          {"Instant download. Drag into OBS. Go live. Etsy Star Seller, 1,300+ sales, 4.9 stars."}
+          {"Instant download. Drag into OBS. Go live. Etsy Star Seller, 1,800+ sales, 4.9 stars."}
         </div>
         <div
           style={{

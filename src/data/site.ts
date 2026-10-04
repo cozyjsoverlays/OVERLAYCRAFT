@@ -6,7 +6,7 @@ export const SITE = {
   url: "https://overlaycraft.com",
   tagline: "Cinematic animated stream overlays for Twitch, YouTube, Kick & TikTok Live.",
   description:
-    "Premium animated stream overlay packages - forged by VectorKingStudio, Etsy Star Seller with 1,300+ sales and a 4.9★ rating. Instant download. Drag into OBS. Go live.",
+    "Premium animated stream overlay packages - forged by VectorKingStudio, Etsy Star Seller with 1,800+ sales and a 4.9★ rating. Instant download. Drag into OBS. Go live.",
 } as const;
 
 export const ETSY_SHOP_URL = "https://www.etsy.com/shop/VectorKingStudio";
@@ -47,7 +47,7 @@ export const TUTORIALS: Tutorial[] = [
 
 export const TRUST_BAR = [
   "★ 4.9 from 193 reviews",
-  "1,300+ streamers equipped",
+  "1,800+ streamers equipped",
   "Star Seller since 2020",
   "Instant download",
 ] as const;

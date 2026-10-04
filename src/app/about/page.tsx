@@ -6,7 +6,7 @@ import { ETSY_SHOP_URL, SITE, TRUST_BAR } from "@/data/site";
 export const metadata: Metadata = {
   title: "About - The Atelier Behind OverlayCraft",
   description:
-    "OverlayCraft is the home of VectorKingStudio - six years of animated stream overlay craft, 1,300+ streamers equipped, 4.9★ on Etsy. This is where stream worlds are forged.",
+    "OverlayCraft is the home of VectorKingStudio - six years of animated stream overlay craft, 1,800+ streamers equipped, 4.9★ on Etsy. This is where stream worlds are forged.",
   alternates: { canonical: "/about" },
 };
 
@@ -21,7 +21,7 @@ export default function AboutPage() {
           building animated worlds for streamers.
         </p>
         <p>
-          It started on Etsy in 2020. Since then: over 1,300 packs delivered,
+          It started on Etsy in 2020. Since then: over 1,800 packs delivered,
           a 4.9★ average across 193 reviews, and a Star Seller badge held
           season after season. Ravens, wolves, dragons, sakura storms, cozy
           foxes - every pack begins as a scene, not a template. Something has

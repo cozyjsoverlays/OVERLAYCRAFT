@@ -74,7 +74,7 @@ export function Hero() {
           className="mx-auto mt-6 max-w-xl font-body text-mist md:text-lg"
         >
           Animated overlay worlds - ravens, dragons, sakura, cozy dens - in OBS
-          and live in 5 minutes. Instant download, trusted by 1,300+ streamers.
+          and live in 5 minutes. Instant download, trusted by 1,800+ streamers.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
